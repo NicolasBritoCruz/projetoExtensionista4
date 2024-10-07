@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Extensionista.PaginaCursosSisu"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="PaginaCursosSisu">
+    <AbsoluteLayout BackgroundColor="#ffffff">
+        <ImageButton
+            x:Name="sairCursosSisu"
+            AbsoluteLayout.LayoutBounds="0.945  , 0.02"
+            AbsoluteLayout.LayoutFlags="PositionProportional"
+            Clicked="sairCursosSisu_Clicked"
+            HeightRequest="35"
+            Source="x.png" />
+        <Label
+            AbsoluteLayout.LayoutBounds="0.5, 0.02"
+            AbsoluteLayout.LayoutFlags="PositionProportional"
+            FontFamily="MontserratSemiBold"
+            FontSize="22"
+            Text="Detalhes do curso"
+            TextColor="#245897" />
+        <Frame
+            AbsoluteLayout.LayoutBounds="0.5, 0.095, 0.85, 0.23"
+            AbsoluteLayout.LayoutFlags="All"
+            BackgroundColor="#d6eafa"
+            BorderColor="#0e3872"
+            CornerRadius="25" />
+        <Image
+            AbsoluteLayout.LayoutBounds="0.15, 0.07, 0.35, 0.35"
+            AbsoluteLayout.LayoutFlags="All"
+            Source="circulobranco.png" />
+        <Image
+            AbsoluteLayout.LayoutBounds="0.14, 0.08, 0.35, 0.35"
+            AbsoluteLayout.LayoutFlags="All"
+            Source="escola.png" />
+        <Label
+            AbsoluteLayout.LayoutBounds="0.69, 0.17"
+            AbsoluteLayout.LayoutFlags="PositionProportional"
+            FontFamily="MontserratBold"
+            FontSize="18"
+            Text="Curso:"
+            TextColor="#245897" />
+        <Frame
+            AbsoluteLayout.LayoutBounds="0.5, 0.075, 0.85, 0.07"
+            AbsoluteLayout.LayoutFlags="All"
+            BackgroundColor="#223d5e"
+            BorderColor="#092444"
+            CornerRadius="0" />
+        <Frame
+            AbsoluteLayout.LayoutBounds="0.5, 0.465, 0.85, 0.3"
+            AbsoluteLayout.LayoutFlags="All"
+            BackgroundColor="#d6eafa"
+            BorderColor="#0e3872"
+            CornerRadius="0" />
+        <Frame
+            AbsoluteLayout.LayoutBounds="0.5, 0.35, 0.85, 0.073"
+            AbsoluteLayout.LayoutFlags="All"
+            BackgroundColor="#223d5e"
+            BorderColor="#092444"
+            CornerRadius="0" />
+        <Label
+            AbsoluteLayout.LayoutBounds="0.18, 0.355"
+            AbsoluteLayout.LayoutFlags="PositionProportional"
+            FontFamily="MontserratSemiBold"
+            FontSize="16"
+            Text="Tipo"
+            TextColor="#ffffff" />
+        <Label
+            AbsoluteLayout.LayoutBounds="0.5, 0.355"
+            AbsoluteLayout.LayoutFlags="PositionProportional"
+            FontFamily="MontserratSemiBold"
+            FontSize="16"
+            Text="Quantidade"
+            TextColor="#ffffff" />
+        <Label
+            AbsoluteLayout.LayoutBounds="0.8, 0.355"
+            AbsoluteLayout.LayoutFlags="PositionProportional"
+            FontFamily="MontserratSemiBold"
+            FontSize="16"
+            Text="Nota"
+            TextColor="#ffffff" />
+        <Frame
+            AbsoluteLayout.LayoutBounds="0.5, 0.93, 0.85, 0.3"
+            AbsoluteLayout.LayoutFlags="All"
+            BackgroundColor="#d6eafa"
+            BorderColor="#0e3872"
+            CornerRadius="0" />
+        <Frame
+            AbsoluteLayout.LayoutBounds="0.5, 0.7, 0.85, 0.073"
+            AbsoluteLayout.LayoutFlags="All"
+            BackgroundColor="#223d5e"
+            BorderColor="#092444"
+            CornerRadius="0" />
+        <Label
+            AbsoluteLayout.LayoutBounds="0.5, 0.69"
+            AbsoluteLayout.LayoutFlags="PositionProportional"
+            FontFamily="MontserratSemiBold"
+            FontSize="16"
+            Text="Peso de cada nota"
+            TextColor="#ffffff" />
+
+    </AbsoluteLayout>
+</ContentPage>

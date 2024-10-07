@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Extensionista.PaginaLista"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="PaginaLista">
+    <AbsoluteLayout BackgroundColor="#ffffff">
+        <ImageButton
+            x:Name="sairLista"
+            AbsoluteLayout.LayoutBounds="0.95, 0.044"
+            AbsoluteLayout.LayoutFlags="PositionProportional"
+            Clicked="sairLista_Clicked"
+            HeightRequest="35"
+            Source="x.png" />
+        <Label
+            AbsoluteLayout.LayoutBounds="0.5, 0.045"
+            AbsoluteLayout.LayoutFlags="PositionProportional"
+            FontFamily="MontserratSemiBold"
+            FontSize="22"
+            Text="Informações"
+            TextColor="#245897" />
+        <Frame
+            AbsoluteLayout.LayoutBounds="0.5, 0.15, 0.85, 0.25"
+            AbsoluteLayout.LayoutFlags="All"
+            BackgroundColor="#d6eafa"
+            BorderColor="#0e3872"
+            CornerRadius="25" />
+        <Image
+            AbsoluteLayout.LayoutBounds="0.15, 0.13, 0.35, 0.35"
+            AbsoluteLayout.LayoutFlags="All"
+            Source="circulobranco.png" />
+        <Image
+            AbsoluteLayout.LayoutBounds="0.14, 0.13, 0.35, 0.35"
+            AbsoluteLayout.LayoutFlags="All"
+            Source="escola.png" />
+        <Label
+            AbsoluteLayout.LayoutBounds="0.55, 0.2"
+            AbsoluteLayout.LayoutFlags="PositionProportional"
+            FontFamily="MontserratSemiBold"
+            FontSize="16"
+            Text="Código:"
+            TextColor="#245897" />
+        <Label
+            AbsoluteLayout.LayoutBounds="0.583, 0.24"
+            AbsoluteLayout.LayoutFlags="PositionProportional"
+            FontFamily="MontserratSemiBold"
+            FontSize="16"
+            Text="Categoria:"
+            TextColor="#245897" />
+        <Label
+            AbsoluteLayout.LayoutBounds="0.55, 0.28"
+            AbsoluteLayout.LayoutFlags="PositionProportional"
+            FontFamily="MontserratSemiBold"
+            FontSize="16"
+            Text="Cidade:"
+            TextColor="#245897" />
+        <Label
+            AbsoluteLayout.LayoutBounds="0.55, 0.32"
+            AbsoluteLayout.LayoutFlags="PositionProportional"
+            FontFamily="MontserratSemiBold"
+            FontSize="16"
+            Text="Estado:"
+            TextColor="#245897" />
+        <Frame
+            AbsoluteLayout.LayoutBounds="0.5, 0.108, 0.85, 0.073"
+            AbsoluteLayout.LayoutFlags="All"
+            BackgroundColor="#223d5e"
+            BorderColor="#092444"
+            CornerRadius="0" />
+        <Frame
+            AbsoluteLayout.LayoutBounds="0.5, 0.77, 0.85, 0.45"
+            AbsoluteLayout.LayoutFlags="All"
+            BackgroundColor="#d6eafa"
+            BorderColor="#0e3872"
+            CornerRadius="0" />
+        <Frame
+            AbsoluteLayout.LayoutBounds="0.5, 0.44, 0.85, 0.073"
+            AbsoluteLayout.LayoutFlags="All"
+            BackgroundColor="#223d5e"
+            BorderColor="#092444"
+            CornerRadius="0" />
+        <Label
+            AbsoluteLayout.LayoutBounds="0.18, 0.442"
+            AbsoluteLayout.LayoutFlags="PositionProportional"
+            FontFamily="MontserratSemiBold"
+            FontSize="16"
+            Text="Curso"
+            TextColor="#ffffff" />
+        <Label
+            AbsoluteLayout.LayoutBounds="0.5, 0.442"
+            AbsoluteLayout.LayoutFlags="PositionProportional"
+            FontFamily="MontserratSemiBold"
+            FontSize="16"
+            Text="Modalidade"
+            TextColor="#ffffff" />
+        <Label
+            AbsoluteLayout.LayoutBounds="0.8, 0.442"
+            AbsoluteLayout.LayoutFlags="PositionProportional"
+            FontFamily="MontserratSemiBold"
+            FontSize="16"
+            Text="Grau"
+            TextColor="#ffffff" />
+        <Image
+            AbsoluteLayout.LayoutBounds="0.44,0.97,0.07,0.1"
+            AbsoluteLayout.LayoutFlags="All"
+            Source="setadireita.png" />
+        <Image
+            AbsoluteLayout.LayoutBounds="0.55,0.97,0.07,0.1"
+            AbsoluteLayout.LayoutFlags="All"
+            Source="setaesquerda.png" />
+        <Label
+            AbsoluteLayout.LayoutBounds="0.85, 0.934"
+            AbsoluteLayout.LayoutFlags="PositionProportional"
+            FontFamily="MontserratSemiBold"
+            FontSize="18"
+            Opacity="0.7"
+            Text="Pág ?/?"
+            TextColor="#6fa0e4" />
+    </AbsoluteLayout>
+</ContentPage>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Extensionista.PaginaPesquisa"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Pesquisa"
+    IconImageSource="pesquisa.png">
+    <AbsoluteLayout BackgroundColor="#ffffff">
+        <ImageButton
+            AbsoluteLayout.LayoutFlags="PositionProportional"
+            AbsoluteLayout.LayoutBounds="0.9, 0"
+            Source="x.png"/>
+        <Button
+            x:Name="pesquisar"
+            Clicked="pesquisar_Clicked"
+            Text="pesquisar" />
+    </AbsoluteLayout>
+</ContentPage>

@@ -1,0 +1,884 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Machine>DESKTOP-AUJRH66</Machine>
+    <WindowsUser>user</WindowsUser>
+    <TargetPlatformIdentifier>Windows</TargetPlatformIdentifier>
+    <TargetOsVersion>10.0</TargetOsVersion>
+    <TargetOsDescription>Windows 10.0</TargetOsDescription>
+    <SolutionConfiguration>Debug|AnyCPU</SolutionConfiguration>
+    <PackageArchitecture>x64</PackageArchitecture>
+    <PackageIdentityName>com.companyname.extensionista</PackageIdentityName>
+    <PackageIdentityPublisher>CN=User Name</PackageIdentityPublisher>
+    <IntermediateOutputPath>C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\</IntermediateOutputPath>
+    <RemoteDeploymentType>CopyToDevice</RemoteDeploymentType>
+    <PackageRegistrationPath>
+    </PackageRegistrationPath>
+    <RemoveNonLayoutFiles>false</RemoveNonLayoutFiles>
+    <DeployOptionalPackages>false</DeployOptionalPackages>
+    <WindowsSdkPath>
+    </WindowsSdkPath>
+    <LayoutDir>C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\AppX</LayoutDir>
+    <RegisteredManifestChecksum>D9C6B8EEDFEE73B53C48994B6DA805D7E25CD3F51436477C8C769554AE4153C1</RegisteredManifestChecksum>
+    <RegisteredPackageMoniker>com.companyname.extensionista_1.0.0.1_x64__9zz4h110yvjzm</RegisteredPackageMoniker>
+    <RegisteredUserModeAppID>com.companyname.extensionista_9zz4h110yvjzm!App</RegisteredUserModeAppID>
+    <RegisteredPackageID>com.companyname.extensionista</RegisteredPackageID>
+    <RegisteredPackagePublisher>CN=User Name</RegisteredPackagePublisher>
+    <RegisteredVersion>1.0.0.1</RegisteredVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <AppXManifest Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
+      <PackagePath>AppxManifest.xml</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2024-10-07T22:28:19.132</Modified>
+    </AppXManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\resources.pri">
+      <PackagePath>resources.pri</PackagePath>
+      <Modified>2024-10-07T22:17:09.746</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Extensionista.runtimeconfig.json">
+      <PackagePath>Extensionista.runtimeconfig.json</PackagePath>
+      <Modified>2024-10-05T12:59:39.458</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Extensionista.dll">
+      <PackagePath>Extensionista.dll</PackagePath>
+      <Modified>2024-10-07T22:28:18.501</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\apphost.exe">
+      <PackagePath>Extensionista.exe</PackagePath>
+      <Modified>2024-10-07T22:28:18.507</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\Resources\Raw\AboutAssets.txt">
+      <PackagePath>AboutAssets.txt</PackagePath>
+      <Modified>2024-10-05T12:54:15.428</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-100.png">
+      <PackagePath>splashSplashScreen.scale-100.png</PackagePath>
+      <Modified>2024-10-05T12:55:40.051</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-125.png">
+      <PackagePath>splashSplashScreen.scale-125.png</PackagePath>
+      <Modified>2024-10-05T12:55:40.082</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-150.png">
+      <PackagePath>splashSplashScreen.scale-150.png</PackagePath>
+      <Modified>2024-10-05T12:55:40.117</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-200.png">
+      <PackagePath>splashSplashScreen.scale-200.png</PackagePath>
+      <Modified>2024-10-05T12:55:40.168</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-400.png">
+      <PackagePath>splashSplashScreen.scale-400.png</PackagePath>
+      <Modified>2024-10-05T12:55:40.363</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\f\Montserrat-Black.ttf">
+      <PackagePath>Montserrat-Black.ttf</PackagePath>
+      <Modified>2024-09-04T23:11:20.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\f\Montserrat-BlackItalic.ttf">
+      <PackagePath>Montserrat-BlackItalic.ttf</PackagePath>
+      <Modified>2024-09-04T23:11:20.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\f\Montserrat-Bold.ttf">
+      <PackagePath>Montserrat-Bold.ttf</PackagePath>
+      <Modified>2024-09-04T23:11:20.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\f\Montserrat-BoldItalic.ttf">
+      <PackagePath>Montserrat-BoldItalic.ttf</PackagePath>
+      <Modified>2024-09-04T23:11:20.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\f\Montserrat-ExtraBold.ttf">
+      <PackagePath>Montserrat-ExtraBold.ttf</PackagePath>
+      <Modified>2024-09-04T23:11:20.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\f\Montserrat-ExtraBoldItalic.ttf">
+      <PackagePath>Montserrat-ExtraBoldItalic.ttf</PackagePath>
+      <Modified>2024-09-04T23:11:20.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\f\Montserrat-ExtraLight.ttf">
+      <PackagePath>Montserrat-ExtraLight.ttf</PackagePath>
+      <Modified>2024-09-04T23:11:20.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\f\Montserrat-ExtraLightItalic.ttf">
+      <PackagePath>Montserrat-ExtraLightItalic.ttf</PackagePath>
+      <Modified>2024-09-04T23:11:20.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\f\Montserrat-Italic.ttf">
+      <PackagePath>Montserrat-Italic.ttf</PackagePath>
+      <Modified>2024-09-04T23:11:20.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\f\Montserrat-Light.ttf">
+      <PackagePath>Montserrat-Light.ttf</PackagePath>
+      <Modified>2024-09-04T23:11:20.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\f\Montserrat-LightItalic.ttf">
+      <PackagePath>Montserrat-LightItalic.ttf</PackagePath>
+      <Modified>2024-09-04T23:11:20.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\f\Montserrat-Medium.ttf">
+      <PackagePath>Montserrat-Medium.ttf</PackagePath>
+      <Modified>2024-09-04T23:11:20.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\f\Montserrat-MediumItalic.ttf">
+      <PackagePath>Montserrat-MediumItalic.ttf</PackagePath>
+      <Modified>2024-09-04T23:11:20.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\f\Montserrat-Regular.ttf">
+      <PackagePath>Montserrat-Regular.ttf</PackagePath>
+      <Modified>2024-09-04T23:11:20.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\f\Montserrat-SemiBold.ttf">
+      <PackagePath>Montserrat-SemiBold.ttf</PackagePath>
+      <Modified>2024-09-04T23:11:20.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\f\Montserrat-SemiBoldItalic.ttf">
+      <PackagePath>Montserrat-SemiBoldItalic.ttf</PackagePath>
+      <Modified>2024-09-04T23:11:20.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\f\Montserrat-Thin.ttf">
+      <PackagePath>Montserrat-Thin.ttf</PackagePath>
+      <Modified>2024-09-04T23:11:20.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\f\Montserrat-ThinItalic.ttf">
+      <PackagePath>Montserrat-ThinItalic.ttf</PackagePath>
+      <Modified>2024-09-04T23:11:20.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\f\OpenSans-Regular.ttf">
+      <PackagePath>OpenSans-Regular.ttf</PackagePath>
+      <Modified>2024-10-05T12:54:15.363</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\f\OpenSans-Semibold.ttf">
+      <PackagePath>OpenSans-Semibold.ttf</PackagePath>
+      <Modified>2024-10-05T12:54:15.366</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\aluno.scale-100.png">
+      <PackagePath>aluno.scale-100.png</PackagePath>
+      <Modified>2024-10-07T22:15:57.904</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\aluno.scale-125.png">
+      <PackagePath>aluno.scale-125.png</PackagePath>
+      <Modified>2024-10-07T22:15:57.904</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\aluno.scale-150.png">
+      <PackagePath>aluno.scale-150.png</PackagePath>
+      <Modified>2024-10-07T22:15:57.904</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\aluno.scale-200.png">
+      <PackagePath>aluno.scale-200.png</PackagePath>
+      <Modified>2024-10-07T22:15:57.904</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\aluno.scale-400.png">
+      <PackagePath>aluno.scale-400.png</PackagePath>
+      <Modified>2024-10-07T22:15:57.903</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appicon.ico">
+      <PackagePath>appicon.ico</PackagePath>
+      <Modified>2024-10-07T22:15:57.901</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-100.png">
+      <PackagePath>appiconLargeTile.scale-100.png</PackagePath>
+      <Modified>2024-10-07T22:15:57.889</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-125.png">
+      <PackagePath>appiconLargeTile.scale-125.png</PackagePath>
+      <Modified>2024-10-07T22:15:57.889</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-150.png">
+      <PackagePath>appiconLargeTile.scale-150.png</PackagePath>
+      <Modified>2024-10-07T22:15:57.889</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-200.png">
+      <PackagePath>appiconLargeTile.scale-200.png</PackagePath>
+      <Modified>2024-10-07T22:15:57.888</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-400.png">
+      <PackagePath>appiconLargeTile.scale-400.png</PackagePath>
+      <Modified>2024-10-07T22:15:57.888</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-16.png">
+      <PackagePath>appiconLogo.altform-lightunplated_targetsize-16.png</PackagePath>
+      <Modified>2024-10-07T22:15:57.897</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-24.png">
+      <PackagePath>appiconLogo.altform-lightunplated_targetsize-24.png</PackagePath>
+      <Modified>2024-10-07T22:15:57.896</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-256.png">
+      <PackagePath>appiconLogo.altform-lightunplated_targetsize-256.png</PackagePath>
+      <Modified>2024-10-07T22:15:57.895</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-32.png">
+      <PackagePath>appiconLogo.altform-lightunplated_targetsize-32.png</PackagePath>
+      <Modified>2024-10-07T22:15:57.896</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-48.png">
+      <PackagePath>appiconLogo.altform-lightunplated_targetsize-48.png</PackagePath>
+      <Modified>2024-10-07T22:15:57.896</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-16.png">
+      <PackagePath>appiconLogo.altform-unplated_targetsize-16.png</PackagePath>
+      <Modified>2024-10-07T22:15:57.898</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-24.png">
+      <PackagePath>appiconLogo.altform-unplated_targetsize-24.png</PackagePath>
+      <Modified>2024-10-07T22:15:57.898</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-256.png">
+      <PackagePath>appiconLogo.altform-unplated_targetsize-256.png</PackagePath>
+      <Modified>2024-10-07T22:15:57.897</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-32.png">
+      <PackagePath>appiconLogo.altform-unplated_targetsize-32.png</PackagePath>
+      <Modified>2024-10-07T22:15:57.897</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-48.png">
+      <PackagePath>appiconLogo.altform-unplated_targetsize-48.png</PackagePath>
+      <Modified>2024-10-07T22:15:57.897</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-100.png">
+      <PackagePath>appiconLogo.scale-100.png</PackagePath>
+      <Modified>2024-10-07T22:15:57.901</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-125.png">
+      <PackagePath>appiconLogo.scale-125.png</PackagePath>
+      <Modified>2024-10-07T22:15:57.900</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-150.png">
+      <PackagePath>appiconLogo.scale-150.png</PackagePath>
+      <Modified>2024-10-07T22:15:57.900</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-200.png">
+      <PackagePath>appiconLogo.scale-200.png</PackagePath>
+      <Modified>2024-10-07T22:15:57.900</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-400.png">
+      <PackagePath>appiconLogo.scale-400.png</PackagePath>
+      <Modified>2024-10-07T22:15:57.900</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-16.png">
+      <PackagePath>appiconLogo.targetsize-16.png</PackagePath>
+      <Modified>2024-10-07T22:15:57.899</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-24.png">
+      <PackagePath>appiconLogo.targetsize-24.png</PackagePath>
+      <Modified>2024-10-07T22:15:57.899</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-256.png">
+      <PackagePath>appiconLogo.targetsize-256.png</PackagePath>
+      <Modified>2024-10-07T22:15:57.898</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-32.png">
+      <PackagePath>appiconLogo.targetsize-32.png</PackagePath>
+      <Modified>2024-10-07T22:15:57.899</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-48.png">
+      <PackagePath>appiconLogo.targetsize-48.png</PackagePath>
+      <Modified>2024-10-07T22:15:57.899</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-100.png">
+      <PackagePath>appiconMediumTile.scale-100.png</PackagePath>
+      <Modified>2024-10-07T22:15:57.892</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-125.png">
+      <PackagePath>appiconMediumTile.scale-125.png</PackagePath>
+      <Modified>2024-10-07T22:15:57.892</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-150.png">
+      <PackagePath>appiconMediumTile.scale-150.png</PackagePath>
+      <Modified>2024-10-07T22:15:57.892</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-200.png">
+      <PackagePath>appiconMediumTile.scale-200.png</PackagePath>
+      <Modified>2024-10-07T22:15:57.891</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-400.png">
+      <PackagePath>appiconMediumTile.scale-400.png</PackagePath>
+      <Modified>2024-10-07T22:15:57.891</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-100.png">
+      <PackagePath>appiconSmallTile.scale-100.png</PackagePath>
+      <Modified>2024-10-07T22:15:57.894</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-125.png">
+      <PackagePath>appiconSmallTile.scale-125.png</PackagePath>
+      <Modified>2024-10-07T22:15:57.893</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-150.png">
+      <PackagePath>appiconSmallTile.scale-150.png</PackagePath>
+      <Modified>2024-10-07T22:15:57.893</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-200.png">
+      <PackagePath>appiconSmallTile.scale-200.png</PackagePath>
+      <Modified>2024-10-07T22:15:57.893</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-400.png">
+      <PackagePath>appiconSmallTile.scale-400.png</PackagePath>
+      <Modified>2024-10-07T22:15:57.893</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-100.png">
+      <PackagePath>appiconStoreLogo.scale-100.png</PackagePath>
+      <Modified>2024-10-07T22:15:57.895</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-125.png">
+      <PackagePath>appiconStoreLogo.scale-125.png</PackagePath>
+      <Modified>2024-10-07T22:15:57.895</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-150.png">
+      <PackagePath>appiconStoreLogo.scale-150.png</PackagePath>
+      <Modified>2024-10-07T22:15:57.895</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-200.png">
+      <PackagePath>appiconStoreLogo.scale-200.png</PackagePath>
+      <Modified>2024-10-07T22:15:57.894</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-400.png">
+      <PackagePath>appiconStoreLogo.scale-400.png</PackagePath>
+      <Modified>2024-10-07T22:15:57.894</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-100.png">
+      <PackagePath>appiconWideTile.scale-100.png</PackagePath>
+      <Modified>2024-10-07T22:15:57.891</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-125.png">
+      <PackagePath>appiconWideTile.scale-125.png</PackagePath>
+      <Modified>2024-10-07T22:15:57.890</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-150.png">
+      <PackagePath>appiconWideTile.scale-150.png</PackagePath>
+      <Modified>2024-10-07T22:15:57.890</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-200.png">
+      <PackagePath>appiconWideTile.scale-200.png</PackagePath>
+      <Modified>2024-10-07T22:15:57.890</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-400.png">
+      <PackagePath>appiconWideTile.scale-400.png</PackagePath>
+      <Modified>2024-10-07T22:15:57.889</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\circulo.scale-100.png">
+      <PackagePath>circulo.scale-100.png</PackagePath>
+      <Modified>2024-10-07T22:15:57.888</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\circulo.scale-125.png">
+      <PackagePath>circulo.scale-125.png</PackagePath>
+      <Modified>2024-10-07T22:15:57.887</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\circulo.scale-150.png">
+      <PackagePath>circulo.scale-150.png</PackagePath>
+      <Modified>2024-10-07T22:15:57.887</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\circulo.scale-200.png">
+      <PackagePath>circulo.scale-200.png</PackagePath>
+      <Modified>2024-10-07T22:15:57.887</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\circulo.scale-400.png">
+      <PackagePath>circulo.scale-400.png</PackagePath>
+      <Modified>2024-10-07T22:15:57.887</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\circulobranco.scale-100.png">
+      <PackagePath>circulobranco.scale-100.png</PackagePath>
+      <Modified>2024-10-07T22:15:57.883</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\circulobranco.scale-125.png">
+      <PackagePath>circulobranco.scale-125.png</PackagePath>
+      <Modified>2024-10-07T22:15:57.883</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\circulobranco.scale-150.png">
+      <PackagePath>circulobranco.scale-150.png</PackagePath>
+      <Modified>2024-10-07T22:15:57.883</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\circulobranco.scale-200.png">
+      <PackagePath>circulobranco.scale-200.png</PackagePath>
+      <Modified>2024-10-07T22:15:57.882</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\circulobranco.scale-400.png">
+      <PackagePath>circulobranco.scale-400.png</PackagePath>
+      <Modified>2024-10-07T22:15:57.882</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\escola.scale-100.png">
+      <PackagePath>escola.scale-100.png</PackagePath>
+      <Modified>2024-10-07T22:15:57.882</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\escola.scale-125.png">
+      <PackagePath>escola.scale-125.png</PackagePath>
+      <Modified>2024-10-07T22:15:57.882</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\escola.scale-150.png">
+      <PackagePath>escola.scale-150.png</PackagePath>
+      <Modified>2024-10-07T22:15:57.882</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\escola.scale-200.png">
+      <PackagePath>escola.scale-200.png</PackagePath>
+      <Modified>2024-10-07T22:15:57.881</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\escola.scale-400.png">
+      <PackagePath>escola.scale-400.png</PackagePath>
+      <Modified>2024-10-07T22:15:57.881</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\favoritos.scale-100.png">
+      <PackagePath>favoritos.scale-100.png</PackagePath>
+      <Modified>2024-10-07T22:15:57.887</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\favoritos.scale-125.png">
+      <PackagePath>favoritos.scale-125.png</PackagePath>
+      <Modified>2024-10-07T22:15:57.886</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\favoritos.scale-150.png">
+      <PackagePath>favoritos.scale-150.png</PackagePath>
+      <Modified>2024-10-07T22:15:57.886</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\favoritos.scale-200.png">
+      <PackagePath>favoritos.scale-200.png</PackagePath>
+      <Modified>2024-10-07T22:15:57.886</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\favoritos.scale-400.png">
+      <PackagePath>favoritos.scale-400.png</PackagePath>
+      <Modified>2024-10-07T22:15:57.886</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\fullheart.scale-100.png">
+      <PackagePath>fullheart.scale-100.png</PackagePath>
+      <Modified>2024-10-07T22:15:57.885</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\fullheart.scale-125.png">
+      <PackagePath>fullheart.scale-125.png</PackagePath>
+      <Modified>2024-10-07T22:15:57.885</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\fullheart.scale-150.png">
+      <PackagePath>fullheart.scale-150.png</PackagePath>
+      <Modified>2024-10-07T22:15:57.885</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\fullheart.scale-200.png">
+      <PackagePath>fullheart.scale-200.png</PackagePath>
+      <Modified>2024-10-07T22:15:57.885</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\fullheart.scale-400.png">
+      <PackagePath>fullheart.scale-400.png</PackagePath>
+      <Modified>2024-10-07T22:15:57.885</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\home.scale-100.png">
+      <PackagePath>home.scale-100.png</PackagePath>
+      <Modified>2024-10-07T22:15:57.903</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\home.scale-125.png">
+      <PackagePath>home.scale-125.png</PackagePath>
+      <Modified>2024-10-07T22:15:57.903</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\home.scale-150.png">
+      <PackagePath>home.scale-150.png</PackagePath>
+      <Modified>2024-10-07T22:15:57.903</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\home.scale-200.png">
+      <PackagePath>home.scale-200.png</PackagePath>
+      <Modified>2024-10-07T22:15:57.903</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\home.scale-400.png">
+      <PackagePath>home.scale-400.png</PackagePath>
+      <Modified>2024-10-07T22:15:57.902</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\mapa.scale-100.png">
+      <PackagePath>mapa.scale-100.png</PackagePath>
+      <Modified>2024-10-07T22:15:57.884</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\mapa.scale-125.png">
+      <PackagePath>mapa.scale-125.png</PackagePath>
+      <Modified>2024-10-07T22:15:57.884</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\mapa.scale-150.png">
+      <PackagePath>mapa.scale-150.png</PackagePath>
+      <Modified>2024-10-07T22:15:57.884</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\mapa.scale-200.png">
+      <PackagePath>mapa.scale-200.png</PackagePath>
+      <Modified>2024-10-07T22:15:57.884</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\mapa.scale-400.png">
+      <PackagePath>mapa.scale-400.png</PackagePath>
+      <Modified>2024-10-07T22:15:57.883</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\pesquisa.scale-100.png">
+      <PackagePath>pesquisa.scale-100.png</PackagePath>
+      <Modified>2024-10-07T22:15:57.881</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\pesquisa.scale-125.png">
+      <PackagePath>pesquisa.scale-125.png</PackagePath>
+      <Modified>2024-10-07T22:15:57.881</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\pesquisa.scale-150.png">
+      <PackagePath>pesquisa.scale-150.png</PackagePath>
+      <Modified>2024-10-07T22:15:57.881</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\pesquisa.scale-200.png">
+      <PackagePath>pesquisa.scale-200.png</PackagePath>
+      <Modified>2024-10-07T22:15:57.880</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\pesquisa.scale-400.png">
+      <PackagePath>pesquisa.scale-400.png</PackagePath>
+      <Modified>2024-10-07T22:15:57.880</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\setadireita.scale-100.png">
+      <PackagePath>setadireita.scale-100.png</PackagePath>
+      <Modified>2024-10-07T22:15:57.902</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\setaesquerda.scale-100.png">
+      <PackagePath>setaesquerda.scale-100.png</PackagePath>
+      <Modified>2024-10-07T22:15:57.902</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\x.scale-100.png">
+      <PackagePath>x.scale-100.png</PackagePath>
+      <Modified>2024-10-07T22:15:57.902</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\x.scale-125.png">
+      <PackagePath>x.scale-125.png</PackagePath>
+      <Modified>2024-10-07T22:15:57.902</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\x.scale-150.png">
+      <PackagePath>x.scale-150.png</PackagePath>
+      <Modified>2024-10-07T22:15:57.901</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\x.scale-200.png">
+      <PackagePath>x.scale-200.png</PackagePath>
+      <Modified>2024-10-07T22:15:57.901</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\x.scale-400.png">
+      <PackagePath>x.scale-400.png</PackagePath>
+      <Modified>2024-10-07T22:15:57.901</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\Desktop\Nicolas\Extensionista\Extensionista\Extensionista\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Extensionista.deps.json">
+      <PackagePath>Extensionista.deps.json</PackagePath>
+      <Modified>2024-10-07T22:17:09.322</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\.nuget\packages\microsoft.windows.sdk.net.ref\10.0.19041.34\lib\net6.0\Microsoft.Windows.SDK.NET.dll">
+      <PackagePath>Microsoft.Windows.SDK.NET.dll</PackagePath>
+      <Modified>2024-07-08T09:23:38.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\.nuget\packages\microsoft.windows.sdk.net.ref\10.0.19041.34\lib\net6.0\WinRT.Runtime.dll">
+      <PackagePath>WinRT.Runtime.dll</PackagePath>
+      <Modified>2024-07-08T09:23:38.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\.nuget\packages\microsoft.extensions.configuration\8.0.0\lib\net8.0\Microsoft.Extensions.Configuration.dll">
+      <PackagePath>Microsoft.Extensions.Configuration.dll</PackagePath>
+      <Modified>2023-10-31T14:59:20.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\.nuget\packages\microsoft.extensions.configuration.abstractions\8.0.0\lib\net8.0\Microsoft.Extensions.Configuration.Abstractions.dll">
+      <PackagePath>Microsoft.Extensions.Configuration.Abstractions.dll</PackagePath>
+      <Modified>2023-10-31T14:59:08.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\.nuget\packages\microsoft.extensions.dependencyinjection\8.0.0\lib\net8.0\Microsoft.Extensions.DependencyInjection.dll">
+      <PackagePath>Microsoft.Extensions.DependencyInjection.dll</PackagePath>
+      <Modified>2023-10-31T14:59:00.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\.nuget\packages\microsoft.extensions.dependencyinjection.abstractions\8.0.0\lib\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll">
+      <PackagePath>Microsoft.Extensions.DependencyInjection.Abstractions.dll</PackagePath>
+      <Modified>2023-10-31T14:58:56.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\.nuget\packages\microsoft.extensions.logging\8.0.0\lib\net8.0\Microsoft.Extensions.Logging.dll">
+      <PackagePath>Microsoft.Extensions.Logging.dll</PackagePath>
+      <Modified>2023-10-31T14:59:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\.nuget\packages\microsoft.extensions.logging.abstractions\8.0.0\lib\net8.0\Microsoft.Extensions.Logging.Abstractions.dll">
+      <PackagePath>Microsoft.Extensions.Logging.Abstractions.dll</PackagePath>
+      <Modified>2023-10-31T14:59:12.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\.nuget\packages\microsoft.extensions.logging.debug\8.0.0\lib\net8.0\Microsoft.Extensions.Logging.Debug.dll">
+      <PackagePath>Microsoft.Extensions.Logging.Debug.dll</PackagePath>
+      <Modified>2023-10-31T14:59:30.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\.nuget\packages\microsoft.extensions.options\8.0.0\lib\net8.0\Microsoft.Extensions.Options.dll">
+      <PackagePath>Microsoft.Extensions.Options.dll</PackagePath>
+      <Modified>2023-10-31T14:59:06.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\.nuget\packages\microsoft.extensions.primitives\8.0.0\lib\net8.0\Microsoft.Extensions.Primitives.dll">
+      <PackagePath>Microsoft.Extensions.Primitives.dll</PackagePath>
+      <Modified>2023-10-31T14:58:52.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\.nuget\packages\microsoft.graphics.win2d\1.2.0\lib\net6.0-windows10.0.19041.0\Microsoft.Graphics.Canvas.Interop.dll">
+      <PackagePath>Microsoft.Graphics.Canvas.Interop.dll</PackagePath>
+      <Modified>2024-03-11T15:36:42.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\.nuget\packages\microsoft.maui.controls.compatibility\8.0.72\lib\net8.0-windows10.0.19041\Microsoft.Maui.Controls.Compatibility.dll">
+      <PackagePath>Microsoft.Maui.Controls.Compatibility.dll</PackagePath>
+      <Modified>2024-08-05T21:21:26.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\.nuget\packages\microsoft.maui.controls.core\8.0.72\lib\net8.0-windows10.0.19041\Microsoft.Maui.Controls.dll">
+      <PackagePath>Microsoft.Maui.Controls.dll</PackagePath>
+      <Modified>2024-08-05T21:19:04.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\.nuget\packages\microsoft.maui.controls.xaml\8.0.72\lib\net8.0-windows10.0.19041\Microsoft.Maui.Controls.Xaml.dll">
+      <PackagePath>Microsoft.Maui.Controls.Xaml.dll</PackagePath>
+      <Modified>2024-08-05T21:18:56.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\.nuget\packages\microsoft.maui.core\8.0.72\lib\net8.0-windows10.0.19041\Microsoft.Maui.dll">
+      <PackagePath>Microsoft.Maui.dll</PackagePath>
+      <Modified>2024-08-05T21:19:14.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\.nuget\packages\microsoft.maui.essentials\8.0.72\lib\net8.0-windows10.0.19041\Microsoft.Maui.Essentials.dll">
+      <PackagePath>Microsoft.Maui.Essentials.dll</PackagePath>
+      <Modified>2024-08-05T21:19:52.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\.nuget\packages\microsoft.maui.graphics\8.0.72\lib\net8.0-windows10.0.19041\Microsoft.Maui.Graphics.dll">
+      <PackagePath>Microsoft.Maui.Graphics.dll</PackagePath>
+      <Modified>2024-08-05T21:19:50.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\.nuget\packages\microsoft.maui.graphics.win2d.winui.desktop\8.0.72\lib\net8.0-windows10.0.19041\Microsoft.Maui.Graphics.Win2D.WinUI.Desktop.dll">
+      <PackagePath>Microsoft.Maui.Graphics.Win2D.WinUI.Desktop.dll</PackagePath>
+      <Modified>2024-08-05T21:19:32.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\.nuget\packages\microsoft.windowsappsdk\1.5.240607001\lib\net6.0-windows10.0.18362.0\Microsoft.InteractiveExperiences.Projection.dll">
+      <PackagePath>Microsoft.InteractiveExperiences.Projection.dll</PackagePath>
+      <Modified>2024-06-07T00:23:32.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\.nuget\packages\microsoft.windowsappsdk\1.5.240607001\lib\net6.0-windows10.0.18362.0\Microsoft.WinUI.dll">
+      <PackagePath>Microsoft.WinUI.dll</PackagePath>
+      <Modified>2024-06-07T17:05:26.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\.nuget\packages\microsoft.windowsappsdk\1.5.240607001\lib\net6.0-windows10.0.18362.0\Microsoft.Windows.AppLifecycle.Projection.dll">
+      <PackagePath>Microsoft.Windows.AppLifecycle.Projection.dll</PackagePath>
+      <Modified>2024-06-07T17:05:26.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\.nuget\packages\microsoft.windowsappsdk\1.5.240607001\lib\net6.0-windows10.0.18362.0\Microsoft.Windows.AppNotifications.Builder.Projection.dll">
+      <PackagePath>Microsoft.Windows.AppNotifications.Builder.Projection.dll</PackagePath>
+      <Modified>2024-06-07T17:05:26.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\.nuget\packages\microsoft.windowsappsdk\1.5.240607001\lib\net6.0-windows10.0.18362.0\Microsoft.Windows.AppNotifications.Projection.dll">
+      <PackagePath>Microsoft.Windows.AppNotifications.Projection.dll</PackagePath>
+      <Modified>2024-06-07T17:05:26.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\.nuget\packages\microsoft.windowsappsdk\1.5.240607001\lib\net6.0-windows10.0.18362.0\Microsoft.Windows.ApplicationModel.DynamicDependency.Projection.dll">
+      <PackagePath>Microsoft.Windows.ApplicationModel.DynamicDependency.Projection.dll</PackagePath>
+      <Modified>2024-06-07T17:05:26.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\.nuget\packages\microsoft.windowsappsdk\1.5.240607001\lib\net6.0-windows10.0.18362.0\Microsoft.Windows.ApplicationModel.Resources.Projection.dll">
+      <PackagePath>Microsoft.Windows.ApplicationModel.Resources.Projection.dll</PackagePath>
+      <Modified>2024-06-07T06:06:02.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\.nuget\packages\microsoft.windowsappsdk\1.5.240607001\lib\net6.0-windows10.0.18362.0\Microsoft.Windows.ApplicationModel.WindowsAppRuntime.Projection.dll">
+      <PackagePath>Microsoft.Windows.ApplicationModel.WindowsAppRuntime.Projection.dll</PackagePath>
+      <Modified>2024-06-07T17:05:26.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\.nuget\packages\microsoft.windowsappsdk\1.5.240607001\lib\net6.0-windows10.0.18362.0\Microsoft.Windows.Management.Deployment.Projection.dll">
+      <PackagePath>Microsoft.Windows.Management.Deployment.Projection.dll</PackagePath>
+      <Modified>2024-06-07T17:05:26.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\.nuget\packages\microsoft.windowsappsdk\1.5.240607001\lib\net6.0-windows10.0.18362.0\Microsoft.Windows.PushNotifications.Projection.dll">
+      <PackagePath>Microsoft.Windows.PushNotifications.Projection.dll</PackagePath>
+      <Modified>2024-06-07T17:05:26.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\.nuget\packages\microsoft.windowsappsdk\1.5.240607001\lib\net6.0-windows10.0.18362.0\Microsoft.Windows.Security.AccessControl.Projection.dll">
+      <PackagePath>Microsoft.Windows.Security.AccessControl.Projection.dll</PackagePath>
+      <Modified>2024-06-07T17:05:26.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\.nuget\packages\microsoft.windowsappsdk\1.5.240607001\lib\net6.0-windows10.0.18362.0\Microsoft.Windows.System.Power.Projection.dll">
+      <PackagePath>Microsoft.Windows.System.Power.Projection.dll</PackagePath>
+      <Modified>2024-06-07T17:05:26.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\.nuget\packages\microsoft.windowsappsdk\1.5.240607001\lib\net6.0-windows10.0.18362.0\Microsoft.Windows.System.Projection.dll">
+      <PackagePath>Microsoft.Windows.System.Projection.dll</PackagePath>
+      <Modified>2024-06-07T17:05:26.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\.nuget\packages\microsoft.windowsappsdk\1.5.240607001\lib\net6.0-windows10.0.18362.0\Microsoft.Windows.Widgets.Projection.dll">
+      <PackagePath>Microsoft.Windows.Widgets.Projection.dll</PackagePath>
+      <Modified>2024-03-28T23:55:28.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\.nuget\packages\microsoft.windowsappsdk\1.5.240607001\lib\net6.0-windows10.0.18362.0\Microsoft.WindowsAppRuntime.Bootstrap.Net.dll">
+      <PackagePath>Microsoft.WindowsAppRuntime.Bootstrap.Net.dll</PackagePath>
+      <Modified>2024-06-07T17:05:26.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\.nuget\packages\microsoft.maui.controls.core\8.0.72\lib\net8.0-windows10.0.19041\ar\Microsoft.Maui.Controls.resources.dll">
+      <PackagePath>ar\Microsoft.Maui.Controls.resources.dll</PackagePath>
+      <Modified>2024-08-05T21:19:10.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\.nuget\packages\microsoft.maui.controls.core\8.0.72\lib\net8.0-windows10.0.19041\ca\Microsoft.Maui.Controls.resources.dll">
+      <PackagePath>ca\Microsoft.Maui.Controls.resources.dll</PackagePath>
+      <Modified>2024-08-05T21:19:58.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\.nuget\packages\microsoft.maui.controls.core\8.0.72\lib\net8.0-windows10.0.19041\cs\Microsoft.Maui.Controls.resources.dll">
+      <PackagePath>cs\Microsoft.Maui.Controls.resources.dll</PackagePath>
+      <Modified>2024-08-05T21:20:02.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\.nuget\packages\microsoft.maui.controls.core\8.0.72\lib\net8.0-windows10.0.19041\da\Microsoft.Maui.Controls.resources.dll">
+      <PackagePath>da\Microsoft.Maui.Controls.resources.dll</PackagePath>
+      <Modified>2024-08-05T21:20:00.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\.nuget\packages\microsoft.maui.controls.core\8.0.72\lib\net8.0-windows10.0.19041\de\Microsoft.Maui.Controls.resources.dll">
+      <PackagePath>de\Microsoft.Maui.Controls.resources.dll</PackagePath>
+      <Modified>2024-08-05T21:20:00.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\.nuget\packages\microsoft.maui.controls.core\8.0.72\lib\net8.0-windows10.0.19041\el\Microsoft.Maui.Controls.resources.dll">
+      <PackagePath>el\Microsoft.Maui.Controls.resources.dll</PackagePath>
+      <Modified>2024-08-05T21:19:04.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\.nuget\packages\microsoft.maui.controls.core\8.0.72\lib\net8.0-windows10.0.19041\es\Microsoft.Maui.Controls.resources.dll">
+      <PackagePath>es\Microsoft.Maui.Controls.resources.dll</PackagePath>
+      <Modified>2024-08-05T21:19:04.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\.nuget\packages\microsoft.maui.controls.core\8.0.72\lib\net8.0-windows10.0.19041\fi\Microsoft.Maui.Controls.resources.dll">
+      <PackagePath>fi\Microsoft.Maui.Controls.resources.dll</PackagePath>
+      <Modified>2024-08-05T21:20:02.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\.nuget\packages\microsoft.maui.controls.core\8.0.72\lib\net8.0-windows10.0.19041\fr\Microsoft.Maui.Controls.resources.dll">
+      <PackagePath>fr\Microsoft.Maui.Controls.resources.dll</PackagePath>
+      <Modified>2024-08-05T21:19:42.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\.nuget\packages\microsoft.maui.controls.core\8.0.72\lib\net8.0-windows10.0.19041\he\Microsoft.Maui.Controls.resources.dll">
+      <PackagePath>he\Microsoft.Maui.Controls.resources.dll</PackagePath>
+      <Modified>2024-08-05T21:19:22.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\.nuget\packages\microsoft.maui.controls.core\8.0.72\lib\net8.0-windows10.0.19041\hi\Microsoft.Maui.Controls.resources.dll">
+      <PackagePath>hi\Microsoft.Maui.Controls.resources.dll</PackagePath>
+      <Modified>2024-08-05T21:19:22.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\.nuget\packages\microsoft.maui.controls.core\8.0.72\lib\net8.0-windows10.0.19041\hr\Microsoft.Maui.Controls.resources.dll">
+      <PackagePath>hr\Microsoft.Maui.Controls.resources.dll</PackagePath>
+      <Modified>2024-08-05T21:19:22.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\.nuget\packages\microsoft.maui.controls.core\8.0.72\lib\net8.0-windows10.0.19041\hu\Microsoft.Maui.Controls.resources.dll">
+      <PackagePath>hu\Microsoft.Maui.Controls.resources.dll</PackagePath>
+      <Modified>2024-08-05T21:19:48.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\.nuget\packages\microsoft.maui.controls.core\8.0.72\lib\net8.0-windows10.0.19041\id\Microsoft.Maui.Controls.resources.dll">
+      <PackagePath>id\Microsoft.Maui.Controls.resources.dll</PackagePath>
+      <Modified>2024-08-05T21:19:20.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\.nuget\packages\microsoft.maui.controls.core\8.0.72\lib\net8.0-windows10.0.19041\it\Microsoft.Maui.Controls.resources.dll">
+      <PackagePath>it\Microsoft.Maui.Controls.resources.dll</PackagePath>
+      <Modified>2024-08-05T21:19:44.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\.nuget\packages\microsoft.maui.controls.core\8.0.72\lib\net8.0-windows10.0.19041\ja\Microsoft.Maui.Controls.resources.dll">
+      <PackagePath>ja\Microsoft.Maui.Controls.resources.dll</PackagePath>
+      <Modified>2024-08-05T21:18:52.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\.nuget\packages\microsoft.maui.controls.core\8.0.72\lib\net8.0-windows10.0.19041\ko\Microsoft.Maui.Controls.resources.dll">
+      <PackagePath>ko\Microsoft.Maui.Controls.resources.dll</PackagePath>
+      <Modified>2024-08-05T21:19:22.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\.nuget\packages\microsoft.maui.controls.core\8.0.72\lib\net8.0-windows10.0.19041\ms\Microsoft.Maui.Controls.resources.dll">
+      <PackagePath>ms\Microsoft.Maui.Controls.resources.dll</PackagePath>
+      <Modified>2024-08-05T21:19:20.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\.nuget\packages\microsoft.maui.controls.core\8.0.72\lib\net8.0-windows10.0.19041\nb\Microsoft.Maui.Controls.resources.dll">
+      <PackagePath>nb\Microsoft.Maui.Controls.resources.dll</PackagePath>
+      <Modified>2024-08-05T21:19:48.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\.nuget\packages\microsoft.maui.controls.core\8.0.72\lib\net8.0-windows10.0.19041\nl\Microsoft.Maui.Controls.resources.dll">
+      <PackagePath>nl\Microsoft.Maui.Controls.resources.dll</PackagePath>
+      <Modified>2024-08-05T21:19:44.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\.nuget\packages\microsoft.maui.controls.core\8.0.72\lib\net8.0-windows10.0.19041\pl\Microsoft.Maui.Controls.resources.dll">
+      <PackagePath>pl\Microsoft.Maui.Controls.resources.dll</PackagePath>
+      <Modified>2024-08-05T21:19:20.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\.nuget\packages\microsoft.maui.controls.core\8.0.72\lib\net8.0-windows10.0.19041\pt-BR\Microsoft.Maui.Controls.resources.dll">
+      <PackagePath>pt-BR\Microsoft.Maui.Controls.resources.dll</PackagePath>
+      <Modified>2024-08-05T21:19:20.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\.nuget\packages\microsoft.maui.controls.core\8.0.72\lib\net8.0-windows10.0.19041\pt\Microsoft.Maui.Controls.resources.dll">
+      <PackagePath>pt\Microsoft.Maui.Controls.resources.dll</PackagePath>
+      <Modified>2024-08-05T21:19:20.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\.nuget\packages\microsoft.maui.controls.core\8.0.72\lib\net8.0-windows10.0.19041\ro\Microsoft.Maui.Controls.resources.dll">
+      <PackagePath>ro\Microsoft.Maui.Controls.resources.dll</PackagePath>
+      <Modified>2024-08-05T21:19:18.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\.nuget\packages\microsoft.maui.controls.core\8.0.72\lib\net8.0-windows10.0.19041\ru\Microsoft.Maui.Controls.resources.dll">
+      <PackagePath>ru\Microsoft.Maui.Controls.resources.dll</PackagePath>
+      <Modified>2024-08-05T21:19:18.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\.nuget\packages\microsoft.maui.controls.core\8.0.72\lib\net8.0-windows10.0.19041\sk\Microsoft.Maui.Controls.resources.dll">
+      <PackagePath>sk\Microsoft.Maui.Controls.resources.dll</PackagePath>
+      <Modified>2024-08-05T21:18:52.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\.nuget\packages\microsoft.maui.controls.core\8.0.72\lib\net8.0-windows10.0.19041\sv\Microsoft.Maui.Controls.resources.dll">
+      <PackagePath>sv\Microsoft.Maui.Controls.resources.dll</PackagePath>
+      <Modified>2024-08-05T21:19:42.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\.nuget\packages\microsoft.maui.controls.core\8.0.72\lib\net8.0-windows10.0.19041\th\Microsoft.Maui.Controls.resources.dll">
+      <PackagePath>th\Microsoft.Maui.Controls.resources.dll</PackagePath>
+      <Modified>2024-08-05T21:19:44.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\.nuget\packages\microsoft.maui.controls.core\8.0.72\lib\net8.0-windows10.0.19041\tr\Microsoft.Maui.Controls.resources.dll">
+      <PackagePath>tr\Microsoft.Maui.Controls.resources.dll</PackagePath>
+      <Modified>2024-08-05T21:19:48.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\.nuget\packages\microsoft.maui.controls.core\8.0.72\lib\net8.0-windows10.0.19041\uk\Microsoft.Maui.Controls.resources.dll">
+      <PackagePath>uk\Microsoft.Maui.Controls.resources.dll</PackagePath>
+      <Modified>2024-08-05T21:19:44.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\.nuget\packages\microsoft.maui.controls.core\8.0.72\lib\net8.0-windows10.0.19041\vi\Microsoft.Maui.Controls.resources.dll">
+      <PackagePath>vi\Microsoft.Maui.Controls.resources.dll</PackagePath>
+      <Modified>2024-08-05T21:19:46.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\.nuget\packages\microsoft.maui.controls.core\8.0.72\lib\net8.0-windows10.0.19041\zh-HK\Microsoft.Maui.Controls.resources.dll">
+      <PackagePath>zh-HK\Microsoft.Maui.Controls.resources.dll</PackagePath>
+      <Modified>2024-08-05T21:19:48.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\.nuget\packages\microsoft.maui.controls.core\8.0.72\lib\net8.0-windows10.0.19041\zh-Hans\Microsoft.Maui.Controls.resources.dll">
+      <PackagePath>zh-Hans\Microsoft.Maui.Controls.resources.dll</PackagePath>
+      <Modified>2024-08-05T21:18:52.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\.nuget\packages\microsoft.maui.controls.core\8.0.72\lib\net8.0-windows10.0.19041\zh-Hant\Microsoft.Maui.Controls.resources.dll">
+      <PackagePath>zh-Hant\Microsoft.Maui.Controls.resources.dll</PackagePath>
+      <Modified>2024-08-05T21:19:18.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\.nuget\packages\microsoft.graphics.win2d\1.2.0\runtimes\win-x64\native\Microsoft.Graphics.Canvas.dll">
+      <PackagePath>Microsoft.Graphics.Canvas.dll</PackagePath>
+      <Modified>2024-03-11T15:36:40.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\.nuget\packages\microsoft.windowsappsdk\1.5.240607001\runtimes\win10-x64\native\Microsoft.WindowsAppRuntime.Bootstrap.dll">
+      <PackagePath>Microsoft.WindowsAppRuntime.Bootstrap.dll</PackagePath>
+      <Modified>2024-06-07T06:05:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\.nuget\packages\microsoft.maui.controls.compatibility\8.0.72\lib\net8.0-windows10.0.19041\Microsoft.Maui.Controls.Compatibility.pri">
+      <PackagePath>Microsoft.Maui.Controls.Compatibility.pri</PackagePath>
+      <Modified>2024-08-05T20:52:12.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\.nuget\packages\microsoft.maui.controls.core\8.0.72\lib\net8.0-windows10.0.19041\Microsoft.Maui.Controls.pri">
+      <PackagePath>Microsoft.Maui.Controls.pri</PackagePath>
+      <Modified>2024-08-05T20:50:54.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\user\.nuget\packages\microsoft.maui.core\8.0.72\lib\net8.0-windows10.0.19041\Microsoft.Maui.pri">
+      <PackagePath>Microsoft.Maui.pri</PackagePath>
+      <Modified>2024-08-05T20:48:20.000</Modified>
+    </AppxPackagedFile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResolvedSDKReference Include="C:\Users\user\.nuget\packages\microsoft.windowsappsdk\1.5.240607001\buildTransitive\..\tools\MSIX\win10-x86\Microsoft.WindowsAppRuntime.1.5.msix">
+      <Name>Microsoft.WindowsAppRuntime.1.5</Name>
+      <Version>5001.159.55.0</Version>
+      <Architecture>x86</Architecture>
+      <FrameworkIdentity>Name = Microsoft.WindowsAppRuntime.1.5, MinVersion = 5001.159.55.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Users\user\.nuget\packages\microsoft.windowsappsdk\1.5.240607001\buildTransitive\..\tools\MSIX\win10-x86\Microsoft.WindowsAppRuntime.1.5.msix</AppxLocation>
+      <MoreInfo>
+      </MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Users\user\.nuget\packages\microsoft.windowsappsdk\1.5.240607001\buildTransitive\..\tools\MSIX\win10-x86\Microsoft.WindowsAppRuntime.1.5.msix">
+      <Name>Microsoft.WindowsAppRuntime.1.5</Name>
+      <Version>5001.159.55.0</Version>
+      <Architecture>win32</Architecture>
+      <FrameworkIdentity>Name = Microsoft.WindowsAppRuntime.1.5, MinVersion = 5001.159.55.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Users\user\.nuget\packages\microsoft.windowsappsdk\1.5.240607001\buildTransitive\..\tools\MSIX\win10-x86\Microsoft.WindowsAppRuntime.1.5.msix</AppxLocation>
+      <MoreInfo>
+      </MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Users\user\.nuget\packages\microsoft.windowsappsdk\1.5.240607001\buildTransitive\..\tools\MSIX\win10-x64\Microsoft.WindowsAppRuntime.1.5.msix">
+      <Name>Microsoft.WindowsAppRuntime.1.5</Name>
+      <Version>5001.159.55.0</Version>
+      <Architecture>x64</Architecture>
+      <FrameworkIdentity>Name = Microsoft.WindowsAppRuntime.1.5, MinVersion = 5001.159.55.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Users\user\.nuget\packages\microsoft.windowsappsdk\1.5.240607001\buildTransitive\..\tools\MSIX\win10-x64\Microsoft.WindowsAppRuntime.1.5.msix</AppxLocation>
+      <MoreInfo>
+      </MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Users\user\.nuget\packages\microsoft.windowsappsdk\1.5.240607001\buildTransitive\..\tools\MSIX\win10-arm64\Microsoft.WindowsAppRuntime.1.5.msix">
+      <Name>Microsoft.WindowsAppRuntime.1.5</Name>
+      <Version>5001.159.55.0</Version>
+      <Architecture>arm64</Architecture>
+      <FrameworkIdentity>Name = Microsoft.WindowsAppRuntime.1.5, MinVersion = 5001.159.55.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Users\user\.nuget\packages\microsoft.windowsappsdk\1.5.240607001\buildTransitive\..\tools\MSIX\win10-arm64\Microsoft.WindowsAppRuntime.1.5.msix</AppxLocation>
+      <MoreInfo>
+      </MoreInfo>
+    </ResolvedSDKReference>
+  </ItemGroup>
+</Project>
