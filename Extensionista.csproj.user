@@ -2,39 +2,39 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <IsFirstTimeProjectOpen>False</IsFirstTimeProjectOpen>
-    <ActiveDebugFramework>net8.0-android</ActiveDebugFramework>
-    <ActiveDebugProfile>Android Emulator</ActiveDebugProfile>
+    <ActiveDebugFramework>net8.0-windows10.0.19041.0</ActiveDebugFramework>
+    <ActiveDebugProfile>Windows Machine</ActiveDebugProfile>
     <SelectedPlatformGroup>Emulator</SelectedPlatformGroup>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net8.0-android|AnyCPU'">
     <DebuggerFlavor>ProjectDebugger</DebuggerFlavor>
   </PropertyGroup>
   <ItemGroup>
-    <MauiXaml Update="PaginaCursosSisu.xaml">
+    <MauiXaml Update="View\PaginaCursosSisu.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
-    <MauiXaml Update="PaginaFavoritos.xaml">
+    <MauiXaml Update="View\PaginaFavoritos.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
-    <MauiXaml Update="PaginaIndicadoresRegiao.xaml">
+    <MauiXaml Update="View\PaginaIndicadoresRegiao.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
-    <MauiXaml Update="PaginaInicio.xaml">
+    <MauiXaml Update="View\PaginaInicio.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
-    <MauiXaml Update="PaginaLista.xaml">
+    <MauiXaml Update="View\PaginaLista.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
-    <MauiXaml Update="PaginaListaSisu.xaml">
+    <MauiXaml Update="View\PaginaListaSisu.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
-    <MauiXaml Update="PaginaPesquisa.xaml">
+    <MauiXaml Update="View\PaginaPesquisa.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
-    <MauiXaml Update="PaginaSisu.xaml">
+    <MauiXaml Update="View\PaginaSisu.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
-    <MauiXaml Update="TabbedPageMenu.xaml">
+    <MauiXaml Update="View\TabbedPageMenu.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
   </ItemGroup>

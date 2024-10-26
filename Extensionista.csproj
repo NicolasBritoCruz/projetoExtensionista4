@@ -39,11 +39,12 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+		
 		<!-- App Icon -->
-		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
 
-		<!-- Splash Screen -->
-		<MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#512BD4" BaseSize="128,128" />
+		<MauiIcon Include="Resources\Appicon\appicon.svg" ForegroundFile="Resources\Appicon\appiconfg.svg" />
+		<MauiIcon Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'" Include="Resources\Appicon\appiconfg_android.svg" ForegroundFile="Resources\Appicon\appicon_android.svg" />
+		<MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#092444" BaseSize="390,390" />
 
 		<!-- Images -->
 		<MauiImage Include="Resources\Images\*" />
@@ -53,6 +54,21 @@
 
 		<!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
 		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <AndroidResource Remove="NovaPasta1\**" />
+	  <AndroidResource Remove="NovaPasta\**" />
+	  <Compile Remove="NovaPasta1\**" />
+	  <Compile Remove="NovaPasta\**" />
+	  <EmbeddedResource Remove="NovaPasta1\**" />
+	  <EmbeddedResource Remove="NovaPasta\**" />
+	  <MauiCss Remove="NovaPasta1\**" />
+	  <MauiCss Remove="NovaPasta\**" />
+	  <MauiXaml Remove="NovaPasta1\**" />
+	  <MauiXaml Remove="NovaPasta\**" />
+	  <None Remove="NovaPasta1\**" />
+	  <None Remove="NovaPasta\**" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -77,31 +93,31 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="PaginaCursosSisu.xaml">
+	  <MauiXaml Update="View\PaginaCursosSisu.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="PaginaFavoritos.xaml">
+	  <MauiXaml Update="View\PaginaFavoritos.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="PaginaIndicadoresRegiao.xaml">
+	  <MauiXaml Update="View\PaginaIndicadoresRegiao.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="PaginaInicio.xaml">
+	  <MauiXaml Update="View\PaginaInicio.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="PaginaLista.xaml">
+	  <MauiXaml Update="View\PaginaLista.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="PaginaListaSisu.xaml">
+	  <MauiXaml Update="View\PaginaListaSisu.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="PaginaPesquisa.xaml">
+	  <MauiXaml Update="View\PaginaPesquisa.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="PaginaSisu.xaml">
+	  <MauiXaml Update="View\PaginaSisu.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="TabbedPageMenu.xaml">
+	  <MauiXaml Update="View\TabbedPageMenu.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>
