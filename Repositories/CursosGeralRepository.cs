@@ -18,20 +18,37 @@ namespace Extensionista.Repositories
         }
 
 
-        public List<CursosGeral> ObterTodosCursos()
+        public List<Universidades> ObterUniversidades(string filterRegiao)
         {
-            var cursos = _connection.Table<CursosGeral>().Take(100).ToList();
+            var universidades = _connection.Table<Universidades>()
+                               .Where(u => u.REGIAO == filterRegiao)
+                               .Take(100)
+                               .ToList();
 
             // Converte os valores numéricos para strings para cada curso
-            foreach (var curso in cursos)
+            foreach (var universidade in universidades)
             {
-                curso.CATEGORIA_ADMINISTRATIVA = _decompressor.Converter("categoria_administrativa", curso.CATEGORIA_ADMINISTRATIVA);
-                curso.GRAU = _decompressor.Converter("grau", curso.GRAU);
-                curso.MODALIDADE = _decompressor.Converter("modalidade", curso.MODALIDADE);
-                curso.REGIAO = _decompressor.Converter("regiao", curso.REGIAO);
+                universidade.CATEGORIA_ADMINISTRATIVA = _decompressor.Converter("categoria_administrativa",universidade.CATEGORIA_ADMINISTRATIVA);
+                universidade.REGIAO = _decompressor.Converter("regiao", universidade.REGIAO);
             }
 
-            return cursos;
+            return universidades;
         }
+
+        public Curso ObterCurso(int codigoCurso)
+        {
+            var curso = _connection.Table<Curso>()
+                                   .Where(c => c.CODIGO_CURSO == codigoCurso)
+                                   .FirstOrDefault();
+
+            // Converte os valores numéricos para strings para cada curso
+            if (curso != null)
+            {
+                curso.GRAU = _decompressor.Converter("grau", curso.GRAU);
+                curso.MODALIDADE = _decompressor.Converter("modalidade", curso.MODALIDADE);
+            }
+
+            return curso;
+        }   
     }
 }

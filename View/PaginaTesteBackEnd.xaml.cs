@@ -13,9 +13,13 @@ public partial class PaginaTesteBackEnd : ContentPage
     private void CarregarCursos()
     {
         var repository = new CursosGeralRepository();
-        List<CursosGeral> cursos = repository.ObterTodosCursos();
+        List<Universidades> universidades = repository.ObterUniversidades("5");
+        Curso curso = repository.ObterCurso(1562800);
 
         // Atribuindo a lista de cursos ao CollectionView
-        CursosCollectionView.ItemsSource = cursos;
+        CursoStackLayout.BindingContext = curso;
+        UniversidadesCollectionView.ItemsSource = universidades;
+
+
     }
 }
