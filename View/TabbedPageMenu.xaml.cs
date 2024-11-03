@@ -25,5 +25,8 @@ public partial class TabbedPageMenu : TabbedPage
 		var paginaCursosSisu = new NavigationPage(new PaginaCursosSisu());
 		paginaCursosSisu.Title = "PaginaCursosSisu";
 
-	}
+		var paginaTesteBackEnd = new NavigationPage(new PaginaTesteBackEnd());
+        paginaTesteBackEnd.Title = "PaginaTesteBackEnd";
+
+    }
 }

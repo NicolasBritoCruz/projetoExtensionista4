@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Extensionista.PaginaTesteBackEnd"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="NewPage1">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label
+                FontSize="24"
+                HorizontalOptions="Center"
+                Text="Cursos Disponíveis"
+                VerticalOptions="StartAndExpand" />
+            <CollectionView x:Name="CursosCollectionView">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <Label FontSize="18" Text="{Binding NOME_CURSO}" />
+                            <Label FontSize="14" Text="{Binding CATEGORIA_ADMINISTRATIVA}" />
+                            <Label FontSize="14" Text="{Binding GRAU}" />
+                            <Label FontSize="14" Text="{Binding MODALIDADE}" />
+                            <Label FontSize="14" Text="{Binding REGIAO}" />
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
