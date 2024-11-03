@@ -134,7 +134,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="DataBase\" />
+	  <Folder Include="DataBase\cursos.db3" />
 	</ItemGroup>
 
 

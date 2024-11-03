@@ -17,25 +17,6 @@ namespace Extensionista.Repositories
           _decompressor = new Decompressor();
         }
 
-        public void ObterTodosCursosT()
-        {
-            try
-            {
-
-                // Execute uma consulta SQL diretamente
-                string query = "SELECT * FROM CursosGeral"; // Substitua "Cursos" pelo nome real da sua tabela
-
-                // Execute a consulta e armazene o resultado
-                var cursos = DataBaseContext.connection.Query<dynamic>(query);
-
-                // Exibe o número de cursos recuperados
-                Console.WriteLine($"Número de cursos recuperados: {cursos.Count}");
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Erro ao recuperar cursos: {ex.Message}");
-            }
-        }
 
         public List<CursosGeral> ObterTodosCursos()
         {
