@@ -21,9 +21,11 @@ namespace Extensionista.Repositories
         public List<Universidades> ObterUniversidades(string filterRegiao)
         {
             var universidades = _connection.Table<Universidades>()
-                               .Where(u => u.REGIAO == filterRegiao)
-                               .Take(100)
-                               .ToList();
+                                   .Where(u => u.REGIAO == filterRegiao)
+                                   .GroupBy(u => u.CODIGO_IES) // Agrupa por CODIGO_IES
+                                   .Select(g => g.First()) // Seleciona o primeiro de cada grupo
+                                   .Take(100)
+                                   .ToList();
 
             // Converte os valores numéricos para strings para cada curso
             foreach (var universidade in universidades)
