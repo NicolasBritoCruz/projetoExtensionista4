@@ -23,8 +23,10 @@ namespace Extensionista.Models
     }
 
     [Table("CursosGeral")]
-    public class Curso
+    public class Cursos
     {
+        public int CODIGO_IES { get; set; }
+
         public int CODIGO_CURSO { get; set; }
 
         public string NOME_CURSO { get; set; } = string.Empty;

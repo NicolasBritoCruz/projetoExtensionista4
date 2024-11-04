@@ -37,20 +37,20 @@ namespace Extensionista.Repositories
             return universidades;
         }
 
-        public Curso ObterCurso(int codigoCurso)
+        public List<Cursos> ObterCursos(int codigoIes)
         {
-            var curso = _connection.Table<Curso>()
-                                   .Where(c => c.CODIGO_CURSO == codigoCurso)
-                                   .FirstOrDefault();
+            var cursos = _connection.Table<Cursos>()
+                                   .Where(c => c.CODIGO_IES == codigoIes)
+                                   .ToList();
 
             // Converte os valores numéricos para strings para cada curso
-            if (curso != null)
+            foreach (var curso in cursos)
             {
                 curso.GRAU = _decompressor.Converter("grau", curso.GRAU);
                 curso.MODALIDADE = _decompressor.Converter("modalidade", curso.MODALIDADE);
             }
 
-            return curso;
+            return cursos;
         }   
     }
 }

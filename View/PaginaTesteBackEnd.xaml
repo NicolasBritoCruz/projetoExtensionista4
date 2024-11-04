@@ -13,12 +13,18 @@
                 VerticalOptions="StartAndExpand" />
 
             <!--  Exibição do CursoView  -->
-            <StackLayout x:Name="CursoStackLayout" Padding="10">
-                <Label FontSize="20" Text="{Binding NOME_CURSO}" />
-                <Label FontSize="14" Text="{Binding GRAU}" />
-                <Label FontSize="14" Text="{Binding MODALIDADE}" />
-                <Label FontSize="14" Text="{Binding QT_VAGAS_AUTORIZADAS}" />
-            </StackLayout>
+            <CollectionView x:Name="CursosCollectionView">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <Label FontSize="20" Text="{Binding NOME_CURSO}" />
+                            <Label FontSize="14" Text="{Binding GRAU}" />
+                            <Label FontSize="14" Text="{Binding MODALIDADE}" />
+                            <Label FontSize="14" Text="{Binding QT_VAGAS_AUTORIZADAS}" />
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
 
             <CollectionView x:Name="UniversidadesCollectionView">
                 <CollectionView.ItemTemplate>

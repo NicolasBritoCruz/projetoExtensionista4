@@ -14,10 +14,10 @@ public partial class PaginaTesteBackEnd : ContentPage
     {
         var repository = new CursosGeralRepository();
         List<Universidades> universidades = repository.ObterUniversidades("5");
-        Curso curso = repository.ObterCurso(1562800);
+        List<Cursos> cursos = repository.ObterCursos(1);
 
         // Atribuindo a lista de cursos ao CollectionView
-        CursoStackLayout.BindingContext = curso;
+        CursosCollectionView.ItemsSource = cursos;
         UniversidadesCollectionView.ItemsSource = universidades;
 
 
