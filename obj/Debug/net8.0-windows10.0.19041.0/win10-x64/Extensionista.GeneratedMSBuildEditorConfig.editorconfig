@@ -8,77 +8,90 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Extensionista
-build_property.ProjectDir = C:\Users\gusta\source\repos\projetoExtensionista4\
+build_property.ProjectDir = C:\Projetos\ProjetoExtensionista\projetoExtensionista4\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.CsWinRTAotOptimizerEnabled = true
+build_property.CsWinRTAotExportsEnabled = 
+build_property.CsWinRTRcwFactoryFallbackGeneratorForceOptIn = 
+build_property.CsWinRTRcwFactoryFallbackGeneratorForceOptOut = 
+build_property.CsWinRTCcwLookupTableGeneratorEnabled = true
+build_property.CsWinRTMergeReferencedActivationFactories = 
+build_property.CsWinRTAotWarningLevel = 
 
-[C:/Users/gusta/source/repos/projetoExtensionista4/App.xaml]
+[C:/Projetos/ProjetoExtensionista/projetoExtensionista4/App.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Extensionista.App.xaml
 build_metadata.AdditionalFiles.TargetPath = App.xaml
 build_metadata.AdditionalFiles.RelativePath = App.xaml
 
-[C:/Users/gusta/source/repos/projetoExtensionista4/Resources/Styles/Colors.xaml]
+[C:/Projetos/ProjetoExtensionista/projetoExtensionista4/Resources/Styles/Colors.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Extensionista.Resources.Styles.Colors.xaml
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Colors.xaml
 build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Colors.xaml
 
-[C:/Users/gusta/source/repos/projetoExtensionista4/Resources/Styles/Styles.xaml]
+[C:/Projetos/ProjetoExtensionista/projetoExtensionista4/Resources/Styles/Styles.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Extensionista.Resources.Styles.Styles.xaml
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
 build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Styles.xaml
 
-[C:/Users/gusta/source/repos/projetoExtensionista4/View/PaginaCursosSisu.xaml]
+[C:/Projetos/ProjetoExtensionista/projetoExtensionista4/View/PaginaCursosSisu.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Extensionista.View.PaginaCursosSisu.xaml
 build_metadata.AdditionalFiles.TargetPath = View\PaginaCursosSisu.xaml
 build_metadata.AdditionalFiles.RelativePath = View\PaginaCursosSisu.xaml
 
-[C:/Users/gusta/source/repos/projetoExtensionista4/View/PaginaFavoritos.xaml]
+[C:/Projetos/ProjetoExtensionista/projetoExtensionista4/View/PaginaFavoritos.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Extensionista.View.PaginaFavoritos.xaml
 build_metadata.AdditionalFiles.TargetPath = View\PaginaFavoritos.xaml
 build_metadata.AdditionalFiles.RelativePath = View\PaginaFavoritos.xaml
 
-[C:/Users/gusta/source/repos/projetoExtensionista4/View/PaginaIndicadoresRegiao.xaml]
+[C:/Projetos/ProjetoExtensionista/projetoExtensionista4/View/PaginaIndicadoresRegiao.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Extensionista.View.PaginaIndicadoresRegiao.xaml
 build_metadata.AdditionalFiles.TargetPath = View\PaginaIndicadoresRegiao.xaml
 build_metadata.AdditionalFiles.RelativePath = View\PaginaIndicadoresRegiao.xaml
 
-[C:/Users/gusta/source/repos/projetoExtensionista4/View/PaginaInicio.xaml]
+[C:/Projetos/ProjetoExtensionista/projetoExtensionista4/View/PaginaInicio.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Extensionista.View.PaginaInicio.xaml
 build_metadata.AdditionalFiles.TargetPath = View\PaginaInicio.xaml
 build_metadata.AdditionalFiles.RelativePath = View\PaginaInicio.xaml
 
-[C:/Users/gusta/source/repos/projetoExtensionista4/View/PaginaLista.xaml]
+[C:/Projetos/ProjetoExtensionista/projetoExtensionista4/View/PaginaLista.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Extensionista.View.PaginaLista.xaml
 build_metadata.AdditionalFiles.TargetPath = View\PaginaLista.xaml
 build_metadata.AdditionalFiles.RelativePath = View\PaginaLista.xaml
 
-[C:/Users/gusta/source/repos/projetoExtensionista4/View/PaginaListaSisu.xaml]
+[C:/Projetos/ProjetoExtensionista/projetoExtensionista4/View/PaginaListaSisu.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Extensionista.View.PaginaListaSisu.xaml
 build_metadata.AdditionalFiles.TargetPath = View\PaginaListaSisu.xaml
 build_metadata.AdditionalFiles.RelativePath = View\PaginaListaSisu.xaml
 
-[C:/Users/gusta/source/repos/projetoExtensionista4/View/PaginaPesquisa.xaml]
+[C:/Projetos/ProjetoExtensionista/projetoExtensionista4/View/PaginaPesquisa.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Extensionista.View.PaginaPesquisa.xaml
 build_metadata.AdditionalFiles.TargetPath = View\PaginaPesquisa.xaml
 build_metadata.AdditionalFiles.RelativePath = View\PaginaPesquisa.xaml
 
-[C:/Users/gusta/source/repos/projetoExtensionista4/View/PaginaSisu.xaml]
+[C:/Projetos/ProjetoExtensionista/projetoExtensionista4/View/PaginaSisu.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Extensionista.View.PaginaSisu.xaml
 build_metadata.AdditionalFiles.TargetPath = View\PaginaSisu.xaml
 build_metadata.AdditionalFiles.RelativePath = View\PaginaSisu.xaml
 
-[C:/Users/gusta/source/repos/projetoExtensionista4/View/TabbedPageMenu.xaml]
+[C:/Projetos/ProjetoExtensionista/projetoExtensionista4/View/PaginaTesteBackEnd.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Extensionista.View.PaginaTesteBackEnd.xaml
+build_metadata.AdditionalFiles.TargetPath = View\PaginaTesteBackEnd.xaml
+build_metadata.AdditionalFiles.RelativePath = View\PaginaTesteBackEnd.xaml
+
+[C:/Projetos/ProjetoExtensionista/projetoExtensionista4/View/TabbedPageMenu.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Extensionista.View.TabbedPageMenu.xaml
 build_metadata.AdditionalFiles.TargetPath = View\TabbedPageMenu.xaml

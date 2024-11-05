@@ -2,7 +2,7 @@ using Extensionista.Repositories;
 using Extensionista.Models;
 namespace Extensionista;
 
-public partial class PaginaTesteBackEnd : ContentPage
+/*public partial class PaginaTesteBackEnd : ContentPage
 {
     public PaginaTesteBackEnd()
     {
@@ -22,4 +22,4 @@ public partial class PaginaTesteBackEnd : ContentPage
 
 
     }
-}
+} */

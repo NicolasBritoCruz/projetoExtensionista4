@@ -1,18 +1,60 @@
-<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage
     x:Class="Extensionista.PaginaPesquisa"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     Title="Pesquisa"
     IconImageSource="pesquisa.png">
-    <AbsoluteLayout BackgroundColor="#ffffff">
-        <ImageButton
-            AbsoluteLayout.LayoutFlags="PositionProportional"
-            AbsoluteLayout.LayoutBounds="0.9, 0"
-            Source="x.png"/>
-        <Button
-            x:Name="pesquisar"
-            Clicked="pesquisar_Clicked"
-            Text="pesquisar" />
-    </AbsoluteLayout>
+
+    <StackLayout BackgroundColor="#ffffff" Padding="10">
+
+        <!-- Barra de Pesquisa com Ícone de Lupa à direita -->
+        <Frame CornerRadius="20" HasShadow="False" BackgroundColor="#f0f0f5" Padding="10" Margin="0,10">
+            <Grid>
+                <Entry x:Name="entrySearch" Placeholder="Digite a cidade ou nome da universidade" TextColor="Black"
+                       HorizontalOptions="FillAndExpand" />
+                <ImageButton Source="pesquisa.png"
+                             WidthRequest="20" HeightRequest="20"
+                             HorizontalOptions="End"
+                             Clicked="Pesquisar_Clicked"
+                             Margin="0,0,5,0" />
+            </Grid>
+        </Frame>
+
+        <!-- Cabeçalho da tabela com borda -->
+        <Frame BorderColor="#092444" CornerRadius="0" Padding="0">
+            <Grid ColumnDefinitions="*,*,*" BackgroundColor="#092444" Padding="10">
+                <Label Text="NOME" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="White"/>
+                <Label Text="CIDADE" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="White" Grid.Column="1" />
+                <Label Text="UF" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="White" Grid.Column="2" />
+            </Grid>
+        </Frame>
+
+        <!-- Lista de resultados -->
+        <CollectionView x:Name="ListaFaculdades" 
+                        VerticalOptions="FillAndExpand"
+                        SelectionMode="Single" 
+                        SelectionChanged="OnFaculdadeSelected">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame Margin="5" Padding="10" BackgroundColor="#ADD8E6" CornerRadius="0">
+                        <Grid ColumnDefinitions="*,*,*" RowDefinitions="Auto">
+                            <!-- NOME -->
+                            <Label Text="{Binding NOME_IES}"
+                                   HorizontalTextAlignment="Center" VerticalTextAlignment="Center" 
+                                   LineBreakMode="WordWrap" Grid.Column="0"/>
+                            <!-- CIDADE -->
+                            <Label Text="{Binding MUNICIPIO}" 
+                                   HorizontalTextAlignment="Center" VerticalTextAlignment="Center" 
+                                   LineBreakMode="WordWrap" Grid.Column="1"/>
+                            <!-- UF -->
+                            <Label Text="{Binding UF}" 
+                                   HorizontalTextAlignment="Center" VerticalTextAlignment="Center" 
+                                   LineBreakMode="WordWrap" Grid.Column="2"/>
+                        </Grid>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+    </StackLayout>
 </ContentPage>

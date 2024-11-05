@@ -18,24 +18,27 @@ namespace Extensionista.Repositories
         }
 
 
-        public List<Universidades> ObterUniversidades(string filterRegiao)
+        public List<Universidades> ObterUniversidades()
         {
-            var universidades = _connection.Table<Universidades>()
-                                   .Where(u => u.REGIAO == filterRegiao)
-                                   .GroupBy(u => u.CODIGO_IES) // Agrupa por CODIGO_IES
-                                   .Select(g => g.First()) // Seleciona o primeiro de cada grupo
-                                   .Take(100)
-                                   .ToList();
+            var query = _connection.Table<Universidades>().AsQueryable();
+
+            var universidades = query
+                .GroupBy(u => new { u.CODIGO_IES, u.MUNICIPIO }) // Agrupa por combinação de CODIGO_IES e MUNICIPIO
+                .Select(g => g.First())
+                .ToList();
 
             // Converte os valores numéricos para strings para cada curso
             foreach (var universidade in universidades)
             {
-                universidade.CATEGORIA_ADMINISTRATIVA = _decompressor.Converter("categoria_administrativa",universidade.CATEGORIA_ADMINISTRATIVA);
+                universidade.CATEGORIA_ADMINISTRATIVA = _decompressor.Converter("categoria_administrativa", universidade.CATEGORIA_ADMINISTRATIVA);
                 universidade.REGIAO = _decompressor.Converter("regiao", universidade.REGIAO);
             }
 
             return universidades;
         }
+
+
+
 
         public List<Cursos> ObterCursos(int codigoIes)
         {

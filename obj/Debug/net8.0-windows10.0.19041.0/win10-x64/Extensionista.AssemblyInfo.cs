@@ -18,7 +18,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Extensionista")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+f44c4dc01142477318b1a38e920b429bc21898aa")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+f7e827c26b0427c539b46f260fa470c91d823671")]
 [assembly: System.Reflection.AssemblyProductAttribute("Extensionista")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Extensionista")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
