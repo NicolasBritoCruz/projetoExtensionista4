@@ -134,11 +134,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="DataBase\" />
-	</ItemGroup>
-
-	<ItemGroup>
-		<MauiAsset Include="DataBase\cursos.db3" />
+		<EmbeddedResource Include="Resources/Raw/cursos.db3" />
 	</ItemGroup>
 
 
