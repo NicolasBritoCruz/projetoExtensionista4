@@ -23,5 +23,10 @@ namespace Extensionista.Repositories
         {
             return _connection.Table<Favoritos>().ToList();
         }
+        public void Delete(Favoritos favorito)
+        {
+            _connection.Delete(favorito);
+        }
+
     }
 }
