@@ -31,6 +31,8 @@ namespace Extensionista.Models
 
         public string NOME_CURSO { get; set; } = string.Empty;
 
+        public string MUNICIPIO { get; set; } = string.Empty;
+
         public string GRAU { get; set; } = string.Empty;
 
         public string MODALIDADE { get; set; } = string.Empty;

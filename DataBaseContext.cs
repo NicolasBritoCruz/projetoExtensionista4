@@ -32,6 +32,7 @@ namespace Extensionista
 
             // Conectando ao banco de dados no caminho desejado
             connection = new SQLiteConnection(dbPath);
+            connection.CreateTable<Favoritos>();
             Console.WriteLine("Conexão com o banco de dados estabelecida com sucesso.");
         }
     }

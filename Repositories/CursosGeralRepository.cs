@@ -37,10 +37,10 @@ namespace Extensionista.Repositories
             return universidades;
         }
 
-        public List<Cursos> ObterCursos(int codigoIes)
+        public List<Cursos> ObterCursos(int codigoIes, string municipio)
         {
             var cursos = _connection.Table<Cursos>()
-                                   .Where(c => c.CODIGO_IES == codigoIes)
+                                   .Where(c => c.CODIGO_IES == codigoIes && c.MUNICIPIO == municipio)
                                    .ToList();
 
             // Converte os valores numéricos para strings para cada curso
