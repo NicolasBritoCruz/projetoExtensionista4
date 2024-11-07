@@ -5,51 +5,102 @@
     Title="Pesquisa"
     IconImageSource="pesquisa.png">
 
-    <StackLayout BackgroundColor="#ffffff" Padding="10">
+    <StackLayout Padding="10" BackgroundColor="#ffffff">
 
-        <!-- Barra de Pesquisa com Ícone de Lupa à direita -->
-        <Frame CornerRadius="20" HasShadow="False" BackgroundColor="#f0f0f5" Padding="10" Margin="0,10">
+        <!--  Barra de Pesquisa com Ícone de Lupa à direita  -->
+        <Frame
+            Margin="0,10"
+            Padding="10"
+            BackgroundColor="#f0f0f5"
+            CornerRadius="20"
+            HasShadow="False">
             <Grid>
-                <Entry x:Name="entrySearch" Placeholder="Digite a cidade ou nome da universidade" TextColor="Black"
-                       HorizontalOptions="FillAndExpand" />
-                <ImageButton Source="pesquisa.png"
-                             WidthRequest="20" HeightRequest="20"
-                             HorizontalOptions="End"
-                             Clicked="Pesquisar_Clicked"
-                             Margin="0,0,5,0" />
+                <Entry
+                    x:Name="entrySearch"
+                    HorizontalOptions="FillAndExpand"
+                    Placeholder="Digite a cidade ou nome da universidade"
+                    TextColor="Black" />
+                <ImageButton
+                    Margin="0,0,5,0"
+                    Clicked="Pesquisar_Clicked"
+                    HeightRequest="20"
+                    HorizontalOptions="End"
+                    Source="pesquisa.png"
+                    WidthRequest="20" />
             </Grid>
         </Frame>
 
-        <!-- Cabeçalho da tabela com borda -->
-        <Frame BorderColor="#092444" CornerRadius="0" Padding="0">
-            <Grid ColumnDefinitions="*,*,*" BackgroundColor="#092444" Padding="10">
-                <Label Text="NOME" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="White"/>
-                <Label Text="CIDADE" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="White" Grid.Column="1" />
-                <Label Text="UF" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="White" Grid.Column="2" />
+        <!--  Cabeçalho da tabela com borda  -->
+        <Frame
+            Padding="0"
+            BorderColor="#092444"
+            CornerRadius="0">
+            <Grid
+                Padding="10"
+                BackgroundColor="#092444"
+                ColumnDefinitions="*,*,*">
+                <Label
+                    FontAttributes="Bold"
+                    HorizontalTextAlignment="Center"
+                    Text="NOME"
+                    TextColor="White"
+                    VerticalTextAlignment="Center" />
+                <Label
+                    Grid.Column="1"
+                    FontAttributes="Bold"
+                    HorizontalTextAlignment="Center"
+                    Text="CIDADE"
+                    TextColor="White"
+                    VerticalTextAlignment="Center" />
+                <Label
+                    Grid.Column="2"
+                    FontAttributes="Bold"
+                    HorizontalTextAlignment="Center"
+                    Text="UF"
+                    TextColor="White"
+                    VerticalTextAlignment="Center" />
             </Grid>
         </Frame>
 
-        <!-- Lista de resultados -->
-        <CollectionView x:Name="ListaFaculdades" 
-                        VerticalOptions="FillAndExpand"
-                        SelectionMode="Single" 
-                        SelectionChanged="OnFaculdadeSelected">
+        <!--  Lista de resultados  -->
+        <CollectionView
+            x:Name="ListaFaculdades"
+            SelectionChanged="OnFaculdadeSelected"
+            SelectionMode="Single"
+            VerticalOptions="FillAndExpand">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <Frame Margin="5" Padding="10" BackgroundColor="#ADD8E6" CornerRadius="0">
+                    <Frame
+                        Margin="5"
+                        Padding="10"
+                        BackgroundColor="#d6eafa"
+                        BorderColor="#092444"
+                        CornerRadius="0">
                         <Grid ColumnDefinitions="*,*,*" RowDefinitions="Auto">
-                            <!-- NOME -->
-                            <Label Text="{Binding NOME_IES}"
-                                   HorizontalTextAlignment="Center" VerticalTextAlignment="Center" 
-                                   LineBreakMode="WordWrap" Grid.Column="0"/>
-                            <!-- CIDADE -->
-                            <Label Text="{Binding MUNICIPIO}" 
-                                   HorizontalTextAlignment="Center" VerticalTextAlignment="Center" 
-                                   LineBreakMode="WordWrap" Grid.Column="1"/>
-                            <!-- UF -->
-                            <Label Text="{Binding UF}" 
-                                   HorizontalTextAlignment="Center" VerticalTextAlignment="Center" 
-                                   LineBreakMode="WordWrap" Grid.Column="2"/>
+                            <!--  NOME  -->
+                            <Label
+                                Grid.Column="0"
+                                HorizontalTextAlignment="Center"
+                                LineBreakMode="WordWrap"
+                                Text="{Binding NOME_IES}"
+                                TextColor="#092444"
+                                VerticalTextAlignment="Center" />
+                            <!--  CIDADE  -->
+                            <Label
+                                Grid.Column="1"
+                                HorizontalTextAlignment="Center"
+                                LineBreakMode="WordWrap"
+                                Text="{Binding MUNICIPIO}"
+                                TextColor="#092444"
+                                VerticalTextAlignment="Center" />
+                            <!--  UF  -->
+                            <Label
+                                Grid.Column="2"
+                                HorizontalTextAlignment="Center"
+                                LineBreakMode="WordWrap"
+                                Text="{Binding UF}"
+                                TextColor="#092444"
+                                VerticalTextAlignment="Center" />
                         </Grid>
                     </Frame>
                 </DataTemplate>

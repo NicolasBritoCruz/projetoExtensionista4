@@ -18,9 +18,20 @@ namespace Extensionista.Repositories
         }
 
 
-        public List<Universidades> ObterUniversidades()
+        public List<Universidades> ObterUniversidades(int? codigoIES = null, string municipio = null)
         {
             var query = _connection.Table<Universidades>().AsQueryable();
+
+            if (codigoIES.HasValue)
+            {
+                // Se um código específico for passado, filtra pela faculdade com esse código
+                query = query.Where(u => u.CODIGO_IES == codigoIES.Value);
+            }
+
+            if (!string.IsNullOrEmpty(municipio))
+            {
+                query = query.Where(u => u.MUNICIPIO.ToLower().Contains(municipio.ToLower()));
+            }
 
             var universidades = query
                 .GroupBy(u => new { u.CODIGO_IES, u.MUNICIPIO }) // Agrupa por combinação de CODIGO_IES e MUNICIPIO

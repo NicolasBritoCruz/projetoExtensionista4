@@ -13,6 +13,5 @@
 
     <pages:PaginaInicio />
     <pages:PaginaFavoritos />
-    <pages:PaginaTesteBackEnd />
 
 </TabbedPage>

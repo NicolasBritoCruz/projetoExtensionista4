@@ -8,7 +8,7 @@ namespace Extensionista.Models
         [PrimaryKey, AutoIncrement]
         public int ID { get; set; }
 
-        public string NOME_IES { get; set; } = string.Empty;  
+        public string NOME_IES { get; set; } = string.Empty;
 
         public int CODIGO_IES { get; set; }
 

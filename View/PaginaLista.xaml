@@ -5,9 +5,13 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     Title="PaginaLista">
     <AbsoluteLayout BackgroundColor="#ffffff">
+        <Image
+            AbsoluteLayout.LayoutBounds="0.06,0.,0.075,0.12"
+            AbsoluteLayout.LayoutFlags="All"
+            Source="appiconfg1.png" />
         <ImageButton
             x:Name="sairLista"
-            AbsoluteLayout.LayoutBounds="0.95, 0.044"
+            AbsoluteLayout.LayoutBounds="0.95, 0.034"
             AbsoluteLayout.LayoutFlags="PositionProportional"
             Clicked="sairLista_Clicked"
             HeightRequest="35"
@@ -18,103 +22,244 @@
             FontFamily="MontserratSemiBold"
             FontSize="22"
             Text="Informações"
-            TextColor="#245897" />
+            TextColor="#092444" />
         <Frame
             AbsoluteLayout.LayoutBounds="0.5, 0.15, 0.85, 0.25"
             AbsoluteLayout.LayoutFlags="All"
             BackgroundColor="#d6eafa"
-            BorderColor="#0e3872"
+            BorderColor="#092444"
             CornerRadius="25" />
         <Image
-            AbsoluteLayout.LayoutBounds="0.15, 0.13, 0.35, 0.35"
-            AbsoluteLayout.LayoutFlags="All"
-            Source="circulobranco.png" />
-        <Image
-            AbsoluteLayout.LayoutBounds="0.14, 0.13, 0.35, 0.35"
+            AbsoluteLayout.LayoutBounds="0.14, 0.15, 0.35, 0.35"
             AbsoluteLayout.LayoutFlags="All"
             Source="escola.png" />
-        <Label
-            AbsoluteLayout.LayoutBounds="0.55, 0.2"
-            AbsoluteLayout.LayoutFlags="PositionProportional"
-            FontFamily="MontserratSemiBold"
-            FontSize="16"
-            Text="Código:"
-            TextColor="#245897" />
-        <Label
-            AbsoluteLayout.LayoutBounds="0.583, 0.24"
-            AbsoluteLayout.LayoutFlags="PositionProportional"
-            FontFamily="MontserratSemiBold"
-            FontSize="16"
-            Text="Categoria:"
-            TextColor="#245897" />
-        <Label
-            AbsoluteLayout.LayoutBounds="0.55, 0.28"
-            AbsoluteLayout.LayoutFlags="PositionProportional"
-            FontFamily="MontserratSemiBold"
-            FontSize="16"
-            Text="Cidade:"
-            TextColor="#245897" />
-        <Label
-            AbsoluteLayout.LayoutBounds="0.55, 0.32"
-            AbsoluteLayout.LayoutFlags="PositionProportional"
-            FontFamily="MontserratSemiBold"
-            FontSize="16"
-            Text="Estado:"
-            TextColor="#245897" />
+        <Grid
+            Padding="0"
+            AbsoluteLayout.LayoutBounds="0.85, 0.235, 0.45, 0.2"
+            AbsoluteLayout.LayoutFlags="All">
+            <!--  Definindo as colunas e linhas do Grid  -->
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="89" />
+                <!--  Coluna 1 para os rótulos (ex: Código IE)  -->
+                <ColumnDefinition Width="*" />
+                <!--  Coluna 2 para os valores (ex: o valor de CODIGO_IES)  -->
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <!--  Linha 1  -->
+                <RowDefinition Height="Auto" />
+                <!--  Linha 2  -->
+                <RowDefinition Height="Auto" />
+                <!--  Linha 3  -->
+                <RowDefinition Height="Auto" />
+                <!--  Linha 4  -->
+            </Grid.RowDefinitions>
+
+            <!--  Código IE  -->
+            <Label
+                Grid.Row="0"
+                Grid.Column="0"
+                Padding="0,3"
+                FontFamily="MontserratSemiBold"
+                FontSize="15"
+                Text="Codigo IE:"
+                TextColor="#092444" />
+
+            <Label
+                Grid.Row="0"
+                Grid.Column="1"
+                Padding="0,3"
+                FontFamily="MontserratSemiBold"
+                FontSize="15"
+                Text="{Binding CODIGO_IES}"
+                TextColor="#345D97" />
+
+            <!--  Categoria  -->
+            <Label
+                Grid.Row="1"
+                Grid.Column="0"
+                Padding="0,3"
+                FontFamily="MontserratSemiBold"
+                FontSize="15"
+                Text="Categoria:"
+                TextColor="#092444" />
+
+            <Label
+                Grid.Row="1"
+                Grid.Column="1"
+                Padding="0,3"
+                FontFamily="MontserratSemiBold"
+                FontSize="15"
+                Text="{Binding CATEGORIA_ADMINISTRATIVA}"
+                TextColor="#345D97" />
+
+            <!--  Cidade  -->
+            <Label
+                Grid.Row="2"
+                Grid.Column="0"
+                Padding="0,3"
+                FontFamily="MontserratSemiBold"
+                FontSize="15"
+                Text="Cidade:"
+                TextColor="#092444" />
+
+            <Label
+                Grid.Row="2"
+                Grid.Column="1"
+                Padding="0,3"
+                FontFamily="MontserratSemiBold"
+                FontSize="15"
+                LineBreakMode="WordWrap"
+                MaximumWidthRequest="140"
+                Text="{Binding MUNICIPIO}"
+                TextColor="#345D97" />
+
+            <!--  Estado  -->
+            <Label
+                Grid.Row="3"
+                Grid.Column="0"
+                Padding="0,3"
+                FontFamily="MontserratSemiBold"
+                FontSize="15"
+                Text="Estado:"
+                TextColor="#092444" />
+
+            <Label
+                Grid.Row="3"
+                Grid.Column="1"
+                Padding="0,3"
+                FontFamily="MontserratSemiBold"
+                FontSize="15"
+                Text="{Binding UF}"
+                TextColor="#345D97" />
+        </Grid>
         <Frame
             AbsoluteLayout.LayoutBounds="0.5, 0.108, 0.85, 0.073"
             AbsoluteLayout.LayoutFlags="All"
-            BackgroundColor="#223d5e"
+            BackgroundColor="#092444"
             BorderColor="#092444"
             CornerRadius="0" />
-        <Frame
-            AbsoluteLayout.LayoutBounds="0.5, 0.77, 0.85, 0.45"
-            AbsoluteLayout.LayoutFlags="All"
-            BackgroundColor="#d6eafa"
-            BorderColor="#0e3872"
-            CornerRadius="0" />
-        <Frame
-            AbsoluteLayout.LayoutBounds="0.5, 0.44, 0.85, 0.073"
-            AbsoluteLayout.LayoutFlags="All"
-            BackgroundColor="#223d5e"
-            BorderColor="#092444"
-            CornerRadius="0" />
-        <Label
-            AbsoluteLayout.LayoutBounds="0.18, 0.442"
+        <ImageButton
+            x:Name="favoritar"
+            AbsoluteLayout.LayoutBounds="0.11, 0.19"
             AbsoluteLayout.LayoutFlags="PositionProportional"
-            FontFamily="MontserratSemiBold"
-            FontSize="16"
-            Text="Curso"
-            TextColor="#ffffff" />
-        <Label
-            AbsoluteLayout.LayoutBounds="0.5, 0.442"
-            AbsoluteLayout.LayoutFlags="PositionProportional"
-            FontFamily="MontserratSemiBold"
-            FontSize="16"
-            Text="Modalidade"
-            TextColor="#ffffff" />
-        <Label
-            AbsoluteLayout.LayoutBounds="0.8, 0.442"
-            AbsoluteLayout.LayoutFlags="PositionProportional"
-            FontFamily="MontserratSemiBold"
-            FontSize="16"
-            Text="Grau"
-            TextColor="#ffffff" />
-        <Image
-            AbsoluteLayout.LayoutBounds="0.44,0.97,0.07,0.1"
+            Clicked="favoritar_Clicked"
+            Source="heart.png" />
+
+        <Grid AbsoluteLayout.LayoutBounds="0.5, 0.108" AbsoluteLayout.LayoutFlags="PositionProportional">
+            <!--  Definir as colunas e linhas do Grid  -->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="52" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="360" />
+            </Grid.ColumnDefinitions>
+
+            <!--  Label dentro do Grid  -->
+            <Label
+                Grid.Row="0"
+                Grid.Column="0"
+                FontFamily="MontserratSemiBold"
+                FontSize="15"
+                HorizontalOptions="Center"
+                Text="{Binding NOME_IES}"
+                TextColor="white"
+                VerticalOptions="Center" />
+        </Grid>
+        <CollectionView
+            x:Name="ListaCursos"
+            AbsoluteLayout.LayoutBounds="0.5, 0.8, 0.85, 0.5"
             AbsoluteLayout.LayoutFlags="All"
-            Source="setadireita.png" />
-        <Image
-            AbsoluteLayout.LayoutBounds="0.55,0.97,0.07,0.1"
-            AbsoluteLayout.LayoutFlags="All"
-            Source="setaesquerda.png" />
-        <Label
-            AbsoluteLayout.LayoutBounds="0.85, 0.934"
-            AbsoluteLayout.LayoutFlags="PositionProportional"
-            FontFamily="MontserratSemiBold"
-            FontSize="18"
-            Opacity="0.7"
-            Text="Pág ?/?"
-            TextColor="#6fa0e4" />
+            BackgroundColor="#d6eafa">
+            <CollectionView.Header>
+                <Grid Padding="10" BackgroundColor="#092444">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Label
+                        Grid.Column="0"
+                        FontFamily="Montserrat-SemiBold"
+                        FontSize="16"
+                        HorizontalTextAlignment="Center"
+                        Text="CURSO"
+                        VerticalTextAlignment="Center" />
+                    <Label
+                        Grid.Column="1"
+                        FontFamily="Montserrat-SemiBold"
+                        FontSize="16"
+                        HorizontalTextAlignment="Center"
+                        Text="GRAU"
+                        VerticalTextAlignment="Center" />
+                    <Label
+                        Grid.Column="2"
+                        FontFamily="Montserrat-SemiBold"
+                        FontSize="16"
+                        HorizontalTextAlignment="Center"
+                        Text="MODALIDADE"
+                        VerticalTextAlignment="Center" />
+                </Grid>
+            </CollectionView.Header>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame
+                        Margin="5"
+                        Padding="10"
+                        BackgroundColor="#d6eafa"
+                        BorderColor="#092444"
+                        CornerRadius="0">
+                        <Grid Padding="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Label
+                                Grid.Column="0"
+                                FontFamily="Montserrat-SemiBold"
+                                FontSize="14"
+                                HorizontalTextAlignment="Center"
+                                Text="{Binding NOME_CURSO}"
+                                TextColor="#092444"
+                                VerticalTextAlignment="Center" />
+                            <Label
+                                Grid.Column="1"
+                                FontFamily="Montserrat-SemiBold"
+                                FontSize="14"
+                                HorizontalTextAlignment="Center"
+                                Text="{Binding GRAU}"
+                                TextColor="#092444"
+                                VerticalTextAlignment="Center" />
+                            <Label
+                                Grid.Column="2"
+                                FontFamily="Montserrat-SemiBold"
+                                FontSize="14"
+                                HorizontalTextAlignment="Center"
+                                Text="{Binding MODALIDADE}"
+                                TextColor="#092444"
+                                VerticalTextAlignment="Center" />
+                        </Grid>
+                        <Frame.Triggers>
+                            <DataTrigger
+                                Binding="{Binding IsEven}"
+                                TargetType="Frame"
+                                Value="True">
+                                <Setter Property="BackgroundColor" Value="#d6eafa" />
+                                <!--  Cor para itens "pares"  -->
+                            </DataTrigger>
+                            <DataTrigger
+                                Binding="{Binding IsEven}"
+                                TargetType="Frame"
+                                Value="False">
+                                <Setter Property="BackgroundColor" Value="#a4c6e0" />
+                                <!--  Cor para itens "ímpares"  -->
+                            </DataTrigger>
+                        </Frame.Triggers>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
     </AbsoluteLayout>
 </ContentPage>

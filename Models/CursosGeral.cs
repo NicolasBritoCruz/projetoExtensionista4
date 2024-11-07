@@ -39,5 +39,11 @@ namespace Extensionista.Models
 
         public int QT_VAGAS_AUTORIZADAS { get; set; }
 
+        [Ignore]
+        public int Index { get; set; }
+
+        [Ignore]
+        public bool IsEven => Index % 2 == 0;
+
     }
 }

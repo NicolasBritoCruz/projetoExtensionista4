@@ -12,11 +12,11 @@ namespace Extensionista.Repositories
         private readonly Dictionary<string, string> stringsCategoriaAdministrativa = new Dictionary<string, string>
         {
             {"1", "Especial"},
-            {"2", "Privada com fins lucrativos"},
-            {"3", "Privada sem fins lucrativos"},
-            {"4", "Pública Estadual" },
-            {"5", "Pública Federal" },
-            {"6", "Pública Municipal" },
+            {"2", "Privada"},
+            {"3", "Privada"},
+            {"4", "Pública" },
+            {"5", "Pública" },
+            {"6", "Pública" },
         };
 
         private readonly Dictionary<string, string> stringsGrau = new Dictionary<string, string>

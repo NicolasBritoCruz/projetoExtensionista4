@@ -10,6 +10,7 @@ namespace Extensionista
     {
         public ObservableCollection<Universidades> UniversidadesList { get; set; } = new ObservableCollection<Universidades>();
         private int selectedCodigoIES;
+        private string selectedMunicipio;
         private readonly CursosGeralRepository _cursosGeralRepository;
 
         public PaginaPesquisa()
@@ -72,8 +73,9 @@ namespace Extensionista
             if (e.CurrentSelection.FirstOrDefault() is Universidades selectedFaculdade)
             {
                 selectedCodigoIES = selectedFaculdade.CODIGO_IES;
+                selectedMunicipio = selectedFaculdade.MUNICIPIO;
                 // Navega para a PaginaLista e passa o selectedCodigoIES como parâmetro
-                await Navigation.PushAsync(new PaginaLista(selectedCodigoIES));
+                await Navigation.PushAsync(new PaginaLista(selectedCodigoIES, selectedMunicipio));
             }
         }
     }
