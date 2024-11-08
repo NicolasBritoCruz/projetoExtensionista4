@@ -5,11 +5,16 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     Title="Favoritos"
     IconImageSource="favoritos.png">
+
     <AbsoluteLayout BackgroundColor="#ffffff">
+
+        <!-- Imagem do ícone -->
         <Image
             AbsoluteLayout.LayoutBounds="0.07,0.032,0.075,0.12"
             AbsoluteLayout.LayoutFlags="All"
             Source="appiconfg1.png" />
+
+        <!-- Título da página -->
         <Label
             AbsoluteLayout.LayoutBounds="0.5, 0.07"
             AbsoluteLayout.LayoutFlags="PositionProportional"
@@ -17,20 +22,27 @@
             FontSize="22"
             Text="Favoritos"
             TextColor="#092444" />
+
+        <!-- Frame contendo a lista de favoritos -->
         <Frame
             AbsoluteLayout.LayoutBounds="0.5, 0.6, 0.85, 0.73"
             AbsoluteLayout.LayoutFlags="All"
             BackgroundColor="#d6eafa"
             BorderColor="#0e3872"
             CornerRadius="30" />
+
+        <!-- Setas para navegação -->
         <Image
             AbsoluteLayout.LayoutBounds="0.44,0.97,0.07,0.1"
             AbsoluteLayout.LayoutFlags="All"
             Source="setadireita.png" />
+
         <Image
             AbsoluteLayout.LayoutBounds="0.55,0.97,0.07,0.1"
             AbsoluteLayout.LayoutFlags="All"
             Source="setaesquerda.png" />
+
+        <!-- Texto de navegação -->
         <Label
             AbsoluteLayout.LayoutBounds="0.85, 0.934"
             AbsoluteLayout.LayoutFlags="PositionProportional"
@@ -39,5 +51,62 @@
             Opacity="0.7"
             Text="Pág ?/?"
             TextColor="#6fa0e4" />
+
+        <!-- Lista de favoritos -->
+        <CollectionView
+            x:Name="ListaFavoritos"
+            AbsoluteLayout.LayoutBounds="0.5, 0.6, 0.84, 0.7"
+            AbsoluteLayout.LayoutFlags="All">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame
+                        Margin="100"
+                        Padding="10"
+                        BackgroundColor="#ffffff"
+                        BorderColor="#092444"
+                        CornerRadius="30">
+                        <Grid RowDefinitions="*, *, Auto" ColumnDefinitions="Auto, *, Auto">
+
+                            <!-- Imagem da escola -->
+                            <Image
+                                VerticalOptions="EndAndExpand"
+                                HorizontalOptions="Start"
+                                HeightRequest="55"
+                                WidthRequest="80"
+                                Source="escola.png"
+                                Grid.Row="0"
+                                Grid.Column="0"
+                                Grid.RowSpan="2" />
+
+                            <!-- Nome da universidade -->
+                            <Label 
+                                Padding="7,0,0,0"
+                                HeightRequest="40"
+                                Text="{Binding NOME_IES}"
+                                FontFamily="Montserrat-Bold"
+                                FontSize="13"
+                                TextColor="#092444"
+                                HorizontalTextAlignment="Start"
+                                VerticalTextAlignment="Center"
+                                Grid.Row="0" Grid.Column="1"
+                                LineBreakMode="WordWrap" />
+
+                            <!-- Município -->
+                            <Label
+                                Padding="7,0,0,0"
+                                HeightRequest="20"
+                                Text="{Binding MUNICIPIO}"
+                                FontFamily="Montserrat-SemiBold"
+                                FontSize="13"
+                                TextColor="#092444"
+                                HorizontalTextAlignment="Start"
+                                VerticalTextAlignment="Start"
+                                Grid.Row="1" Grid.Column="1" />
+                        </Grid>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
     </AbsoluteLayout>
 </ContentPage>

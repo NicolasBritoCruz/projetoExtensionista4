@@ -145,7 +145,7 @@
             AbsoluteLayout.LayoutBounds="0.11, 0.19"
             AbsoluteLayout.LayoutFlags="PositionProportional"
             Clicked="favoritar_Clicked"
-            Source="heart.png" />
+             />
 
         <Grid AbsoluteLayout.LayoutBounds="0.5, 0.108" AbsoluteLayout.LayoutFlags="PositionProportional">
             <!--  Definir as colunas e linhas do Grid  -->

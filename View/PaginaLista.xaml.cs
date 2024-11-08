@@ -1,59 +1,107 @@
-
 using Extensionista.Models;
 using Extensionista.Repositories;
-namespace Extensionista;
+using System.Linq;
 
-public partial class PaginaLista : ContentPage
+namespace Extensionista
 {
-    private int codigoIES;
-    private string municipio;
-    bool favoritado = false;
-    public PaginaLista(int codigoIES, string municipio)
+    public partial class PaginaLista : ContentPage
     {
-        InitializeComponent();
-        CarregarCursos(codigoIES, municipio);
-        NavigationPage.SetHasNavigationBar(this, false);
+        private int codigoIES;
+        private string municipio;
 
-        this.codigoIES = codigoIES;
-        this.municipio = municipio;
-    }
-
-    private async void sairLista_Clicked(object sender, EventArgs e)
-    {
-        await Navigation.PushAsync(new PaginaPesquisa());
-    }
-
-    private void CarregarCursos(int codigoIES, string municipio)
-    {
-        var repository = new CursosGeralRepository();
-        var universidades = repository.ObterUniversidades(codigoIES, municipio).FirstOrDefault();
-
-        if (universidades != null)
+        public PaginaLista(int codigoIES, string municipio)
         {
+            InitializeComponent();
+            CarregarCursos(codigoIES, municipio);
+            NavigationPage.SetHasNavigationBar(this, false);
 
-            var cursos = repository.ObterCursos(codigoIES, municipio);
+            this.codigoIES = codigoIES;
+            this.municipio = municipio;
+        }
 
-            for (int i = 0; i < cursos.Count; i++)
+        private async void sairLista_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new PaginaPesquisa());
+        }
+
+        private void CarregarCursos(int codigoIES, string municipio)
+        {
+            var repository = new CursosGeralRepository();
+            var universidades = repository.ObterUniversidades(codigoIES, municipio).FirstOrDefault();
+
+            if (universidades != null)
             {
-                cursos[i].Index = i;
+                var cursos = repository.ObterCursos(codigoIES, municipio);
+
+                var favoritosRepository = new FavoritosRepository();
+                var favoritos = favoritosRepository.ObterFavoritos();
+
+                // Atualiza o estado de favoritado dos cursos
+                foreach (var curso in cursos)
+                {
+                    var favorito = favoritos.FirstOrDefault(f => f.CODIGO_IES == curso.CODIGO_IES);
+                    curso.Favorito = favorito != null;  // Marca como favoritado ou não
+                }
+
+                for (int i = 0; i < cursos.Count; i++)
+                {
+                    cursos[i].Index = i;
+                }
+
+                // Define a fonte do ListView ou CollectionView
+                ListaCursos.ItemsSource = cursos;
+
+                // Atualiza o estado de favorito da universidade
+                var favoritoUniversidade = favoritos.FirstOrDefault(f => f.CODIGO_IES == universidades.CODIGO_IES);
+                universidades.Favorito = favoritoUniversidade != null;
+
+                // Atualiza o ícone de favoritar
+                AtualizarIconeFavoritar(universidades.Favorito);
+
+                this.BindingContext = universidades;
+            }
+        
+        }
+        private void AtualizarIconeFavoritar(bool isFavorito)
+        {
+            // Verifica o estado de favoritado e altera a imagem
+            favoritar.Source = isFavorito ? "fullheart.png" : "heart.png";
+        }
+
+
+        private void favoritar_Clicked(object sender, EventArgs e)
+        {
+            var button = sender as ImageButton;
+            if (button == null) return;
+
+            var universidade = button.BindingContext as Universidades;
+            if (universidade == null) return;
+
+            var favoritosRepository = new FavoritosRepository();
+
+            // Alterna o estado de favoritado
+            universidade.Favorito = !universidade.Favorito;
+
+            // Salva ou remove do banco de dados
+            var favorito = new Favoritos
+            {
+                NOME_IES = universidade.NOME_IES,
+                CODIGO_IES = this.codigoIES,
+                MUNICIPIO = this.municipio,
+            };
+
+            if (universidade.Favorito)
+            {
+                favoritosRepository.Favoritar(favorito); // Salva no banco de dados
+            }
+            else
+            {
+                favoritosRepository.Delete(favorito); // Remove do banco de dados
             }
 
-            ListaCursos.ItemsSource = cursos;
-            this.BindingContext = universidades;
+            AtualizarIconeFavoritar(universidade.Favorito);
+
+            MessagingCenter.Send(this, "AtualizarFavoritos");
         }
     }
-    private void favoritar_Clicked(object sender, EventArgs e)
-    {
-        favoritado = !favoritado;
-
-        var coracaoVazio = "heart.png";
-        var coracaoCheio = "fullheart.png";
-
-        var button = favoritar;
-
-        favoritar.Source = (favoritado == false) ? ImageSource.FromFile(coracaoVazio) : ImageSource.FromFile(coracaoCheio);
-    }
 }
-
-
-

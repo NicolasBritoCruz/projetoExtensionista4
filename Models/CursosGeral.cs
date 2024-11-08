@@ -19,6 +19,8 @@ namespace Extensionista.Models
 
         public string REGIAO { get; set; } = string.Empty;
 
+        public bool Favorito { get; set; }
+
 
     }
 
@@ -44,6 +46,8 @@ namespace Extensionista.Models
 
         [Ignore]
         public bool IsEven => Index % 2 == 0;
+
+        public bool Favorito { get; set; }
 
     }
 }

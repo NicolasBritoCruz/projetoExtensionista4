@@ -16,8 +16,15 @@ namespace Extensionista.Repositories
 
         public void Favoritar(Favoritos favorito)
         {
-            _connection.Insert(favorito);
+            var existeFavorito = _connection.Table<Favoritos>()
+                                             .Any(f => f.CODIGO_IES == favorito.CODIGO_IES);
+
+            if (!existeFavorito)
+            {
+                _connection.Insert(favorito);
+            }
         }
+
 
         public List<Favoritos> ObterFavoritos()
         {
@@ -25,8 +32,16 @@ namespace Extensionista.Repositories
         }
         public void Delete(Favoritos favorito)
         {
-            _connection.Delete(favorito);
+            // A remoção deve usar o mesmo código de IES
+            var favoritoExistente = _connection.Table<Favoritos>()
+                                                .FirstOrDefault(f => f.CODIGO_IES == favorito.CODIGO_IES);
+
+            if (favoritoExistente != null)
+            {
+                _connection.Delete(favoritoExistente);
+            }
         }
+
 
     }
 }
