@@ -7,33 +7,43 @@
     IconImageSource="home.png">
 
     <AbsoluteLayout BackgroundColor="#ffffff">
+        <Image
+            AbsoluteLayout.LayoutBounds="0.06,0.063,0.075,0.12"
+            AbsoluteLayout.LayoutFlags="All"
+            Source="appiconfg1.png" />
         <Label
             AbsoluteLayout.LayoutBounds="0.5, 0.094"
             AbsoluteLayout.LayoutFlags="PositionProportional"
-            FontFamily="MontserratMedium"
+            FontFamily="MontserratMediu"
             FontSize="24"
             Text="Inicio"
-            TextColor="#245897" />
+            TextColor="#092444" />
         <Frame
-            AbsoluteLayout.LayoutBounds="0.5, 0.5, 0.85, 0.27"
+            AbsoluteLayout.LayoutBounds="0.5, 0.5, 0.85, 0.3"
             AbsoluteLayout.LayoutFlags="All"
-            BackgroundColor="#d6eafa"
-            BorderColor="#0e3872"
-            CornerRadius="30" />
+            BorderColor="#ffffff"
+            CornerRadius="30">
+                <Frame.Background>
+                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                        <GradientStop Color="#ffffff" Offset="0.5"/>
+                        <GradientStop Color="#bcd7ed" Offset="1"/>
+                    </LinearGradientBrush>
+                </Frame.Background>
+        </Frame>
         <Label
             AbsoluteLayout.LayoutBounds="0.159, 0.45"
             AbsoluteLayout.LayoutFlags="PositionProportional"
             FontFamily="MontserratSemiBold"
             FontSize="22"
             Text="Bem-vindo!"
-            TextColor="#245897" />
+            TextColor="#092444" />
         <Label
             AbsoluteLayout.LayoutBounds="0.2, 0.53"
             AbsoluteLayout.LayoutFlags="PositionProportional"
-            FontFamily="MontserratMedium"
+            FontFamily="Montserrat"
             FontSize="16"
             Text="Descubra informações&#x0a;sobre o seu curso&#x0a;dos sonhos"
-            TextColor="#6fa0e5" />
+            TextColor="#345d97" />
         <Image
             AbsoluteLayout.LayoutBounds="0.85, 0.45, 0.35, 0.35"
             AbsoluteLayout.LayoutFlags="All"

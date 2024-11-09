@@ -26,9 +26,15 @@
         <Frame
             AbsoluteLayout.LayoutBounds="0.5, 0.15, 0.85, 0.25"
             AbsoluteLayout.LayoutFlags="All"
-            BackgroundColor="#d6eafa"
-            BorderColor="#092444"
-            CornerRadius="25" />
+            BorderColor="#ffffff"
+            CornerRadius="25">
+            <Frame.Background>
+                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                    <GradientStop Color="#ffffff" Offset="0.5"/>
+                    <GradientStop Color="#bcd7ed" Offset="1"/>
+                </LinearGradientBrush>
+            </Frame.Background>
+        </Frame>
         <Image
             AbsoluteLayout.LayoutBounds="0.14, 0.15, 0.35, 0.35"
             AbsoluteLayout.LayoutFlags="All"
@@ -148,15 +154,12 @@
              />
 
         <Grid AbsoluteLayout.LayoutBounds="0.5, 0.108" AbsoluteLayout.LayoutFlags="PositionProportional">
-            <!--  Definir as colunas e linhas do Grid  -->
             <Grid.RowDefinitions>
                 <RowDefinition Height="52" />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="360" />
             </Grid.ColumnDefinitions>
-
-            <!--  Label dentro do Grid  -->
             <Label
                 Grid.Row="0"
                 Grid.Column="0"
