@@ -168,6 +168,7 @@
                 HorizontalOptions="Center"
                 Text="{Binding NOME_IES}"
                 TextColor="white"
+                LineBreakMode="WordWrap"
                 VerticalOptions="Center" />
         </Grid>
         <CollectionView

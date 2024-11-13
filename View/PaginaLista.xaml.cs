@@ -21,7 +21,7 @@ namespace Extensionista
 
         private async void sairLista_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new PaginaPesquisa());
+            await Navigation.PopAsync();
         }
 
         private void CarregarCursos(int codigoIES, string municipio)

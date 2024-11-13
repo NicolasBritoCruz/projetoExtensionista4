@@ -10,13 +10,11 @@ namespace Extensionista.Repositories
         private readonly SQLiteConnection _connection;
         private readonly Decompressor _decompressor;
 
-
         public CursosGeralRepository()
         {
             _connection = DataBaseContext.connection;
             _decompressor = new Decompressor();
         }
-
 
         public List<Universidades> ObterUniversidades(int? codigoIES = null, string municipio = null)
         {
@@ -51,8 +49,8 @@ namespace Extensionista.Repositories
         public List<Cursos> ObterCursos(int codigoIes, string municipio)
         {
             var cursos = _connection.Table<Cursos>()
-                                   .Where(c => c.CODIGO_IES == codigoIes && c.MUNICIPIO == municipio)
-                                   .ToList();
+                                    .Where(c => c.CODIGO_IES == codigoIes && c.MUNICIPIO == municipio)
+                                    .ToList();
 
             // Converte os valores numéricos para strings para cada curso
             foreach (var curso in cursos)

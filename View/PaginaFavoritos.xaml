@@ -24,22 +24,6 @@
             BackgroundColor="#ffffff"
             BorderColor="#ffffff"
             CornerRadius="30" />
-        <Image
-            AbsoluteLayout.LayoutBounds="0.44,0.97,0.07,0.1"
-            AbsoluteLayout.LayoutFlags="All"
-            Source="setadireita.png" />
-        <Image
-            AbsoluteLayout.LayoutBounds="0.55,0.97,0.07,0.1"
-            AbsoluteLayout.LayoutFlags="All"
-            Source="setaesquerda.png" />
-        <Label
-            AbsoluteLayout.LayoutBounds="0.85, 0.934"
-            AbsoluteLayout.LayoutFlags="PositionProportional"
-            FontFamily="MontserratSemiBold"
-            FontSize="18"
-            Opacity="0.7"
-            Text="Pág ?/?"
-            TextColor="#6fa0e4" />
         <CollectionView
             x:Name="ListaFavoritos"
             AbsoluteLayout.LayoutBounds="0.5, 0.45, 0.9, 0.7"

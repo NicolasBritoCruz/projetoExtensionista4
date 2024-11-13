@@ -6,8 +6,7 @@
     IconImageSource="pesquisa.png">
 
     <StackLayout Padding="10" BackgroundColor="#ffffff">
-
-        <!--  Barra de Pesquisa com Ícone de Lupa à direita  -->
+        <!-- Barra de Pesquisa -->
         <Frame
             Margin="0,10"
             Padding="10"
@@ -19,6 +18,7 @@
                     x:Name="entrySearch"
                     HorizontalOptions="FillAndExpand"
                     Placeholder="Digite a cidade ou nome da universidade"
+                    FontFamily="MontserratSemiBold"
                     TextColor="Black" />
                 <ImageButton
                     Margin="0,0,5,0"
@@ -30,7 +30,7 @@
             </Grid>
         </Frame>
 
-        <!--  Cabeçalho da tabela com borda  -->
+        <!-- Cabeçalho da tabela -->
         <Frame
             Padding="0"
             BorderColor="#092444"
@@ -42,12 +42,14 @@
                 <Label
                     FontAttributes="Bold"
                     HorizontalTextAlignment="Center"
+                    FontFamily="MontserratSemiBold"
                     Text="NOME"
                     TextColor="White"
                     VerticalTextAlignment="Center" />
                 <Label
                     Grid.Column="1"
                     FontAttributes="Bold"
+                    FontFamily="MontserratSemiBold"
                     HorizontalTextAlignment="Center"
                     Text="CIDADE"
                     TextColor="White"
@@ -55,6 +57,7 @@
                 <Label
                     Grid.Column="2"
                     FontAttributes="Bold"
+                    FontFamily="MontserratSemiBold"
                     HorizontalTextAlignment="Center"
                     Text="UF"
                     TextColor="White"
@@ -62,12 +65,14 @@
             </Grid>
         </Frame>
 
-        <!--  Lista de resultados  -->
+        <!-- Lista de Resultados -->
         <CollectionView
             x:Name="ListaFaculdades"
-            SelectionChanged="OnFaculdadeSelected"
-            SelectionMode="Single"
-            VerticalOptions="FillAndExpand">
+            SelectionMode="None"
+            VerticalOptions="FillAndExpand"
+            RemainingItemsThreshold="5"
+            RemainingItemsThresholdReached="OnRemainingItemsThresholdReached"
+            ItemsUpdatingScrollMode="KeepScrollOffset">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <Frame
@@ -76,27 +81,32 @@
                         BackgroundColor="#d6eafa"
                         BorderColor="#092444"
                         CornerRadius="0">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer
+                                Tapped="OnFaculdadeSelected"
+                                CommandParameter="{Binding}" />
+                        </Frame.GestureRecognizers>
                         <Grid ColumnDefinitions="*,*,*" RowDefinitions="Auto">
-                            <!--  NOME  -->
                             <Label
                                 Grid.Column="0"
                                 HorizontalTextAlignment="Center"
                                 LineBreakMode="WordWrap"
+                                FontFamily="MontserratSemiBold"
                                 Text="{Binding NOME_IES}"
                                 TextColor="#092444"
                                 VerticalTextAlignment="Center" />
-                            <!--  CIDADE  -->
                             <Label
                                 Grid.Column="1"
                                 HorizontalTextAlignment="Center"
+                                FontFamily="MontserratSemiBold"
                                 LineBreakMode="WordWrap"
                                 Text="{Binding MUNICIPIO}"
                                 TextColor="#092444"
                                 VerticalTextAlignment="Center" />
-                            <!--  UF  -->
                             <Label
                                 Grid.Column="2"
                                 HorizontalTextAlignment="Center"
+                                FontFamily="MontserratSemiBold"
                                 LineBreakMode="WordWrap"
                                 Text="{Binding UF}"
                                 TextColor="#092444"
@@ -106,6 +116,5 @@
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
-
     </StackLayout>
 </ContentPage>
