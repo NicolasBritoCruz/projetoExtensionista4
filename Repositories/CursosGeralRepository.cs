@@ -16,9 +16,11 @@ namespace Extensionista.Repositories
             _decompressor = new Decompressor();
         }
 
-        public List<Universidades> ObterUniversidades(int? codigoIES = null, string municipio = null)
+        public List<Universidades> ObterUniversidades(int? codigoIES = null, string municipio = null, int page = 1)
         {
             var query = _connection.Table<Universidades>().AsQueryable();
+            int pageSize = 20; // Número de resultados por página
+            int skipAmount = (page - 1) * pageSize; // Quantidade de registros a ignorar
 
             if (codigoIES.HasValue)
             {
@@ -34,6 +36,8 @@ namespace Extensionista.Repositories
             var universidades = query
                 .GroupBy(u => new { u.CODIGO_IES, u.MUNICIPIO }) // Agrupa por combinação de CODIGO_IES e MUNICIPIO
                 .Select(g => g.First())
+                .Skip(skipAmount)
+                .Take(20)
                 .ToList();
 
             // Converte os valores numéricos para strings para cada curso
