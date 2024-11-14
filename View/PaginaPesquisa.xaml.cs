@@ -9,56 +9,41 @@ namespace Extensionista
     public partial class PaginaPesquisa : ContentPage
     {
         public ObservableCollection<Universidades> UniversidadesList { get; set; } = new ObservableCollection<Universidades>();
-
         private readonly CursosGeralRepository _cursosGeralRepository;
-        private int currentPage = 0;
-        private const int PageSize = 30;
-        private bool isLoading = false;
+        private int currentPage = 1;
         private bool hasMoreItems = true;
-        private object lastVisibleItem;
-        private bool isSearching = false;
-        private bool isLoaded = false;
+        private bool isLoading = false;
 
         public PaginaPesquisa()
         {
             InitializeComponent();
             BindingContext = this;
-
             _cursosGeralRepository = new CursosGeralRepository();
             ListaFaculdades.ItemsSource = UniversidadesList;
-
             NavigationPage.SetHasNavigationBar(this, false);
 
-            // Inicializar com carregamento inicial
-            LoadFaculdadesAsync();
+            // Carregar as universidades ao iniciar, sem filtro
+            _ = LoadFaculdadesAsync();
         }
 
-        private async Task LoadFaculdades(int page)
+        // Carrega a lista de faculdades com paginação e filtros opcionais
+        private async Task LoadFaculdadesAsync(int? codigoIES = null, string municipio = null)
         {
             if (isLoading || !hasMoreItems) return;
 
             isLoading = true;
             try
             {
+                // Chama a função do repositório diretamente com paginação e filtros
                 var universidades = await Task.Run(() =>
-                    _cursosGeralRepository.ObterUniversidades()
-                                          .Skip(page * PageSize)
-                                          .Take(PageSize)
-                                          .ToList());
+                    _cursosGeralRepository.ObterUniversidades(codigoIES, municipio, currentPage));
 
-                if (!universidades.Any())
+                if (universidades.Count == 0)
                 {
-                    hasMoreItems = false;
+                    hasMoreItems = false; // Marca como última página se não houver mais itens
                     return;
                 }
 
-                if (isSearching)
-                {
-                    // Não adicione novos itens ao resultado da pesquisa, já que estamos filtrando
-                    return;
-                }
-
-                // Caso não esteja pesquisando, adicione os itens normalmente
                 foreach (var universidade in universidades)
                 {
                     if (!UniversidadesList.Contains(universidade))
@@ -66,6 +51,8 @@ namespace Extensionista
                         UniversidadesList.Add(universidade);
                     }
                 }
+
+                currentPage++; // Incrementa para a próxima página
             }
             catch (Exception ex)
             {
@@ -77,121 +64,52 @@ namespace Extensionista
             }
         }
 
-
-        private async Task LoadFaculdadesAsync()
+        // Método acionado ao alcançar o limite de rolagem, carregando a próxima página
+        private async void OnRemainingItemsThresholdReached(object sender, EventArgs e)
         {
-            if (UniversidadesList.Count > 0)
-            {
-                // Se já houver universidades na lista, não faça o carregamento
-                return;
-            }
-
-            currentPage = 0;
-            hasMoreItems = true;
-            UniversidadesList.Clear(); // Limpa a lista antes de carregar os novos dados, caso contrário, pode ocorrer duplicação.
-
-            await LoadFaculdades(currentPage); // Carrega os dados da primeira vez
-
-            // Pré-carrega o próximo lote
-            _ = LoadFaculdades(currentPage + 1);
+            await LoadFaculdadesAsync();
         }
 
-
+        // Método de pesquisa otimizado para usar filtros diretamente no repositório
         private void Pesquisar_Clicked(object sender, EventArgs e)
         {
             var query = entrySearch.Text?.ToLower();
+            UniversidadesList.Clear();
+            currentPage = 1;
+            hasMoreItems = true;
 
-            if (string.IsNullOrEmpty(query))
+            // Determina se o usuário está buscando por código ou município e ajusta a pesquisa
+            if (int.TryParse(query, out int codigoIES))
             {
-                // Se não houver pesquisa, mostra todos os itens carregados
-                isSearching = false;
-
-                // Recarrega todos os itens carregados previamente
-                var allUniversidades = _cursosGeralRepository.ObterUniversidades();
-                UniversidadesList.Clear();
-                foreach (var universidade in allUniversidades)
-                {
-                    UniversidadesList.Add(universidade);
-                }
+                _ = LoadFaculdadesAsync(codigoIES: codigoIES);
+            }
+            else if (!string.IsNullOrEmpty(query))
+            {
+                _ = LoadFaculdadesAsync(municipio: query);
             }
             else
             {
-                // Marca que está pesquisando
-                isSearching = true;
-
-                // Filtra os itens carregados localmente
-                var filteredUniversidades = UniversidadesList
-                    .Where(u => u.NOME_IES.ToLower().Contains(query) || u.MUNICIPIO.ToLower().Contains(query))
-                    .ToList();
-
-                // Limpa a lista atual e exibe apenas os itens filtrados
-                UniversidadesList.Clear();
-                foreach (var universidade in filteredUniversidades)
-                {
-                    UniversidadesList.Add(universidade);
-                }
-
-                // Caso a pesquisa não tenha encontrado o suficiente, busque no banco de dados
-                var additionalUniversidades = _cursosGeralRepository.ObterUniversidades()
-                    .Where(u => u.NOME_IES.ToLower().Contains(query) || u.MUNICIPIO.ToLower().Contains(query))
-                    .ToList();
-
-                // Adiciona os itens encontrados no banco à lista, verificando duplicação
-                foreach (var universidade in additionalUniversidades)
-                {
-                    // Verifica se a universidade já não foi carregada (compara pelo código único)
-                    if (!UniversidadesList.Any(u => u.CODIGO_IES == universidade.CODIGO_IES))
-                    {
-                        UniversidadesList.Add(universidade);
-                    }
-                }
+                _ = LoadFaculdadesAsync(); // Recarrega a lista completa se a pesquisa estiver vazia
             }
         }
 
-
-
-
+        // Método para manipular a seleção de um item na lista
         private async void OnFaculdadeSelected(object sender, EventArgs e)
         {
             if (sender is Element element && element.BindingContext is Universidades selectedFaculdade)
             {
-                lastVisibleItem = selectedFaculdade; // Salva o último item selecionado
-                var selectedCodigoIES = selectedFaculdade.CODIGO_IES;
-                var selectedMunicipio = selectedFaculdade.MUNICIPIO;
-
-                await Navigation.PushAsync(new PaginaLista(selectedCodigoIES, selectedMunicipio));
+                await Navigation.PushAsync(new PaginaLista(selectedFaculdade.ID_UNIVERSIDADE));
             }
         }
 
+        // Carrega a lista ao exibir a página, sem duplicar itens
         protected override async void OnAppearing()
         {
             base.OnAppearing();
-
-            // Verifica se a lista já foi carregada
-            if (UniversidadesList.Count == 0 && !isLoading) // Certifique-se de que a lista está vazia e não está carregando
+            if (UniversidadesList.Count == 0 && !isLoading)
             {
-                await LoadFaculdadesAsync(); // Carrega os dados pela primeira vez
-            }
-
-            // Caso haja um item visível, rola até ele
-            if (lastVisibleItem != null)
-            {
-                ListaFaculdades.ScrollTo(lastVisibleItem, position: ScrollToPosition.Start);
+                await LoadFaculdadesAsync();
             }
         }
-
-
-
-        private async void OnRemainingItemsThresholdReached(object sender, EventArgs e)
-        {
-            if (isLoading || !hasMoreItems) return;
-
-            // Armazene o último item visível
-            lastVisibleItem = UniversidadesList.LastOrDefault();
-
-            currentPage++;
-            await LoadFaculdades(currentPage);
-        }
-
     }
 }

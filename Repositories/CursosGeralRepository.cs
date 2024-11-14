@@ -16,6 +16,21 @@ namespace Extensionista.Repositories
             _decompressor = new Decompressor();
         }
 
+        public Universidades ObterUniversidade(int idUniversidade)
+        {
+            var universidade = _connection.Table<Universidades>()
+                                        .Where(u => u.ID_UNIVERSIDADE == idUniversidade)
+                                        .FirstOrDefault();
+
+            if (universidade != null)
+            {
+                universidade.CATEGORIA_ADMINISTRATIVA = _decompressor.Converter("categoria_administrativa", universidade.CATEGORIA_ADMINISTRATIVA);
+                universidade.REGIAO = _decompressor.Converter("regiao", universidade.REGIAO);
+            }
+
+            return universidade;
+        }
+
         public List<Universidades> ObterUniversidades(int? codigoIES = null, string municipio = null, int page = 1)
         {
             var query = _connection.Table<Universidades>().AsQueryable();
@@ -34,8 +49,6 @@ namespace Extensionista.Repositories
             }
 
             var universidades = query
-                .GroupBy(u => new { u.CODIGO_IES, u.MUNICIPIO }) // Agrupa por combinação de CODIGO_IES e MUNICIPIO
-                .Select(g => g.First())
                 .Skip(skipAmount)
                 .Take(20)
                 .ToList();
@@ -50,10 +63,10 @@ namespace Extensionista.Repositories
             return universidades;
         }
 
-        public List<Cursos> ObterCursos(int codigoIes, string municipio)
+        public List<Cursos> ObterCursos(int idUniversidade)
         {
             var cursos = _connection.Table<Cursos>()
-                                    .Where(c => c.CODIGO_IES == codigoIes && c.MUNICIPIO == municipio)
+                                    .Where(c => c.ID_UNIVERSIDADE == idUniversidade)
                                     .ToList();
 
             // Converte os valores numéricos para strings para cada curso

@@ -10,7 +10,7 @@ namespace Extensionista.Models
 
         public string NOME_IES { get; set; } = string.Empty;
 
-        public int CODIGO_IES { get; set; }
+        public int ID_UNIVERSIDADE { get; set; }
 
         public string MUNICIPIO { get; set; } = string.Empty;
 

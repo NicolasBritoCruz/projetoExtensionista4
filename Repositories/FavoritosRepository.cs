@@ -17,7 +17,7 @@ namespace Extensionista.Repositories
         public void Favoritar(Favoritos favorito)
         {
             var existeFavorito = _connection.Table<Favoritos>()
-                                             .Any(f => f.CODIGO_IES == favorito.CODIGO_IES);
+                                             .Any(f => f.ID_UNIVERSIDADE == favorito.ID_UNIVERSIDADE);
 
             if (!existeFavorito)
             {
@@ -34,7 +34,7 @@ namespace Extensionista.Repositories
         {
             // A remoção deve usar o mesmo código de IES
             var favoritoExistente = _connection.Table<Favoritos>()
-                                                .FirstOrDefault(f => f.CODIGO_IES == favorito.CODIGO_IES);
+                                                .FirstOrDefault(f => f.ID_UNIVERSIDADE == favorito.ID_UNIVERSIDADE);
 
             if (favoritoExistente != null)
             {

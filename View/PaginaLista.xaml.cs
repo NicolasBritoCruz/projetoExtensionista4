@@ -9,14 +9,11 @@ namespace Extensionista
         private int codigoIES;
         private string municipio;
 
-        public PaginaLista(int codigoIES, string municipio)
+        public PaginaLista(int idUniversidade)
         {
             InitializeComponent();
-            CarregarCursos(codigoIES, municipio);
+            CarregarCursos(idUniversidade);
             NavigationPage.SetHasNavigationBar(this, false);
-
-            this.codigoIES = codigoIES;
-            this.municipio = municipio;
         }
 
         private async void sairLista_Clicked(object sender, EventArgs e)
@@ -24,14 +21,14 @@ namespace Extensionista
             await Navigation.PopAsync();
         }
 
-        private void CarregarCursos(int codigoIES, string municipio)
+        private void CarregarCursos(int idUniversidade)
         {
             var repository = new CursosGeralRepository();
-            var universidades = repository.ObterUniversidades(codigoIES, municipio).FirstOrDefault();
+            var universidades = repository.ObterUniversidade(idUniversidade);
 
             if (universidades != null)
             {
-                var cursos = repository.ObterCursos(codigoIES, municipio);
+                var cursos = repository.ObterCursos(idUniversidade);
 
                 var favoritosRepository = new FavoritosRepository();
                 var favoritos = favoritosRepository.ObterFavoritos();
@@ -39,7 +36,7 @@ namespace Extensionista
                 // Atualiza o estado de favoritado dos cursos
                 foreach (var curso in cursos)
                 {
-                    var favorito = favoritos.FirstOrDefault(f => f.CODIGO_IES == curso.CODIGO_IES);
+                    var favorito = favoritos.FirstOrDefault(f => f.ID_UNIVERSIDADE == curso.ID_UNIVERSIDADE);
                     curso.Favorito = favorito != null;  // Marca como favoritado ou não
                 }
 
@@ -52,7 +49,7 @@ namespace Extensionista
                 ListaCursos.ItemsSource = cursos;
 
                 // Atualiza o estado de favorito da universidade
-                var favoritoUniversidade = favoritos.FirstOrDefault(f => f.CODIGO_IES == universidades.CODIGO_IES);
+                var favoritoUniversidade = favoritos.FirstOrDefault(f => f.ID_UNIVERSIDADE == universidades.ID_UNIVERSIDADE);
                 universidades.Favorito = favoritoUniversidade != null;
 
                 // Atualiza o ícone de favoritar
@@ -86,8 +83,8 @@ namespace Extensionista
             var favorito = new Favoritos
             {
                 NOME_IES = universidade.NOME_IES,
-                CODIGO_IES = this.codigoIES,
-                MUNICIPIO = this.municipio,
+                ID_UNIVERSIDADE = universidade.ID_UNIVERSIDADE,
+                MUNICIPIO = universidade.MUNICIPIO,
             };
 
             if (universidade.Favorito)

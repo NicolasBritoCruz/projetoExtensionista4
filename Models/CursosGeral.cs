@@ -3,9 +3,9 @@
 
 namespace Extensionista.Models
 {
-    [Table("CursosGeral")]
     public class Universidades
     {
+        public int ID_UNIVERSIDADE { get; set; }
 
         public int CODIGO_IES { get; set; }
 
@@ -20,20 +20,17 @@ namespace Extensionista.Models
         public string REGIAO { get; set; } = string.Empty;
 
         public bool Favorito { get; set; }
-
-
     }
 
-    [Table("CursosGeral")]
     public class Cursos
     {
-        public int CODIGO_IES { get; set; }
+        public int ID_CURSO { get; set; }
+
+        public int ID_UNIVERSIDADE { get; set; }
 
         public int CODIGO_CURSO { get; set; }
 
         public string NOME_CURSO { get; set; } = string.Empty;
-
-        public string MUNICIPIO { get; set; } = string.Empty;
 
         public string GRAU { get; set; } = string.Empty;
 
