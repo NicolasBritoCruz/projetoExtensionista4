@@ -8,13 +8,13 @@
 
     <AbsoluteLayout BackgroundColor="#ffffff">
         <Image
-            AbsoluteLayout.LayoutBounds="0.06,0.063,0.075,0.12"
+            AbsoluteLayout.LayoutBounds="0.09,0.06,0.1,0.12"
             AbsoluteLayout.LayoutFlags="All"
             Source="appiconfg1.png" />
         <Label
             AbsoluteLayout.LayoutBounds="0.5, 0.094"
             AbsoluteLayout.LayoutFlags="PositionProportional"
-            FontFamily="MontserratMediu"
+            FontFamily="MontserratSemiBold"
             FontSize="24"
             Text="Inicio"
             TextColor="#092444" />
@@ -23,12 +23,12 @@
             AbsoluteLayout.LayoutFlags="All"
             BorderColor="#ffffff"
             CornerRadius="30">
-                <Frame.Background>
-                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
-                        <GradientStop Color="#ffffff" Offset="0.5"/>
-                        <GradientStop Color="#bcd7ed" Offset="1"/>
-                    </LinearGradientBrush>
-                </Frame.Background>
+            <Frame.Background>
+                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                    <GradientStop Offset="0.5" Color="#ffffff" />
+                    <GradientStop Offset="1" Color="#bcd7ed" />
+                </LinearGradientBrush>
+            </Frame.Background>
         </Frame>
         <Label
             AbsoluteLayout.LayoutBounds="0.159, 0.45"
@@ -40,7 +40,7 @@
         <Label
             AbsoluteLayout.LayoutBounds="0.2, 0.53"
             AbsoluteLayout.LayoutFlags="PositionProportional"
-            FontFamily="Montserrat"
+            FontFamily="MontserratMedium"
             FontSize="16"
             Text="Descubra informações&#x0a;sobre o seu curso&#x0a;dos sonhos"
             TextColor="#345d97" />

@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Extensionista.View.PaginaCurso"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="PaginaCurso">
+    <AbsoluteLayout BackgroundColor="#ffffff">
+        <Image
+            AbsoluteLayout.LayoutBounds="0.06,0.,0.075,0.12"
+            AbsoluteLayout.LayoutFlags="All"
+            Source="appiconfg1.png" />
+        <ImageButton
+            x:Name="sairCurso"
+            AbsoluteLayout.LayoutBounds="0.95, 0.034"
+            AbsoluteLayout.LayoutFlags="PositionProportional"
+            Clicked="sairCurso_Clicked"
+            HeightRequest="35"
+            Source="x.png" />
+        <Label
+            AbsoluteLayout.LayoutBounds="0.5, 0.045"
+            AbsoluteLayout.LayoutFlags="PositionProportional"
+            FontFamily="MontserratSemiBold"
+            FontSize="22"
+            Text="Informações SISU"
+            TextColor="#092444" />
+        <Frame
+            AbsoluteLayout.LayoutBounds="0.5, 0.15, 0.85, 0.25"
+            AbsoluteLayout.LayoutFlags="All"
+            BorderColor="#ffffff"
+            CornerRadius="25">
+            <Frame.Background>
+                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                    <GradientStop Offset="0.5" Color="#ffffff" />
+                    <GradientStop Offset="1" Color="#bcd7ed" />
+                </LinearGradientBrush>
+            </Frame.Background>
+        </Frame>
+        <Label
+            AbsoluteLayout.LayoutBounds="0.7, 0.2"
+            AbsoluteLayout.LayoutFlags="PositionProportional"
+            FontFamily="MontserratSemiBold"
+            FontSize="20"
+            Text="Curso:"
+            TextColor="#092444" />
+        <Button
+            AbsoluteLayout.LayoutBounds="0.75,0.305,0.3,0.07"
+            AbsoluteLayout.LayoutFlags="All"
+            BackgroundColor="#ffffff"
+            BorderColor="#092444"
+            BorderWidth="1"
+            FontFamily="Montserrat-SemiBold"
+            Text="Ver indicadores"
+            TextColor="#345d97" />
+        <Image
+            AbsoluteLayout.LayoutBounds="0.14, 0.15, 0.35, 0.35"
+            AbsoluteLayout.LayoutFlags="All"
+            Source="escola.png" />
+        <Grid
+            Padding="0"
+            AbsoluteLayout.LayoutBounds="0.85, 0.235, 0.45, 0.2"
+            AbsoluteLayout.LayoutFlags="All">
+            <!--  Definindo as colunas e linhas do Grid  -->
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="89" />
+                <!--  Coluna 1 para os rótulos  -->
+                <ColumnDefinition Width="*" />
+                <!--  Coluna 2 para os valores  -->
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <!--  Linha 1  -->
+                <RowDefinition Height="Auto" />
+                <!--  Linha 2  -->
+                <RowDefinition Height="Auto" />
+                <!--  Linha 3  -->
+                <RowDefinition Height="Auto" />
+                <!--  Linha 4  -->
+            </Grid.RowDefinitions>
+            <!--  colocar bidings  -->
+        </Grid>
+        <Frame
+            AbsoluteLayout.LayoutBounds="0.5, 0.108, 0.85, 0.073"
+            AbsoluteLayout.LayoutFlags="All"
+            BackgroundColor="#092444"
+            BorderColor="#092444"
+            CornerRadius="0" />
+        <Grid AbsoluteLayout.LayoutBounds="0.5, 0.108" AbsoluteLayout.LayoutFlags="PositionProportional">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="52" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="360" />
+            </Grid.ColumnDefinitions>
+            <Label
+                Grid.Row="0"
+                Grid.Column="0"
+                FontFamily="MontserratSemiBold"
+                FontSize="15"
+                HorizontalOptions="Center"
+                LineBreakMode="WordWrap"
+                Text="{Binding NOME_IES}"
+                TextColor="white"
+                VerticalOptions="Center" />
+        </Grid>
+        <CollectionView
+            x:Name="ListaCursos"
+            AbsoluteLayout.LayoutBounds="0.5, 0.8, 0.85, 0.5"
+            AbsoluteLayout.LayoutFlags="All"
+            BackgroundColor="#d6eafa">
+            <CollectionView.Header>
+                <Grid Padding="10" BackgroundColor="#092444">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Label
+                        Grid.Column="2"
+                        FontFamily="Montserrat-SemiBold"
+                        FontSize="16"
+                        HorizontalTextAlignment="Center"
+                        Text="PESO DAS NOTAS"
+                        VerticalTextAlignment="Center" />
+                </Grid>
+            </CollectionView.Header>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame
+                        Margin="5"
+                        Padding="10"
+                        BackgroundColor="#d6eafa"
+                        BorderColor="#092444"
+                        CornerRadius="0">
+                        <Grid Padding="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <!--  colocar os bidings  -->
+                        </Grid>
+                        <Frame.Triggers>
+                            <DataTrigger
+                                Binding="{Binding IsEven}"
+                                TargetType="Frame"
+                                Value="True">
+                                <Setter Property="BackgroundColor" Value="#d6eafa" />
+                                <!--  Cor para itens "pares"  -->
+                            </DataTrigger>
+                            <DataTrigger
+                                Binding="{Binding IsEven}"
+                                TargetType="Frame"
+                                Value="False">
+                                <Setter Property="BackgroundColor" Value="#a4c6e0" />
+                                <!--  Cor para itens "ímpares"  -->
+                            </DataTrigger>
+                        </Frame.Triggers>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </AbsoluteLayout>
+</ContentPage>

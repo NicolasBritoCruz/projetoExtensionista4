@@ -6,7 +6,7 @@
     Title="PaginaLista">
     <AbsoluteLayout BackgroundColor="#ffffff">
         <Image
-            AbsoluteLayout.LayoutBounds="0.06,0.,0.075,0.12"
+            AbsoluteLayout.LayoutBounds="0.05,0.,0.1,0.12"
             AbsoluteLayout.LayoutFlags="All"
             Source="appiconfg1.png" />
         <ImageButton
@@ -24,7 +24,7 @@
             Text="Informações"
             TextColor="#092444" />
         <Frame
-            AbsoluteLayout.LayoutBounds="0.5, 0.15, 0.85, 0.25"
+            AbsoluteLayout.LayoutBounds="0.5, 0.15, 0.9, 0.25"
             AbsoluteLayout.LayoutFlags="All"
             BorderColor="#ffffff"
             CornerRadius="25">
@@ -141,7 +141,7 @@
                 TextColor="#345D97" />
         </Grid>
         <Frame
-            AbsoluteLayout.LayoutBounds="0.5, 0.108, 0.85, 0.073"
+            AbsoluteLayout.LayoutBounds="0.5, 0.108, 0.9, 0.073"
             AbsoluteLayout.LayoutFlags="All"
             BackgroundColor="#092444"
             BorderColor="#092444"
@@ -163,7 +163,7 @@
             <Label
                 Grid.Row="0"
                 Grid.Column="0"
-                FontFamily="MontserratSemiBold"
+                FontFamily="MontserratBold"
                 FontSize="15"
                 HorizontalOptions="Center"
                 Text="{Binding NOME_IES}"
@@ -173,7 +173,7 @@
         </Grid>
         <CollectionView
             x:Name="ListaCursos"
-            AbsoluteLayout.LayoutBounds="0.5, 0.8, 0.85, 0.5"
+            AbsoluteLayout.LayoutBounds="0.5, 0.89, 0.9, 0.55"
             AbsoluteLayout.LayoutFlags="All"
             BackgroundColor="#d6eafa">
             <CollectionView.Header>
@@ -227,7 +227,8 @@
                                 HorizontalTextAlignment="Center"
                                 Text="{Binding NOME_CURSO}"
                                 TextColor="#092444"
-                                VerticalTextAlignment="Center" />
+                                VerticalTextAlignment="Center"
+                                LineBreakMode="WordWrap"/>
                             <Label
                                 Grid.Column="1"
                                 FontFamily="Montserrat-SemiBold"
@@ -235,7 +236,8 @@
                                 HorizontalTextAlignment="Center"
                                 Text="{Binding GRAU}"
                                 TextColor="#092444"
-                                VerticalTextAlignment="Center" />
+                                VerticalTextAlignment="Center"
+                                LineBreakMode="WordWrap"/>
                             <Label
                                 Grid.Column="2"
                                 FontFamily="Montserrat-SemiBold"
@@ -243,21 +245,22 @@
                                 HorizontalTextAlignment="Center"
                                 Text="{Binding MODALIDADE}"
                                 TextColor="#092444"
-                                VerticalTextAlignment="Center" />
+                                VerticalTextAlignment="Center"
+                                LineBreakMode="WordWrap"/>
                         </Grid>
                         <Frame.Triggers>
                             <DataTrigger
                                 Binding="{Binding IsEven}"
                                 TargetType="Frame"
                                 Value="True">
-                                <Setter Property="BackgroundColor" Value="#d6eafa" />
+                                <Setter Property="BackgroundColor" Value="#d8e8fb" />
                                 <!--  Cor para itens "pares"  -->
                             </DataTrigger>
                             <DataTrigger
                                 Binding="{Binding IsEven}"
                                 TargetType="Frame"
                                 Value="False">
-                                <Setter Property="BackgroundColor" Value="#a4c6e0" />
+                                <Setter Property="BackgroundColor" Value="#bcd7ed" />
                                 <!--  Cor para itens "ímpares"  -->
                             </DataTrigger>
                         </Frame.Triggers>

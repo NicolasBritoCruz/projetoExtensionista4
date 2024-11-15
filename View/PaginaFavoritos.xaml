@@ -8,7 +8,7 @@
 
     <AbsoluteLayout BackgroundColor="#ffffff">
         <Image
-            AbsoluteLayout.LayoutBounds="0.07,0.032,0.075,0.12"
+            AbsoluteLayout.LayoutBounds="0.09,0.032,0.1,0.12"
             AbsoluteLayout.LayoutFlags="All"
             Source="appiconfg1.png" />
         <Label
@@ -30,56 +30,53 @@
             AbsoluteLayout.LayoutFlags="All">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <Frame
-                        BorderColor="#ffffff"
-                        CornerRadius="20">
+                    <Frame BorderColor="#ffffff" CornerRadius="20">
                         <Frame.Background>
                             <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
-                                <GradientStop Color="#ffffff" Offset="0.3"/>
-                                <GradientStop Color="#bcd7ed" Offset="1"/>
+                                <GradientStop Offset="0.3" Color="#ffffff" />
+                                <GradientStop Offset="1" Color="#bcd7ed" />
                             </LinearGradientBrush>
                         </Frame.Background>
-                        <Grid RowDefinitions="*, *, Auto" ColumnDefinitions="Auto, *, Auto">
-                            <!-- Imagem da escola -->
+                        <Grid ColumnDefinitions="Auto, *, Auto" RowDefinitions="*, *, Auto">
+                            <!--  Imagem da escola  -->
                             <Image
-                                VerticalOptions="EndAndExpand"
-                                HorizontalOptions="Start"
-                                HeightRequest="65"
-                                WidthRequest="80"
-                                Source="escola.png"
                                 Grid.Row="0"
+                                Grid.RowSpan="2"
                                 Grid.Column="0"
-                                Grid.RowSpan="2" />
-                            <!-- Nome da universidade -->
-                            <Label 
-                                Padding="7,0,0,0"
-                                HeightRequest="40"
-                                Text="{Binding NOME_IES}"
-                                FontFamily="Montserrat-Bold"
-                                FontSize="13"
-                                TextColor="#092444"
-                                HorizontalTextAlignment="Start"
-                                VerticalTextAlignment="End"
+                                HeightRequest="65"
+                                HorizontalOptions="Start"
+                                Source="escola.png"
+                                VerticalOptions="EndAndExpand"
+                                WidthRequest="80" />
+                            <!--  Nome da universidade  -->
+                            <Label
                                 Grid.Row="0"
                                 Grid.Column="1"
-                                LineBreakMode="WordWrap" />
-                            <!-- Município -->
-                            <Label
                                 Padding="7,0,0,0"
-                                HeightRequest="20"
-                                Text="{Binding MUNICIPIO}"
+                                FontFamily="Montserrat-Bold"
+                                FontSize="13"
+                                HeightRequest="40"
+                                HorizontalTextAlignment="Start"
+                                LineBreakMode="WordWrap"
+                                Text="{Binding NOME_IES}"
+                                TextColor="#092444"
+                                VerticalTextAlignment="End" />
+                            <!--  Município  -->
+                            <Label
+                                Grid.Row="1"
+                                Grid.Column="1"
+                                Padding="7,0,0,0"
                                 FontFamily="Montserrat-SemiBold"
                                 FontSize="13"
-                                TextColor="#345d97"
+                                HeightRequest="20"
                                 HorizontalTextAlignment="Start"
-                                VerticalTextAlignment="Start"
-                                Grid.Row="1"
-                                Grid.Column="1" />
+                                Text="{Binding MUNICIPIO}"
+                                TextColor="#345d97"
+                                VerticalTextAlignment="Start" />
                         </Grid>
                     </Frame>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
-
     </AbsoluteLayout>
 </ContentPage>
