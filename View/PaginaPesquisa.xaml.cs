@@ -1,8 +1,7 @@
 using Extensionista.Models;
 using Extensionista.Repositories;
+using Extensionista.View;
 using System.Collections.ObjectModel;
-using System.Threading.Tasks;
-using Microsoft.Maui.Controls;
 
 namespace Extensionista
 {
@@ -10,6 +9,7 @@ namespace Extensionista
     {
         public ObservableCollection<Universidades> UniversidadesList { get; set; } = new ObservableCollection<Universidades>();
         private readonly CursosGeralRepository _cursosGeralRepository;
+        private readonly SisuCursosRepository _sisuCursosRepository;
         private int currentPage = 1;
         private bool hasMoreItems = true;
         private bool isLoading = false;
@@ -19,6 +19,7 @@ namespace Extensionista
             InitializeComponent();
             BindingContext = this;
             _cursosGeralRepository = new CursosGeralRepository();
+            _sisuCursosRepository = new SisuCursosRepository();
             ListaFaculdades.ItemsSource = UniversidadesList;
             NavigationPage.SetHasNavigationBar(this, false);
 
@@ -29,14 +30,18 @@ namespace Extensionista
         // Carrega a lista de faculdades com paginação e filtros opcionais
         private async Task LoadFaculdadesAsync(int? codigoIES = null, string municipio = null)
         {
-            if (isLoading || !hasMoreItems) return;
+            if (isLoading) return;
 
             isLoading = true;
+
             try
             {
                 // Chama a função do repositório diretamente com paginação e filtros
                 var universidades = await Task.Run(() =>
                     _cursosGeralRepository.ObterUniversidades(codigoIES, municipio, currentPage));
+
+                // Debug para validar os resultados retornados
+                Console.WriteLine($"Resultados retornados: {universidades.Count}");
 
                 if (universidades.Count == 0)
                 {
@@ -46,17 +51,19 @@ namespace Extensionista
 
                 foreach (var universidade in universidades)
                 {
-                    if (!UniversidadesList.Contains(universidade))
-                    {
-                        UniversidadesList.Add(universidade);
-                    }
+                    UniversidadesList.Add(universidade);
                 }
 
-                currentPage++; // Incrementa para a próxima página
+                // Incrementa a página apenas se não houver filtros ativos
+                if (codigoIES == null && string.IsNullOrEmpty(municipio))
+                {
+                    currentPage++;
+                }
             }
             catch (Exception ex)
             {
                 Console.WriteLine($"Erro ao carregar universidades: {ex.Message}");
+                await DisplayAlert("Erro", "Não foi possível carregar os dados.", "OK");
             }
             finally
             {
@@ -67,29 +74,44 @@ namespace Extensionista
         // Método acionado ao alcançar o limite de rolagem, carregando a próxima página
         private async void OnRemainingItemsThresholdReached(object sender, EventArgs e)
         {
-            await LoadFaculdadesAsync();
+            if (hasMoreItems)
+            {
+                await LoadFaculdadesAsync();
+            }
         }
 
         // Método de pesquisa otimizado para usar filtros diretamente no repositório
-        private void Pesquisar_Clicked(object sender, EventArgs e)
+        private async void Pesquisar_Clicked(object sender, EventArgs e)
         {
             var query = entrySearch.Text?.ToLower();
+
+            // Reinicia o estado da pesquisa
             UniversidadesList.Clear();
             currentPage = 1;
-            hasMoreItems = true;
+            hasMoreItems = false; // Impede carregamento incremental durante a pesquisa
+            isLoading = false;
 
-            // Determina se o usuário está buscando por código ou município e ajusta a pesquisa
             if (int.TryParse(query, out int codigoIES))
             {
-                _ = LoadFaculdadesAsync(codigoIES: codigoIES);
+                // Pesquisa por código IES
+                await LoadFaculdadesAsync(codigoIES: codigoIES);
             }
             else if (!string.IsNullOrEmpty(query))
             {
-                _ = LoadFaculdadesAsync(municipio: query);
+                // Pesquisa por município
+                await LoadFaculdadesAsync(municipio: query);
             }
             else
             {
-                _ = LoadFaculdadesAsync(); // Recarrega a lista completa se a pesquisa estiver vazia
+                // Recarrega a lista completa se a pesquisa estiver vazia
+                hasMoreItems = true; // Permite carregamento incremental novamente
+                await LoadFaculdadesAsync();
+            }
+
+            // Mostre uma mensagem se não houver resultados
+            if (UniversidadesList.Count == 0)
+            {
+                await DisplayAlert("Nenhum resultado", "Nenhuma universidade encontrada para os critérios de busca.", "OK");
             }
         }
 
@@ -98,17 +120,27 @@ namespace Extensionista
         {
             if (sender is Element element && element.BindingContext is Universidades selectedFaculdade)
             {
-                await Navigation.PushAsync(new PaginaLista(selectedFaculdade.ID_UNIVERSIDADE));
-            }
-        }
+                try
+                {
+                    // Verificar se o código IES existe no repositório de cursos SISU
+                    var cursosSisu = _sisuCursosRepository.ObterCursosSisu(selectedFaculdade.CODIGO_IES.ToString());
 
-        // Carrega a lista ao exibir a página, sem duplicar itens
-        protected override async void OnAppearing()
-        {
-            base.OnAppearing();
-            if (UniversidadesList.Count == 0 && !isLoading)
-            {
-                await LoadFaculdadesAsync();
+                    if (cursosSisu.Any())
+                    {
+                        // Navegar para a página `PaginaCurso`
+                        await Navigation.PushAsync(new NewPage1(selectedFaculdade.CODIGO_IES));
+                    }
+                    else
+                    {
+                        // Caso contrário, vá diretamente para `PaginaLista`
+                        await Navigation.PushAsync(new PaginaLista(selectedFaculdade.ID_UNIVERSIDADE));
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // Log ou mensagem de erro para o usuário
+                    await DisplayAlert("Erro", $"Ocorreu um erro ao verificar o SISU: {ex.Message}", "OK");
+                }
             }
         }
     }
