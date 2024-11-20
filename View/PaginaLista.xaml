@@ -30,8 +30,8 @@
             CornerRadius="25">
             <Frame.Background>
                 <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
-                    <GradientStop Color="#ffffff" Offset="0.5"/>
-                    <GradientStop Color="#bcd7ed" Offset="1"/>
+                    <GradientStop Offset="0.5" Color="#ffffff" />
+                    <GradientStop Offset="1" Color="#bcd7ed" />
                 </LinearGradientBrush>
             </Frame.Background>
         </Frame>
@@ -150,8 +150,7 @@
             x:Name="favoritar"
             AbsoluteLayout.LayoutBounds="0.11, 0.19"
             AbsoluteLayout.LayoutFlags="PositionProportional"
-            Clicked="favoritar_Clicked"
-             />
+            Clicked="favoritar_Clicked" />
 
         <Grid AbsoluteLayout.LayoutBounds="0.5, 0.108" AbsoluteLayout.LayoutFlags="PositionProportional">
             <Grid.RowDefinitions>
@@ -166,11 +165,22 @@
                 FontFamily="MontserratBold"
                 FontSize="15"
                 HorizontalOptions="Center"
+                LineBreakMode="WordWrap"
                 Text="{Binding NOME_IES}"
                 TextColor="white"
-                LineBreakMode="WordWrap"
                 VerticalOptions="Center" />
         </Grid>
+        <Label
+            x:Name="labelSISU"
+            AbsoluteLayout.LayoutBounds="0.5,0.15"
+            AbsoluteLayout.LayoutFlags="PositionProportional"
+            FontFamily="MontserratBold"
+            FontSize="15"
+            HorizontalOptions="Center"
+            LineBreakMode="WordWrap"
+            Text="Selecione um  curso e veja informações"
+            TextColor="#a4cdff"
+            VerticalOptions="Center" />
         <CollectionView
             x:Name="ListaCursos"
             AbsoluteLayout.LayoutBounds="0.5, 0.89, 0.9, 0.55"
@@ -214,6 +224,9 @@
                         BackgroundColor="#d6eafa"
                         BorderColor="#092444"
                         CornerRadius="0">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer CommandParameter="{Binding}" Tapped="OnCursoSelected" />
+                        </Frame.GestureRecognizers>
                         <Grid Padding="5">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*" />
@@ -225,28 +238,28 @@
                                 FontFamily="Montserrat-SemiBold"
                                 FontSize="14"
                                 HorizontalTextAlignment="Center"
+                                LineBreakMode="WordWrap"
                                 Text="{Binding NOME_CURSO}"
                                 TextColor="#092444"
-                                VerticalTextAlignment="Center"
-                                LineBreakMode="WordWrap"/>
+                                VerticalTextAlignment="Center" />
                             <Label
                                 Grid.Column="1"
                                 FontFamily="Montserrat-SemiBold"
                                 FontSize="14"
                                 HorizontalTextAlignment="Center"
+                                LineBreakMode="WordWrap"
                                 Text="{Binding GRAU}"
                                 TextColor="#092444"
-                                VerticalTextAlignment="Center"
-                                LineBreakMode="WordWrap"/>
+                                VerticalTextAlignment="Center" />
                             <Label
                                 Grid.Column="2"
                                 FontFamily="Montserrat-SemiBold"
                                 FontSize="14"
                                 HorizontalTextAlignment="Center"
+                                LineBreakMode="WordWrap"
                                 Text="{Binding MODALIDADE}"
                                 TextColor="#092444"
-                                VerticalTextAlignment="Center"
-                                LineBreakMode="WordWrap"/>
+                                VerticalTextAlignment="Center" />
                         </Grid>
                         <Frame.Triggers>
                             <DataTrigger

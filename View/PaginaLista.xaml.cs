@@ -1,5 +1,7 @@
 using Extensionista.Models;
 using Extensionista.Repositories;
+using Extensionista.View;
+using System.Globalization;
 using System.Linq;
 
 namespace Extensionista
@@ -12,7 +14,7 @@ namespace Extensionista
         public PaginaLista(int idUniversidade, bool estaNoSisu)
         {
             InitializeComponent();
-            CarregarCursos(idUniversidade);
+            CarregarCursos(idUniversidade, estaNoSisu);
             NavigationPage.SetHasNavigationBar(this, false);
         }
 
@@ -21,7 +23,7 @@ namespace Extensionista
             await Navigation.PopAsync();
         }
 
-        private void CarregarCursos(int idUniversidade)
+        private void CarregarCursos(int idUniversidade, bool estaNoSisu)
         {
             var repository = new CursosGeralRepository();
             var universidades = repository.ObterUniversidade(idUniversidade);
@@ -38,6 +40,8 @@ namespace Extensionista
                 {
                     var favorito = favoritos.FirstOrDefault(f => f.ID_UNIVERSIDADE == curso.ID_UNIVERSIDADE);
                     curso.Favorito = favorito != null;  // Marca como favoritado ou não
+
+                    curso.CODIGO_CURSO = universidades.CODIGO_IES;
                 }
 
                 for (int i = 0; i < cursos.Count; i++)
@@ -56,6 +60,15 @@ namespace Extensionista
                 AtualizarIconeFavoritar(universidades.Favorito);
 
                 this.BindingContext = universidades;
+
+                if (estaNoSisu)
+                    {
+                    labelSISU.IsVisible = true;
+                    }
+                else
+                {
+                    labelSISU.IsVisible = false;
+                }
             }
         
         }
@@ -99,6 +112,29 @@ namespace Extensionista
             AtualizarIconeFavoritar(universidade.Favorito);
 
             MessagingCenter.Send(this, "AtualizarFavoritos");
+        }
+
+        private async void OnCursoSelected(object sender, TappedEventArgs e)
+        {
+            if (sender is Element element && element.BindingContext is Cursos selectedCurso)
+            {
+                try
+                {
+                    string CodigoIes = selectedCurso.CODIGO_CURSO.ToString();
+
+                    var sisuCursosRepository = new SisuCursosRepository();
+                    var cursosSisu = sisuCursosRepository.ObterCursosSisu(CodigoIes);
+
+                    if (cursosSisu.Any())
+                    { 
+                    await Navigation.PushAsync(new PaginaCurso(selectedCurso));
+                    }
+                }
+                catch (Exception ex)
+                {
+                    await DisplayAlert("Erro", $"Ocorreu um erro ao abrir o curso: {ex.Message}", "OK");
+                }
+            }
         }
     }
 }

@@ -6,7 +6,6 @@ namespace Extensionista.Models
     {
         [Key]
         public string Id_Curso { get; set; } = string.Empty;
-
         public string Codigo_Ies { get; set; } = string.Empty;
         public string Nome_Curso { get; set; } = string.Empty;
         public int Qt_Vagas { get; set; } = 0;

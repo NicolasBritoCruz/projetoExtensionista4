@@ -55,29 +55,25 @@
             AbsoluteLayout.LayoutBounds="0.14, 0.15, 0.35, 0.35"
             AbsoluteLayout.LayoutFlags="All"
             Source="escola.png" />
-        <Grid
+        <Grid 
             Padding="0"
-            AbsoluteLayout.LayoutBounds="0.85, 0.235, 0.45, 0.2"
+            AbsoluteLayout.LayoutBounds="0.815, 0.235, 0.45, 0.06"
             AbsoluteLayout.LayoutFlags="All">
             <!--  Definindo as colunas e linhas do Grid  -->
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="89" />
-                <!--  Coluna 1 para os rótulos  -->
                 <ColumnDefinition Width="*" />
-                <!--  Coluna 2 para os valores  -->
             </Grid.ColumnDefinitions>
-
             <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
-                <!--  Linha 1  -->
-                <RowDefinition Height="Auto" />
-                <!--  Linha 2  -->
-                <RowDefinition Height="Auto" />
-                <!--  Linha 3  -->
-                <RowDefinition Height="Auto" />
-                <!--  Linha 4  -->
+                <RowDefinition Height="*" />
             </Grid.RowDefinitions>
-            <!--  colocar bidings  -->
+            <Label
+             HorizontalOptions="Center"
+             FontFamily="MontserratSemiBold"
+             FontSize="13" 
+             LineBreakMode="WordWrap"
+             Text="{Binding NOME_CURSO}"
+             VerticalOptions="Start"
+             TextColor="#092444"/> 
         </Grid>
         <Frame
             AbsoluteLayout.LayoutBounds="0.5, 0.108, 0.85, 0.073"
@@ -93,33 +89,43 @@
                 <ColumnDefinition Width="360" />
             </Grid.ColumnDefinitions>
             <Label
+                x:Name="labelNome"
                 Grid.Row="0"
                 Grid.Column="0"
                 FontFamily="MontserratSemiBold"
                 FontSize="15"
                 HorizontalOptions="Center"
                 LineBreakMode="WordWrap"
-                Text="{Binding NOME_IES}"
+                Text=""
                 TextColor="white"
                 VerticalOptions="Center" />
         </Grid>
+       
         <CollectionView
-            x:Name="ListaCursos"
-            AbsoluteLayout.LayoutBounds="0.5, 0.8, 0.85, 0.5"
+            x:Name="PesoNotasSisu"
+            AbsoluteLayout.LayoutBounds="0.5, 0.63, 0.85, 0.315"
             AbsoluteLayout.LayoutFlags="All"
             BackgroundColor="#d6eafa">
             <CollectionView.Header>
-                <Grid Padding="10" BackgroundColor="#092444">
+                <Grid Padding="13" BackgroundColor="#092444">
                     <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
                     <Label
-                        Grid.Column="2"
+                        Grid.Column="0"
                         FontFamily="Montserrat-SemiBold"
                         FontSize="16"
                         HorizontalTextAlignment="Center"
-                        Text="PESO DAS NOTAS"
+                        Text="PROVA"
                         VerticalTextAlignment="Center" />
+                    <Label
+                        Grid.Column="1"
+                        FontFamily="Montserrat-SemiBold"
+                        FontSize="16"
+                        HorizontalTextAlignment="Center"
+                        Text="PESO"
+                        VerticalTextAlignment="Center" />       
                 </Grid>
             </CollectionView.Header>
             <CollectionView.ItemTemplate>
@@ -135,7 +141,113 @@
                                 <ColumnDefinition Width="*" />
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
-                            <!--  colocar os bidings  -->
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />                       
+                            </Grid.RowDefinitions>
+                            <Label
+                                 Padding="5"
+                                 Grid.Column="0"
+                                 Grid.Row="0"
+                                 FontFamily="Montserrat-SemiBold"
+                                 FontSize="16"
+                                 HorizontalTextAlignment="Center"
+                                 Text="Ciências Humanas"
+                                 VerticalTextAlignment="Center"
+                                 TextColor="#092444"/>
+                            <Label
+                                 Padding="5"
+                                 Grid.Column="1"
+                                 Grid.Row="0"
+                                 FontFamily="Montserrat-SemiBold"
+                                 FontSize="16"
+                                 HorizontalTextAlignment="Center"
+                                 Text="{Binding Peso_Ch}"
+                                 VerticalTextAlignment="Center"
+                                 TextColor="#092444"/>
+                            <Label
+                                 Padding="5"
+                                 Grid.Column="0"
+                                 Grid.Row="1"
+                                 FontFamily="Montserrat-SemiBold"
+                                 FontSize="16"
+                                 HorizontalTextAlignment="Center"
+                                 Text="Linguagens"
+                                 VerticalTextAlignment="Center"
+                                 TextColor="#092444"/>
+                            <Label
+                                 Padding="5"
+                                 Grid.Column="1"
+                                 Grid.Row="1"
+                                 FontFamily="Montserrat-SemiBold"
+                                 FontSize="16"
+                                 HorizontalTextAlignment="Center"
+                                 Text="{Binding Peso_L}"
+                                 VerticalTextAlignment="Center"
+                                 TextColor="#092444"/>
+                            <Label 
+                                 Padding="5"
+                                 Grid.Column="0"
+                                 Grid.Row="2"
+                                 FontFamily="Montserrat-SemiBold"
+                                 FontSize="16"
+                                 HorizontalTextAlignment="Center"
+                                 Text="Redação"
+                                 VerticalTextAlignment="Center"
+                                 TextColor="#092444"/>              
+                            <Label
+                                 Padding="5"
+                                 Grid.Column="1"
+                                 Grid.Row="2"
+                                 FontFamily="Montserrat-SemiBold"
+                                 FontSize="16"
+                                 HorizontalTextAlignment="Center"
+                                 Text="{Binding Peso_R}"
+                                 VerticalTextAlignment="Center"
+                                 TextColor="#092444"/>
+                            <Label
+                                 Padding="5"
+                                 Grid.Column="0"
+                                 Grid.Row="3"
+                                 FontFamily="Montserrat-SemiBold"
+                                 FontSize="16"
+                                 HorizontalTextAlignment="Center"
+                                 Text="Matemática"
+                                 VerticalTextAlignment="Center"
+                                 TextColor="#092444"/>
+                            <Label
+                                 Padding="5"
+                                 Grid.Column="1"
+                                 Grid.Row="3"
+                                 FontFamily="Montserrat-SemiBold"
+                                 FontSize="16"
+                                 HorizontalTextAlignment="Center"
+                                 Text="{Binding Peso_M}"
+                                 VerticalTextAlignment="Center"
+                                 TextColor="#092444"/>
+                            <Label
+                                 Padding="5"
+                                 Grid.Column="0"
+                                 Grid.Row="4"
+                                 FontFamily="Montserrat-SemiBold"
+                                 FontSize="16"
+                                 HorizontalTextAlignment="Center"
+                                 Text="Ciências da Natureza"
+                                 VerticalTextAlignment="Center"
+                                 TextColor="#092444"/>
+                            <Label
+                                 Padding="5"
+                                 Grid.Column="1"
+                                 Grid.Row="4"
+                                 FontFamily="Montserrat-SemiBold"
+                                 FontSize="16"
+                                 HorizontalTextAlignment="Center"
+                                 Text="{Binding Peso_Cn}"
+                                 VerticalTextAlignment="Center"
+                                 TextColor="#092444"/>
                         </Grid>
                         <Frame.Triggers>
                             <DataTrigger
