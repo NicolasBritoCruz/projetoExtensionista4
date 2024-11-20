@@ -9,7 +9,7 @@ namespace Extensionista
         private int codigoIES;
         private string municipio;
 
-        public PaginaLista(int idUniversidade)
+        public PaginaLista(int idUniversidade, bool estaNoSisu)
         {
             InitializeComponent();
             CarregarCursos(idUniversidade);

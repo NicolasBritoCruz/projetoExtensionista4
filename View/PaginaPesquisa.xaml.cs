@@ -124,17 +124,16 @@ namespace Extensionista
                 {
                     // Verificar se o código IES existe no repositório de cursos SISU
                     var cursosSisu = _sisuCursosRepository.ObterCursosSisu(selectedFaculdade.CODIGO_IES.ToString());
+                    bool estaNoSisu = cursosSisu.Any();
 
-                    if (cursosSisu.Any())
-                    {
-                        // Navegar para a página `PaginaCurso`
-                        await Navigation.PushAsync(new NewPage1(selectedFaculdade.CODIGO_IES));
-                    }
-                    else
-                    {
-                        // Caso contrário, vá diretamente para `PaginaLista`
-                        await Navigation.PushAsync(new PaginaLista(selectedFaculdade.ID_UNIVERSIDADE));
-                    }
+                    string mensagem = estaNoSisu
+                    ? "Esta universidade participa do SISU."
+                    : "Esta universidade não participa do SISU.";
+
+                    await DisplayAlert("Informação SISU", mensagem, "OK");
+
+                    // Caso contrário, vá diretamente para `PaginaLista`
+                    await Navigation.PushAsync(new PaginaLista(selectedFaculdade.ID_UNIVERSIDADE, estaNoSisu));
                 }
                 catch (Exception ex)
                 {
