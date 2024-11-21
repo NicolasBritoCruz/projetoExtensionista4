@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage
     x:Class="Extensionista.PaginaFavoritos"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
@@ -31,6 +30,11 @@
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <Frame BorderColor="#ffffff" CornerRadius="20">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer
+                    CommandParameter="{Binding}"
+                    Tapped="OnFavoritoSelected" />
+                        </Frame.GestureRecognizers>
                         <Frame.Background>
                             <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
                                 <GradientStop Offset="0.3" Color="#ffffff" />
@@ -38,45 +42,60 @@
                             </LinearGradientBrush>
                         </Frame.Background>
                         <Grid ColumnDefinitions="Auto, *, Auto" RowDefinitions="*, *, Auto">
-                            <!--  Imagem da escola  -->
+                            <!-- Imagem da escola -->
                             <Image
-                                Grid.Row="0"
-                                Grid.RowSpan="2"
-                                Grid.Column="0"
-                                HeightRequest="65"
-                                HorizontalOptions="Start"
-                                Source="escola.png"
-                                VerticalOptions="EndAndExpand"
-                                WidthRequest="80" />
-                            <!--  Nome da universidade  -->
+                    Grid.Row="0"
+                    Grid.RowSpan="2"
+                    Grid.Column="0"
+                    HeightRequest="65"
+                    HorizontalOptions="Start"
+                    Source="escola.png"
+                    VerticalOptions="EndAndExpand"
+                    WidthRequest="80" />
+                            <!-- Nome da universidade -->
                             <Label
-                                Grid.Row="0"
-                                Grid.Column="1"
-                                Padding="7,0,0,0"
-                                FontFamily="Montserrat-Bold"
-                                FontSize="13"
-                                HeightRequest="40"
-                                HorizontalTextAlignment="Start"
-                                LineBreakMode="WordWrap"
-                                Text="{Binding NOME_IES}"
-                                TextColor="#092444"
-                                VerticalTextAlignment="End" />
-                            <!--  Município  -->
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    Padding="7,0,0,0"
+                    FontFamily="Montserrat-Bold"
+                    FontSize="13"
+                    HeightRequest="40"
+                    HorizontalTextAlignment="Start"
+                    LineBreakMode="WordWrap"
+                    Text="{Binding NOME_IES}"
+                    TextColor="#092444"
+                    VerticalTextAlignment="End" />
+                            <!-- Município -->
                             <Label
-                                Grid.Row="1"
-                                Grid.Column="1"
-                                Padding="7,0,0,0"
-                                FontFamily="Montserrat-SemiBold"
-                                FontSize="13"
-                                HeightRequest="20"
-                                HorizontalTextAlignment="Start"
-                                Text="{Binding MUNICIPIO}"
-                                TextColor="#345d97"
-                                VerticalTextAlignment="Start" />
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Padding="7,0,0,0"
+                    FontFamily="Montserrat-SemiBold"
+                    FontSize="13"
+                    HeightRequest="20"
+                    HorizontalTextAlignment="Start"
+                    Text="{Binding MUNICIPIO}"
+                    TextColor="#345d97"
+                    VerticalTextAlignment="Start" />
+                            <!-- Botão de remoção -->
+                            <ImageButton
+                    Grid.Row="0"
+                    Grid.RowSpan="2"
+                    Grid.Column="2"
+                    Source="x.png"
+                    WidthRequest="30"
+                    HeightRequest="30"
+                    HorizontalOptions="End"
+                    VerticalOptions="Center"
+                                BackgroundColor="Transparent"
+                    BorderWidth="0"
+                    Clicked="RemoverFavorito_Clicked"
+                    CommandParameter="{Binding}" />
                         </Grid>
                     </Frame>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
+
         </CollectionView>
     </AbsoluteLayout>
 </ContentPage>

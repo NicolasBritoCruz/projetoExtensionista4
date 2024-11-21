@@ -10,8 +10,4 @@
     BarBackground="#f9fbfa"
     SelectedTabColor="#193163"
     UnselectedTabColor="#477ded">
-
-    <pages:PaginaInicio />
-    <pages:PaginaFavoritos />
-
 </TabbedPage>
