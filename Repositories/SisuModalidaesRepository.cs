@@ -15,7 +15,7 @@ namespace Extensionista.Repositories
         public List<SisuModalidades> ObterCursosPorIdCurso(string IdCurso)
         {
             var cursos = _connection.Table<SisuModalidades>()
-                                    .Where(c => c.Id_Curso == IdCurso)                                    
+                                    .Where(c => c.ID_CURSO == IdCurso)                                    
                                     .ToList();
 
             return cursos;

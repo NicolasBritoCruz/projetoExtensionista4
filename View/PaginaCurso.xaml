@@ -165,7 +165,7 @@
                                 FontFamily="Montserrat-SemiBold"
                                 FontSize="16"
                                 HorizontalTextAlignment="Center"
-                                Text="{Binding Peso_Ch}"
+                                Text="{Binding PESO_CH}"
                                 TextColor="#092444"
                                 VerticalTextAlignment="Center" />
                             <Label
@@ -185,7 +185,7 @@
                                 FontFamily="Montserrat-SemiBold"
                                 FontSize="16"
                                 HorizontalTextAlignment="Center"
-                                Text="{Binding Peso_L}"
+                                Text="{Binding PESO_L}"
                                 TextColor="#092444"
                                 VerticalTextAlignment="Center" />
                             <Label
@@ -205,7 +205,7 @@
                                 FontFamily="Montserrat-SemiBold"
                                 FontSize="16"
                                 HorizontalTextAlignment="Center"
-                                Text="{Binding Peso_R}"
+                                Text="{Binding PESO_R}"
                                 TextColor="#092444"
                                 VerticalTextAlignment="Center" />
                             <Label
@@ -225,7 +225,7 @@
                                 FontFamily="Montserrat-SemiBold"
                                 FontSize="16"
                                 HorizontalTextAlignment="Center"
-                                Text="{Binding Peso_M}"
+                                Text="{Binding PESO_M}"
                                 TextColor="#092444"
                                 VerticalTextAlignment="Center" />
                             <Label
@@ -245,7 +245,7 @@
                                 FontFamily="Montserrat-SemiBold"
                                 FontSize="16"
                                 HorizontalTextAlignment="Center"
-                                Text="{Binding Peso_Cn}"
+                                Text="{Binding PESO_CN}"
                                 TextColor="#092444"
                                 VerticalTextAlignment="Center" />
                         </Grid>
