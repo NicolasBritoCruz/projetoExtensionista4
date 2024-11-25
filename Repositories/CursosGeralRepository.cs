@@ -31,21 +31,21 @@ namespace Extensionista.Repositories
             return universidade;
         }
 
-        public List<Universidades> ObterUniversidades(int? codigoIES = null, string municipio = null, int page = 1)
+        public List<Universidades> ObterUniversidades(int? codigoIES = null, string municipio = null, string nome = null,  int page = 1)
         {
             var query = _connection.Table<Universidades>().AsQueryable();
             int pageSize = 20; // Número de resultados por página
             int skipAmount = (page - 1) * pageSize; // Quantidade de registros a ignorar
 
-            if (codigoIES.HasValue)
+            if (!string.IsNullOrEmpty(municipio) || !string.IsNullOrEmpty(nome))
             {
-                // Se um código específico for passado, filtra pela faculdade com esse código
-                query = query.Where(u => u.CODIGO_IES == codigoIES.Value);
-            }
+                string normalizedMunicipio = municipio?.Trim().ToLower() ?? string.Empty;
+                string normalizedNome = nome?.Trim().ToLower() ?? string.Empty;
 
-            if (!string.IsNullOrEmpty(municipio))
-            {
-                query = query.Where(u => u.MUNICIPIO.ToLower().Contains(municipio.ToLower()));
+                query = query.Where(u =>
+                    (!string.IsNullOrEmpty(normalizedMunicipio) && u.MUNICIPIO.Trim().ToLower().Contains(normalizedMunicipio)) ||
+                    (!string.IsNullOrEmpty(normalizedNome) && u.NOME_IES.Trim().ToLower().Contains(normalizedNome))
+                );
             }
 
             var universidades = query

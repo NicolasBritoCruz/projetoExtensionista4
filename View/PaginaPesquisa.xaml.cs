@@ -28,7 +28,7 @@ namespace Extensionista
         }
 
         // Carrega a lista de faculdades com paginação e filtros opcionais
-        private async Task LoadFaculdadesAsync(int? codigoIES = null, string municipio = null)
+        private async Task LoadFaculdadesAsync(int? codigoIES = null, string municipio = null, string nome = null)
         {
             if (isLoading) return;
 
@@ -36,16 +36,14 @@ namespace Extensionista
 
             try
             {
-                // Chama a função do repositório diretamente com paginação e filtros
+                // Chama o repositório com os filtros suportados (código IES e município)
                 var universidades = await Task.Run(() =>
-                    _cursosGeralRepository.ObterUniversidades(codigoIES, municipio, currentPage));
+                    _cursosGeralRepository.ObterUniversidades(codigoIES, municipio, nome, currentPage));
 
-                // Debug para validar os resultados retornados
-                Console.WriteLine($"Resultados retornados: {universidades.Count}");
-
+                // Verifica se ainda há itens a carregar
                 if (universidades.Count == 0)
                 {
-                    hasMoreItems = false; // Marca como última página se não houver mais itens
+                    hasMoreItems = false;
                     return;
                 }
 
@@ -54,8 +52,8 @@ namespace Extensionista
                     UniversidadesList.Add(universidade);
                 }
 
-                // Incrementa a página apenas se não houver filtros ativos
-                if (codigoIES == null && string.IsNullOrEmpty(municipio))
+                // Incrementa a página apenas se não houver filtros
+                if (codigoIES == null && string.IsNullOrEmpty(municipio) && string.IsNullOrEmpty(nome))
                 {
                     currentPage++;
                 }
@@ -91,15 +89,10 @@ namespace Extensionista
             hasMoreItems = false; // Impede carregamento incremental durante a pesquisa
             isLoading = false;
 
-            if (int.TryParse(query, out int codigoIES))
+            if (!string.IsNullOrEmpty(query))
             {
-                // Pesquisa por código IES
-                await LoadFaculdadesAsync(codigoIES: codigoIES);
-            }
-            else if (!string.IsNullOrEmpty(query))
-            {
-                // Pesquisa por município
-                await LoadFaculdadesAsync(municipio: query);
+                // Pesquisa por município ou nome da universidade
+                await LoadFaculdadesAsync(municipio: query, nome: query);
             }
             else
             {
@@ -112,6 +105,8 @@ namespace Extensionista
             if (UniversidadesList.Count == 0)
             {
                 await DisplayAlert("Nenhum resultado", "Nenhuma universidade encontrada para os critérios de busca.", "OK");
+                hasMoreItems = true;
+                await LoadFaculdadesAsync();
             }
         }
 

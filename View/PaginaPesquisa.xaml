@@ -1,34 +1,33 @@
 <ContentPage
     x:Class="Extensionista.PaginaPesquisa"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    Title="Pesquisa"
-    IconImageSource="pesquisa.png">
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
 
     <StackLayout Padding="10" BackgroundColor="#ffffff">
         <!-- Barra de Pesquisa -->
         <Frame
-            Margin="0,10"
-            Padding="10"
-            BackgroundColor="#f0f0f5"
-            CornerRadius="20"
-            HasShadow="False">
+        Margin="0,10"
+        Padding="10"
+        BackgroundColor="#f0f0f5"
+        CornerRadius="20"
+        HasShadow="False">
             <Grid>
-                <Entry
-                    x:Name="entrySearch"
-                    HorizontalOptions="FillAndExpand"
-                    Placeholder="Digite a cidade ou nome da universidade"
-                    FontFamily="MontserratSemiBold"
-                    TextColor="Black" />
-                <ImageButton
-                    Margin="0,0,5,0"
-                    Clicked="Pesquisar_Clicked"
-                    HeightRequest="20"
-                    HorizontalOptions="End"
-                    Source="pesquisa.png"
-                    WidthRequest="20" />
+                <Entry x:Name="entrySearch"
+                 Placeholder="Busque por cidade ou universidade"
+                 HorizontalOptions="FillAndExpand"
+                 VerticalOptions="Center"
+                 TextColor="Black"
+                 FontFamily="MontserratSemiBold"
+                 Margin="10" />
+                <ImageButton x:Name="SearchIcon"
+                 Source="pesquisa.png"
+                 Clicked="Pesquisar_Clicked"
+                 BackgroundColor="Transparent"
+                 HorizontalOptions="End"
+                 VerticalOptions="Center" />
             </Grid>
         </Frame>
+
 
         <!-- Cabeçalho da tabela -->
         <Frame
