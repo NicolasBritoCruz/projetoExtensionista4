@@ -31,7 +31,7 @@ namespace Extensionista.Repositories
             return universidade;
         }
 
-        public List<Universidades> ObterUniversidades(int? codigoIES = null, string municipio = null, string nome = null,  int page = 1)
+        public List<Universidades> ObterUniversidades(int? codigoIES = null, string municipio = null, string nome = null, int page = 1)
         {
             var query = _connection.Table<Universidades>().AsQueryable();
             int pageSize = 20; // Número de resultados por página
@@ -50,7 +50,7 @@ namespace Extensionista.Repositories
 
             var universidades = query
                 .Skip(skipAmount)
-                .Take(20)
+                .Take(pageSize)
                 .ToList();
 
             // Converte os valores numéricos para strings para cada curso

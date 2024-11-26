@@ -36,26 +36,27 @@ namespace Extensionista
 
             try
             {
-                // Chama o repositório com os filtros suportados (código IES e município)
+                // Obtém as universidades com base nos filtros e na página atual
                 var universidades = await Task.Run(() =>
                     _cursosGeralRepository.ObterUniversidades(codigoIES, municipio, nome, currentPage));
 
-                // Verifica se ainda há itens a carregar
-                if (universidades.Count == 0)
+                // Verifica se há mais itens a carregar
+                if (universidades.Count > 0)
                 {
-                    hasMoreItems = false;
-                    return;
-                }
+                    foreach (var universidade in universidades)
+                    {
+                        UniversidadesList.Add(universidade);
+                    }
 
-                foreach (var universidade in universidades)
-                {
-                    UniversidadesList.Add(universidade);
-                }
-
-                // Incrementa a página apenas se não houver filtros
-                if (codigoIES == null && string.IsNullOrEmpty(municipio) && string.IsNullOrEmpty(nome))
-                {
-                    currentPage++;
+                    if (universidades.Count == 20) // Se o número de resultados for 20, há mais páginas
+                    {
+                        currentPage++;
+                        hasMoreItems = true;
+                    }
+                    else
+                    {
+                        hasMoreItems = false; // Não há mais páginas
+                    }
                 }
             }
             catch (Exception ex)
@@ -74,7 +75,7 @@ namespace Extensionista
         {
             if (hasMoreItems)
             {
-                await LoadFaculdadesAsync();
+                await LoadFaculdadesAsync(municipio: entrySearch.Text?.ToLower());
             }
         }
 
