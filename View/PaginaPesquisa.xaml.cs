@@ -121,8 +121,14 @@ namespace Extensionista
                     var cursosSisu = _sisuCursosRepository.ObterCursosSisu(selectedFaculdade.CODIGO_IES.ToString());
                     bool estaNoSisu = cursosSisu.Any();
 
-                    // Caso contrário, vá diretamente para `PaginaLista`
-                    await Navigation.PushAsync(new PaginaLista(selectedFaculdade.ID_UNIVERSIDADE, estaNoSisu));
+                    if (estaNoSisu)
+                    {
+                        await Navigation.PushAsync(new PaginaListaS(selectedFaculdade.ID_UNIVERSIDADE));
+                    }
+                    else
+                    {
+                        await Navigation.PushAsync(new PaginaLista(selectedFaculdade.ID_UNIVERSIDADE, estaNoSisu));
+                    }
                 }
                 catch (Exception ex)
                 {

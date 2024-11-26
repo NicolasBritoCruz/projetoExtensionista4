@@ -20,5 +20,6 @@ namespace Extensionista.Models
         public float PESO_M { get; set; } = 0.0f;
         public float PESO_R { get; set; } = 0.0f;
         public string SITE_IES { get; set; } = string.Empty;
+        public bool Favorito { get; set; }
     }
 }

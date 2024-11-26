@@ -62,9 +62,7 @@ namespace Extensionista
                 AtualizarIconeFavoritar(universidades.Favorito);
 
                 this.BindingContext = universidades;
-
-                // Controla visibilidade do label do SISU
-                labelSISU.IsVisible = estaNoSisu;
+ 
             }
         }
 
@@ -130,29 +128,6 @@ namespace Extensionista
 
                 // Notifica outras páginas sobre a mudança
                 MessagingCenter.Send(this, "AtualizarFavoritos");
-            }
-        }
-
-        private async void OnCursoSelected(object sender, TappedEventArgs e)
-        {
-            if (sender is Element element && element.BindingContext is Cursos selectedCurso)
-            {
-                try
-                {
-                    string CodigoIes = selectedCurso.CODIGO_CURSO.ToString();
-
-                    var sisuCursosRepository = new SisuCursosRepository();
-                    var cursosSisu = sisuCursosRepository.ObterCursosSisu(CodigoIes);
-
-                    if (cursosSisu.Any())
-                    {
-                        await Navigation.PushAsync(new PaginaCurso(selectedCurso));
-                    }
-                }
-                catch (Exception ex)
-                {
-                    await DisplayAlert("Erro", $"Ocorreu um erro ao abrir o curso: {ex.Message}", "OK");
-                }
             }
         }
     }

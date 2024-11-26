@@ -170,17 +170,6 @@
                 TextColor="white"
                 VerticalOptions="Center" />
         </Grid>
-        <Label
-            x:Name="labelSISU"
-            AbsoluteLayout.LayoutBounds="0.5,0.15"
-            AbsoluteLayout.LayoutFlags="PositionProportional"
-            FontFamily="MontserratBold"
-            FontSize="15"
-            HorizontalOptions="Center"
-            LineBreakMode="WordWrap"
-            Text="Selecione um  curso e veja informações"
-            TextColor="#a4cdff"
-            VerticalOptions="Center" />
         <CollectionView
             x:Name="ListaCursos"
             AbsoluteLayout.LayoutBounds="0.5, 0.89, 0.9, 0.55"
@@ -224,9 +213,6 @@
                         BackgroundColor="#d6eafa"
                         BorderColor="#092444"
                         CornerRadius="0">
-                        <Frame.GestureRecognizers>
-                            <TapGestureRecognizer CommandParameter="{Binding}" Tapped="OnCursoSelected" />
-                        </Frame.GestureRecognizers>
                         <Grid Padding="5">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*" />
