@@ -1,20 +1,21 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Extensionista.View.PaginaIndicadores"
-             Title="PaginaIndicadores">
+<ContentPage
+    x:Class="Extensionista.View.PaginaIndicadores"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="PaginaIndicadores">
     <AbsoluteLayout BackgroundColor="#ffffff">
         <Image
             AbsoluteLayout.LayoutBounds="0.09,0.06,0.1,0.12"
             AbsoluteLayout.LayoutFlags="All"
             Source="appiconfg1.png" />
         <ImageButton
-             x:Name="sairIndicadores"
-             AbsoluteLayout.LayoutBounds="0.95, 0.034"
-             AbsoluteLayout.LayoutFlags="PositionProportional"
-             Clicked="sairIndicadores_Clicked"
-             HeightRequest="35"
-             Source="x.png" />
+            x:Name="sairIndicadores"
+            AbsoluteLayout.LayoutBounds="0.95, 0.087"
+            AbsoluteLayout.LayoutFlags="PositionProportional"
+            Clicked="sairIndicadores_Clicked"
+            HeightRequest="35"
+            Source="x.png" />
         <Label
             AbsoluteLayout.LayoutBounds="0.5, 0.094"
             AbsoluteLayout.LayoutFlags="PositionProportional"
@@ -22,6 +23,18 @@
             FontSize="24"
             Text="Indicadores"
             TextColor="#092444" />
+        <Label
+            AbsoluteLayout.LayoutBounds="0.5, 0.22"
+            AbsoluteLayout.LayoutFlags="PositionProportional"
+            FontFamily="MontserratSemiBold"
+            FontSize="18"
+            Text="Quantidade de Vagas por Modalidade"
+            TextColor="#092444" />
+        <GraphicsView
+            AbsoluteLayout.LayoutBounds="0.48, 0.5, 0.3,0.3"
+            AbsoluteLayout.LayoutFlags="All"
+            x:Name="BarrasGrafico"
+            HeightRequest="300"
+            WidthRequest="400" />
     </AbsoluteLayout>
-
 </ContentPage>
