@@ -21,10 +21,10 @@ namespace Extensionista.Repositories
             return SisuCursos;
         }
 
-        public List<SisuCursos> ObterCursoSisuID(String CodigoIES, String IdCurso)
+        public List<SisuCursos> ObterCursoSisuID(String IdCurso)
         {
             var SisuCursos = _connection.Table<SisuCursos>()
-                                        .Where(u => u.CODIGO_IES == CodigoIES && u.ID_CURSO == IdCurso)                                        
+                                        .Where(u => u.ID_CURSO == IdCurso)                                        
                                         .ToList();
             return SisuCursos;
         }

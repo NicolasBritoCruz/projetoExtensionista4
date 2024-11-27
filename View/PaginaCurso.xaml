@@ -43,6 +43,7 @@
             Text="Curso:"
             TextColor="#092444" />
         <Button
+            x:Name="IndicadoresButton"
             AbsoluteLayout.LayoutBounds="0.75,0.305,0.34,0.07"
             AbsoluteLayout.LayoutFlags="All"
             BackgroundColor="#ffffff"
@@ -50,7 +51,8 @@
             BorderWidth="1"
             FontFamily="Montserrat-SemiBold"
             Text="Ver indicadores"
-            TextColor="#345d97" />
+            TextColor="#345d97" 
+            Clicked="IndicadoresButton_Clicked"/>
         <Image
             AbsoluteLayout.LayoutBounds="0.14, 0.15, 0.35, 0.35"
             AbsoluteLayout.LayoutFlags="All"
@@ -96,11 +98,10 @@
                 FontSize="15"
                 HorizontalOptions="Center"
                 LineBreakMode="WordWrap"
-                Text=""
+                Text="{Binding NOME_IES}"
                 TextColor="white"
                 VerticalOptions="Center" />
         </Grid>
-
         <CollectionView
             x:Name="PesoNotasSisu"
             AbsoluteLayout.LayoutBounds="0.5, 0.67, 0.85, 0.36"

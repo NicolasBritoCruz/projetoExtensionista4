@@ -23,6 +23,9 @@ namespace Extensionista.Models
         public string SITE_IES { get; set; } = string.Empty;
         public bool Favorito { get; set; }
 
+        public string TIPO_CONCORRENCIA { get; set; } = string.Empty;
+
+
         [Ignore]
         public int Index { get; set; }
     }

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Extensionista.View.PaginaIndicadores"
+             Title="PaginaIndicadores">
+    <AbsoluteLayout BackgroundColor="#ffffff">
+        <Image
+            AbsoluteLayout.LayoutBounds="0.09,0.06,0.1,0.12"
+            AbsoluteLayout.LayoutFlags="All"
+            Source="appiconfg1.png" />
+        <ImageButton
+             x:Name="sairIndicadores"
+             AbsoluteLayout.LayoutBounds="0.95, 0.034"
+             AbsoluteLayout.LayoutFlags="PositionProportional"
+             Clicked="sairIndicadores_Clicked"
+             HeightRequest="35"
+             Source="x.png" />
+        <Label
+            AbsoluteLayout.LayoutBounds="0.5, 0.094"
+            AbsoluteLayout.LayoutFlags="PositionProportional"
+            FontFamily="MontserratSemiBold"
+            FontSize="24"
+            Text="Indicadores"
+            TextColor="#092444" />
+    </AbsoluteLayout>
+
+</ContentPage>

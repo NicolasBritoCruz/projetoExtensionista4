@@ -212,7 +212,7 @@
                     FontFamily="Montserrat-SemiBold"
                     FontSize="16"
                     HorizontalTextAlignment="Center"
-                    Text="CIDADE"
+                    Text="VAGAS"
                     VerticalTextAlignment="Center" />
                 </Grid>
             </CollectionView.Header>
@@ -257,7 +257,7 @@
                             FontSize="14"
                             HorizontalTextAlignment="Center"
                             LineBreakMode="WordWrap"
-                            Text="{Binding CIDADE}"
+                            Text="{Binding QT_VAGAS}"
                             TextColor="#092444"
                             VerticalTextAlignment="Center" />
                         </Grid>

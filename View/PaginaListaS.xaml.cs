@@ -24,7 +24,19 @@ public partial class PaginaListaS : ContentPage
 
     private async void OnCursoSSelected(object sender, TappedEventArgs e)
     {
-        await Navigation.PushAsync(new PaginaCurso());
+        if (sender is Element element && element.BindingContext is SisuCursos SelectedCurso)
+        {
+            try
+            {
+                string IdCurso = SelectedCurso.ID_CURSO;
+                await Navigation.PushAsync(new PaginaCurso(IdCurso));
+            }
+            catch (Exception ex)
+            {
+                // Log ou mensagem de erro para o usuário
+                await DisplayAlert("Erro", $"Ocorreu um erro ao verificar o SISU: {ex.Message}", "OK");
+            }
+        }
     }
 
     private void CarregarCursosS(int idUniversidade, string municipio)
