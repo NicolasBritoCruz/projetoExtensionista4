@@ -5,10 +5,10 @@ namespace Extensionista.View;
 
 public partial class PaginaListaS : ContentPage
 {
-	public PaginaListaS(int idUniversidade)
+	public PaginaListaS(int idUniversidade, string municipio)
 	{
 		InitializeComponent();
-        CarregarCursosS(idUniversidade);
+        CarregarCursosS(idUniversidade, municipio);
         NavigationPage.SetHasNavigationBar(this, false);
 
         MessagingCenter.Subscribe<PaginaFavoritos>(this, "AtualizarFavoritos", (sender) =>
@@ -27,43 +27,53 @@ public partial class PaginaListaS : ContentPage
         await Navigation.PushAsync(new PaginaCurso());
     }
 
-    private void CarregarCursosS(int idUniversidade)
+    private void CarregarCursosS(int idUniversidade, string municipio)
     {
-        var repository = new CursosGeralRepository();
-        var universidades = repository.ObterUniversidade(idUniversidade);
+        var sisuRepository = new SisuCursosRepository();
+        // Obtenha a universidade para obter o código de IES e cidade
+        var cursosGeralRepository = new CursosGeralRepository();
+        var universidade = cursosGeralRepository.ObterUniversidade(idUniversidade);
 
-        if (universidades != null)
+        if (universidade != null)
         {
-            var cursos = repository.ObterCursos(idUniversidade);
+            // Obtenha os cursos do SISU usando o repositório atualizado
+            var cursos = sisuRepository.ObterCursosSisuCidade(universidade.CODIGO_IES.ToString(), universidade.MUNICIPIO);
 
-            var favoritosRepository = new FavoritosRepository();
-            var favoritos = favoritosRepository.ObterFavoritos();
-
-            // Atualiza o estado de favoritado dos cursos
-            foreach (var curso in cursos)
+            if (cursos != null && cursos.Any())
             {
-                curso.Favorito = favoritos.Any(f => f.ID_UNIVERSIDADE == curso.ID_UNIVERSIDADE);
-                curso.CODIGO_CURSO = universidades.CODIGO_IES;
-            }
+                var favoritosRepository = new FavoritosRepository();
+                var favoritos = favoritosRepository.ObterFavoritos();
 
-            for (int i = 0; i < cursos.Count; i++)
+                // Atualiza o estado de favoritado dos cursos
+                foreach (var curso in cursos)
+                {
+                    curso.Favorito = favoritos.Any(f => f.ID.ToString() == curso.ID_CURSO);
+                }
+
+                // Adicione um índice para cada curso (caso necessário)
+                for (int i = 0; i < cursos.Count; i++)
+                {
+                    cursos[i].Index = i;
+                }
+
+                // Define a fonte do ListView ou CollectionView
+                ListaCursosS.ItemsSource = cursos;
+
+                // Atualiza o estado de favorito da universidade
+                universidade.Favorito = favoritos.Any(f => f.ID_UNIVERSIDADE == universidade.ID_UNIVERSIDADE);
+                AtualizarIconeFavoritar(universidade.Favorito);
+
+                // Atualiza o contexto de dados para vincular a universidade
+                this.BindingContext = universidade;
+            }
+            else
             {
-                cursos[i].Index = i;
+                // Se não houver cursos, mostre uma mensagem ou trate conforme necessário
+                DisplayAlert("Aviso", "Nenhum curso encontrado para esta universidade.", "OK");
             }
-
-            // Define a fonte do ListView ou CollectionView
-            ListaCursosS.ItemsSource = cursos;
-
-            // Atualiza o estado de favorito da universidade
-            universidades.Favorito = favoritos.Any(f => f.ID_UNIVERSIDADE == universidades.ID_UNIVERSIDADE);
-
-            // Atualiza o ícone de favoritar
-            AtualizarIconeFavoritar(universidades.Favorito);
-
-            this.BindingContext = universidades;
-
         }
     }
+
 
     private void AtualizarListaFavoritos()
     {

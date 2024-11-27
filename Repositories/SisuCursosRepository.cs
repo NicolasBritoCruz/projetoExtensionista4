@@ -12,10 +12,10 @@ namespace Extensionista.Repositories
             _connection = DataBaseContext.connection;
         }
 
-        public List<SisuCursos> ObterCursosSisu(String CodigoIES, String Cidade)
+        public List<SisuCursos> ObterCursosSisu(String CodigoIES)
         {
             var SisuCursos = _connection.Table<SisuCursos>()
-                                          .Where(u => u.CODIGO_IES == CodigoIES && u.CIDADE == Cidade)
+                                          .Where(u => u.CODIGO_IES == CodigoIES)
                                           .ToList();
 
             return SisuCursos;
@@ -27,7 +27,16 @@ namespace Extensionista.Repositories
                                         .Where(u => u.CODIGO_IES == CodigoIES && u.ID_CURSO == IdCurso)                                        
                                         .ToList();
             return SisuCursos;
-        }     
-     
+        }
+
+        public List<SisuCursos> ObterCursosSisuCidade(String CodigoIES, String Cidade)
+        {
+            var SisuCursos = _connection.Table<SisuCursos>()
+                                          .Where(u => u.CODIGO_IES == CodigoIES && u.CIDADE == Cidade)
+                                          .ToList();
+
+            return SisuCursos;
+        }
+
     }
 }

@@ -205,14 +205,14 @@
                     FontFamily="Montserrat-SemiBold"
                     FontSize="16"
                     HorizontalTextAlignment="Center"
-                    Text="GRAU"
+                    Text="TURNO"
                     VerticalTextAlignment="Center" />
                     <Label
                     Grid.Column="2"
                     FontFamily="Montserrat-SemiBold"
                     FontSize="16"
                     HorizontalTextAlignment="Center"
-                    Text="MODALIDADE"
+                    Text="CIDADE"
                     VerticalTextAlignment="Center" />
                 </Grid>
             </CollectionView.Header>
@@ -248,7 +248,7 @@
                             FontSize="14"
                             HorizontalTextAlignment="Center"
                             LineBreakMode="WordWrap"
-                            Text="{Binding GRAU}"
+                            Text="{Binding TURNO}"
                             TextColor="#092444"
                             VerticalTextAlignment="Center" />
                             <Label
@@ -257,7 +257,7 @@
                             FontSize="14"
                             HorizontalTextAlignment="Center"
                             LineBreakMode="WordWrap"
-                            Text="{Binding MODALIDADE}"
+                            Text="{Binding CIDADE}"
                             TextColor="#092444"
                             VerticalTextAlignment="Center" />
                         </Grid>

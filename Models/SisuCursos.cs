@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using SQLite;
+using System.ComponentModel.DataAnnotations;
 
 namespace Extensionista.Models
 {
@@ -21,5 +22,8 @@ namespace Extensionista.Models
         public float PESO_R { get; set; } = 0.0f;
         public string SITE_IES { get; set; } = string.Empty;
         public bool Favorito { get; set; }
+
+        [Ignore]
+        public int Index { get; set; }
     }
 }

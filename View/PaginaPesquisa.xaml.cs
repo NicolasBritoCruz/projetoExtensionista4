@@ -118,12 +118,12 @@ namespace Extensionista
             {
                 try
                 {
-                    var cursosSisu = _sisuCursosRepository.ObterCursosSisu(selectedFaculdade.CODIGO_IES.ToString());
+                    var cursosSisu = _sisuCursosRepository.ObterCursosSisuCidade(selectedFaculdade.CODIGO_IES.ToString(), selectedFaculdade.MUNICIPIO);
                     bool estaNoSisu = cursosSisu.Any();
 
                     if (estaNoSisu)
-                    {
-                        await Navigation.PushAsync(new PaginaListaS(selectedFaculdade.ID_UNIVERSIDADE));
+                    { 
+                        await Navigation.PushAsync(new PaginaListaS(selectedFaculdade.ID_UNIVERSIDADE, selectedFaculdade.MUNICIPIO));
                     }
                     else
                     {
