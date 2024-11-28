@@ -1,3 +1,5 @@
+using Extensionista.View;
+
 namespace Extensionista;
 
 public partial class TabbedPageMenu : TabbedPage
@@ -20,9 +22,16 @@ public partial class TabbedPageMenu : TabbedPage
             IconImageSource = "favoritos.png"
         };
 
+        var paginaIndicadores = new NavigationPage(new Indicadores())
+        {
+            Title = "Indicadores",
+            IconImageSource = "indicadores.png"
+        };
+
         // Adiciona as páginas ao TabbedPage
         Children.Add(new PaginaInicio()); // Página inicial não precisa de NavigationPage
         Children.Add(paginaPesquisa);
         Children.Add(paginaFavoritos);
+        Children.Add(paginaIndicadores);
     }
 }

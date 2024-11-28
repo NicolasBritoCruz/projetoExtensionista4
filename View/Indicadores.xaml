@@ -1,0 +1,124 @@
+<ContentPage
+    x:Class="Extensionista.View.Indicadores"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Indicadores">
+
+    <AbsoluteLayout BackgroundColor="#ffffff">
+
+        <!-- Imagem do ícone -->
+        <Image
+            AbsoluteLayout.LayoutBounds="0.09, 0.032, 0.1, 0.12"
+            AbsoluteLayout.LayoutFlags="All"
+            Source="appiconfg1.png" />
+
+        <!-- Título -->
+        <Label
+            AbsoluteLayout.LayoutBounds="0.5, 0.07"
+            AbsoluteLayout.LayoutFlags="PositionProportional"
+            FontFamily="MontserratSemiBold"
+            FontSize="22"
+            Text="Indicadores"
+            TextColor="#092444" />
+
+        <!-- Botões proporcionais -->
+        <Grid
+            AbsoluteLayout.LayoutBounds="0, 0.7, 1, 0.85"
+            AbsoluteLayout.LayoutFlags="All"
+            RowDefinitions="Auto, *, *, *, *, *"
+            RowSpacing="20"
+            Margin="10, 20, 10, 20"
+            Padding="0, 0, 0, 20"
+            BackgroundColor="#d6eafa">
+
+            <!-- Retângulo com texto -->
+            <Frame
+                Grid.Row="0"
+                BackgroundColor="#092444"
+                CornerRadius="0"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand">
+                <Label
+                    Text="SELECIONE UMA REGIÃO"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    FontFamily="MontserratSemiBold"
+                    FontSize="16"
+                    TextColor="White" />
+            </Frame>
+
+            <!-- Botões -->
+            <Button
+                Grid.Row="1"
+                Text="Norte"
+                FontFamily="MontserratSemiBold"
+                FontSize="16"
+                FontAttributes="Bold"
+                BackgroundColor="#ffffff"
+                TextColor="#092444"
+                BorderColor="#092444"
+                BorderWidth="1"
+                CornerRadius="40"
+                Padding="10, 0"
+                VerticalOptions="Fill"
+                Clicked="OnRegiaoClicked" />
+            <Button
+                Grid.Row="2"
+                Text="Nordeste"
+                FontFamily="MontserratSemiBold"
+                FontSize="16"
+                FontAttributes="Bold"
+                BackgroundColor="#ffffff"
+                TextColor="#092444"
+                BorderColor="#092444"
+                BorderWidth="1"
+                CornerRadius="40"
+                Padding="10, 0"
+                VerticalOptions="Fill"
+                Clicked="OnRegiaoClicked" />
+            <Button
+                Grid.Row="3"
+                Text="Centro-Oeste"
+                FontFamily="MontserratSemiBold"
+                FontSize="16"
+                FontAttributes="Bold"
+                BackgroundColor="#ffffff"
+                TextColor="#092444"
+                BorderColor="#092444"
+                BorderWidth="1"
+                CornerRadius="40"
+                Padding="10, 0"
+                VerticalOptions="Fill"
+                Clicked="OnRegiaoClicked" />
+            <Button
+                Grid.Row="4"
+                Text="Sudeste"
+                FontFamily="MontserratSemiBold"
+                FontSize="16"
+                FontAttributes="Bold"
+                BackgroundColor="#ffffff"
+                TextColor="#092444"
+                BorderColor="#092444"
+                BorderWidth="1"
+                CornerRadius="40"
+                Padding="10, 0"
+                VerticalOptions="Fill"
+                Clicked="OnRegiaoClicked" />
+            <Button
+                Grid.Row="5"
+                Text="Sul"
+                FontFamily="MontserratSemiBold"
+                FontSize="16"
+                FontAttributes="Bold"
+                BackgroundColor="#ffffff"
+                TextColor="#092444"
+                BorderColor="#092444"
+                BorderWidth="1"
+                CornerRadius="40"
+                Padding="10, 0"
+                VerticalOptions="Fill"
+                Clicked="OnRegiaoClicked" />
+        </Grid>
+
+    </AbsoluteLayout>
+</ContentPage>
