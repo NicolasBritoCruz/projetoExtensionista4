@@ -14,7 +14,7 @@
         <Image
             AbsoluteLayout.LayoutBounds="0.5, 0.65, 1, 0.8"
             AbsoluteLayout.LayoutFlags="All"
-            Source="mapa.png" />
+            Source="maparegioes.png" />
 
         <!--  Título  -->
         <Label
@@ -30,25 +30,25 @@
             FontFamily="MontserratSemiBold"
             FontSize="20"
             HorizontalOptions="Center"
-            Text="SELECIONE UMA REGIÃO"
+            Text="Selecione uma Região"
             TextColor="#092444"
             VerticalOptions="Center" />
         <Button
-            Padding="10,0"
-            AbsoluteLayout.LayoutBounds="0.35, 0.42, 0.2, 0.1"
+            AbsoluteLayout.LayoutBounds="0.25, 0.35, 0.5, 0.15"
             AbsoluteLayout.LayoutFlags="All"
             BackgroundColor="Transparent"
+            BorderWidth="1"
             Clicked="OnRegiaoClicked"
             CornerRadius="40"
             FontAttributes="Bold"
             FontFamily="MontserratSemiBold"
             FontSize="15"
             Text="Norte"
-            TextColor="#ffffff"
+            TextColor="Transparent"
             VerticalOptions="Fill" />
         <Button
             Padding="10,0"
-            AbsoluteLayout.LayoutBounds="0.89, 0.47, 0.25, 0.07"
+            AbsoluteLayout.LayoutBounds="0.93, 0.43, 0.3, 0.12"
             AbsoluteLayout.LayoutFlags="All"
             BackgroundColor="transparent"
             Clicked="OnRegiaoClicked"
@@ -57,11 +57,11 @@
             FontFamily="MontserratSemiBold"
             FontSize="15"
             Text="Nordeste"
-            TextColor="#ffffff"
+            TextColor="Transparent"
             VerticalOptions="Fill" />
         <Button
             Padding="10,0"
-            AbsoluteLayout.LayoutBounds="0.519, 0.564, 0.3, 0.07"
+            AbsoluteLayout.LayoutBounds="0.519, 0.564, 0.25, 0.11"
             AbsoluteLayout.LayoutFlags="All"
             BackgroundColor="Transparent"
             Clicked="OnRegiaoClicked"
@@ -70,11 +70,11 @@
             FontFamily="MontserratSemiBold"
             FontSize="14"
             Text="Centro-Oeste"
-            TextColor="#ffffff"
+            TextColor="Transparent"
             VerticalOptions="Fill" />
         <Button
             Padding="10,0"
-            AbsoluteLayout.LayoutBounds="0.72, 0.62, 0.2, 0.06"
+            AbsoluteLayout.LayoutBounds="0.77, 0.63, 0.2, 0.1"
             AbsoluteLayout.LayoutFlags="All"
             BackgroundColor="Transparent"
             Clicked="OnRegiaoClicked"
@@ -83,11 +83,11 @@
             FontFamily="MontserratSemiBold"
             FontSize="15"
             Text="Sudeste"
-            TextColor="#ffffff"
+            TextColor="Transparent"
             VerticalOptions="Fill" />
         <Button
             Padding="10,0"
-            AbsoluteLayout.LayoutBounds="0.55, 0.71, 0.2, 0.06"
+            AbsoluteLayout.LayoutBounds="0.55, 0.72, 0.2, 0.1"
             AbsoluteLayout.LayoutFlags="All"
             BackgroundColor="transparent"
             Clicked="OnRegiaoClicked"
@@ -96,7 +96,7 @@
             FontFamily="MontserratSemiBold"
             FontSize="15"
             Text="Sul"
-            TextColor="#ffffff"
+            TextColor="Transparent"
             VerticalOptions="Fill" />
 
     </AbsoluteLayout>
