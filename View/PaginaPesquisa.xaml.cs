@@ -73,10 +73,10 @@ namespace Extensionista
         // Método acionado ao alcançar o limite de rolagem, carregando a próxima página
         private async void OnRemainingItemsThresholdReached(object sender, EventArgs e)
         {
-            if (hasMoreItems)
-            {
-                await LoadFaculdadesAsync(municipio: entrySearch.Text?.ToLower());
-            }
+            if (!hasMoreItems || isLoading) return;
+
+            // Carrega mais itens com base na pesquisa atual (se houver)
+            await LoadFaculdadesAsync(nome: entrySearch.Text?.ToLower());
         }
 
         // Método de pesquisa otimizado para usar filtros diretamente no repositório
@@ -84,30 +84,55 @@ namespace Extensionista
         {
             var query = entrySearch.Text?.ToLower();
 
-            // Reinicia o estado da pesquisa
-            UniversidadesList.Clear();
-            currentPage = 1;
-            hasMoreItems = false; // Impede carregamento incremental durante a pesquisa
-            isLoading = false;
-
             if (!string.IsNullOrEmpty(query))
             {
-                // Pesquisa por município ou nome da universidade
-                await LoadFaculdadesAsync(municipio: query, nome: query);
+                // Limpa a lista atual para exibir somente os resultados da pesquisa
+                UniversidadesList.Clear();
+
+                try
+                {
+                    // Executa a consulta SQL personalizada no repositório
+                    var universidades = _cursosGeralRepository.ExecutarQueryPersonalizada<Universidades>(
+                        "SELECT * FROM Universidades WHERE LOWER(MUNICIPIO) LIKE ? OR LOWER(NOME_IES) LIKE ?",
+                        $"%{query}%", $"%{query}%"
+                    );
+
+                    // Adiciona os resultados na lista observável
+                    foreach (var universidade in universidades)
+                    {
+                        UniversidadesList.Add(universidade);
+                    }
+
+                    // Feedback para o usuário se não houver resultados
+                    if (UniversidadesList.Count == 0)
+                    {
+                        await DisplayAlert("Nenhum resultado", "Nenhuma universidade encontrada para os critérios de busca.", "OK");
+                    }
+
+                    // Rola a lista para o início
+                    if (UniversidadesList.Count > 0)
+                    {
+                        ListaFaculdades.ScrollTo(UniversidadesList[0], position: ScrollToPosition.Start, animate: true);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Erro na query direta: {ex.Message}");
+                }
             }
             else
             {
-                // Recarrega a lista completa se a pesquisa estiver vazia
-                hasMoreItems = true; // Permite carregamento incremental novamente
+                // Caso o campo de pesquisa esteja vazio, recarrega todos os dados
+                UniversidadesList.Clear();
+                currentPage = 1; // Reinicia a paginação
+                hasMoreItems = true; // Habilita mais itens para rolagem
                 await LoadFaculdadesAsync();
-            }
 
-            // Mostre uma mensagem se não houver resultados
-            if (UniversidadesList.Count == 0)
-            {
-                await DisplayAlert("Nenhum resultado", "Nenhuma universidade encontrada para os critérios de busca.", "OK");
-                hasMoreItems = true;
-                await LoadFaculdadesAsync();
+                // Rola a lista para o início
+                if (UniversidadesList.Count > 0)
+                {
+                    ListaFaculdades.ScrollTo(UniversidadesList[0], position: ScrollToPosition.Start, animate: true);
+                }
             }
         }
 

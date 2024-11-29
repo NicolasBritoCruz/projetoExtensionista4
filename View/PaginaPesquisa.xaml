@@ -67,7 +67,7 @@
             SelectionMode="None"
             VerticalOptions="FillAndExpand"
             VerticalScrollBarVisibility="Always"
-            RemainingItemsThreshold="1"
+            RemainingItemsThreshold="3"
             RemainingItemsThresholdReached="OnRemainingItemsThresholdReached"
             ItemsUpdatingScrollMode="KeepScrollOffset">
             <CollectionView.ItemTemplate>

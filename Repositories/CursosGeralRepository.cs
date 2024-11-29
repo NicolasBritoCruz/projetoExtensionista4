@@ -37,14 +37,14 @@ namespace Extensionista.Repositories
             int pageSize = 20; // Número de resultados por página
             int skipAmount = (page - 1) * pageSize; // Quantidade de registros a ignorar
 
-            if (!string.IsNullOrEmpty(municipio) || !string.IsNullOrEmpty(nome))
+            if (!string.IsNullOrWhiteSpace(municipio) || !string.IsNullOrWhiteSpace(nome))
             {
-                string normalizedMunicipio = municipio?.Trim().ToLower() ?? string.Empty;
-                string normalizedNome = nome?.Trim().ToLower() ?? string.Empty;
+                var municipioLower = municipio?.Trim().ToLower() ?? string.Empty;
+                var nomeLower = nome?.Trim().ToLower() ?? string.Empty;
 
                 query = query.Where(u =>
-                    (!string.IsNullOrEmpty(normalizedMunicipio) && u.MUNICIPIO.Trim().ToLower().Contains(normalizedMunicipio)) ||
-                    (!string.IsNullOrEmpty(normalizedNome) && u.NOME_IES.Trim().ToLower().Contains(normalizedNome))
+                    (!string.IsNullOrEmpty(municipioLower) && u.MUNICIPIO.Trim().ToLower().Contains(municipioLower)) ||
+                    (!string.IsNullOrEmpty(nomeLower) && u.NOME_IES.Trim().ToLower().Contains(nomeLower))
                 );
             }
 
@@ -53,7 +53,6 @@ namespace Extensionista.Repositories
                 .Take(pageSize)
                 .ToList();
 
-            // Converte os valores numéricos para strings para cada curso
             foreach (var universidade in universidades)
             {
                 universidade.CATEGORIA_ADMINISTRATIVA = _decompressor.Converter("categoria_administrativa", universidade.CATEGORIA_ADMINISTRATIVA);
@@ -61,6 +60,11 @@ namespace Extensionista.Repositories
             }
 
             return universidades;
+        }
+
+        public List<T> ExecutarQueryPersonalizada<T>(string query, params object[] args) where T : new()
+        {
+            return _connection.Query<T>(query, args);
         }
 
         public List<Cursos> ObterCursos(int idUniversidade)
