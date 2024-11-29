@@ -49,10 +49,10 @@
             BackgroundColor="#ffffff"
             BorderColor="#092444"
             BorderWidth="1"
+            Clicked="IndicadoresButton_Clicked"
             FontFamily="Montserrat-SemiBold"
-            Text="Ver indicadores"
-            TextColor="#345d97" 
-            Clicked="IndicadoresButton_Clicked"/>
+            Text="Ver gráficos"
+            TextColor="#345d97" />
         <Image
             AbsoluteLayout.LayoutBounds="0.14, 0.15, 0.35, 0.35"
             AbsoluteLayout.LayoutFlags="All"

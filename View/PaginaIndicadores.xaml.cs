@@ -9,6 +9,10 @@ public partial class PaginaIndicadores : ContentPage
     {
         InitializeComponent();
         NavigationPage.SetHasNavigationBar(this, false);
+        LinhasGrafico.IsVisible = true;
+        LabelNotas.IsVisible = true;
+        BarrasGrafico.IsVisible = false;
+        LabelVagas.IsVisible = false;
 
         // Obter os dados do repositório
         var repository = new SisuModalidadesRepository();
@@ -18,12 +22,24 @@ public partial class PaginaIndicadores : ContentPage
         var drawable = new GraficoBarrasDrawable
         {
             Modalidades = modalidades, // Atribuir diretamente
-            Rotulos = new List<string> { "AC", "RaReEs", "RaEs", "Es", "DeEs", "DeReEs", "ReEs", "?", "De" }
+            Rotulos = new List<string> { "AC", "RaReEs", "RaEs", "Es", "DeEs", "DeReEs", "ReEs", "?", "De" },
         };
 
         // Associar ao GraphicsView e atualizar
         BarrasGrafico.Drawable = drawable;
         BarrasGrafico.Invalidate();
+
+
+        var drawableL = new GraficoLinhasDrawable
+        {
+            ModalidadesBarras = modalidades,
+            RotulosBarras = new List<string> { "AC", "RaReEs", "RaEs", "Es", "DeEs", "DeReEs", "ReEs", "?", "De" },
+
+        };
+
+        // Associar ao GraphicsView
+        LinhasGrafico.Drawable = drawableL;
+        LinhasGrafico.Invalidate();
     }
 
 
@@ -31,4 +47,30 @@ public partial class PaginaIndicadores : ContentPage
     {
         await Navigation.PopAsync();
     }
+
+    private void radioButtonNotas_CheckedChanged(object sender, CheckedChangedEventArgs e)
+    {
+        if (sender is RadioButton radioButton)
+        {
+            if (radioButton == radioButtonNotas && radioButtonNotas.IsChecked)
+            {
+                // Exibe o gráfico de notas
+                LinhasGrafico.IsVisible = true;
+                LabelNotas.IsVisible = true;
+                BarrasGrafico.IsVisible = false;
+                LabelVagas.IsVisible = false;
+            }
+            else if (radioButton == radioButtonVagas && radioButtonVagas.IsChecked)
+            {
+                // Exibe o gráfico de vagas
+                LinhasGrafico.IsVisible = false;
+                LabelNotas.IsVisible = false;
+                BarrasGrafico.IsVisible = true;
+                LabelVagas.IsVisible = true;
+            }
+        }
+    }
+
+
+
 }

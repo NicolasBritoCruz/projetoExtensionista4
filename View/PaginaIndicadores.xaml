@@ -21,20 +21,58 @@
             AbsoluteLayout.LayoutFlags="PositionProportional"
             FontFamily="MontserratSemiBold"
             FontSize="24"
-            Text="Indicadores"
+            Text="Gráficos"
+            TextColor="#092444" />
+        <RadioButton
+            x:Name="radioButtonNotas"
+            Margin="10"
+            AbsoluteLayout.LayoutBounds="0.08,0.2"
+            AbsoluteLayout.LayoutFlags="PositionProportional"
+            CheckedChanged="radioButtonNotas_CheckedChanged"
+            Content="Pesos das Notas"
+            FontFamily="Montserrat-SemiBold"
+            FontSize="13.5"
+            GroupName="Options"
+            IsChecked="True"
+            TextColor="#092444" />
+        <RadioButton
+            x:Name="radioButtonVagas"
+            Margin="10"
+            AbsoluteLayout.LayoutBounds="0.9,0.2"
+            AbsoluteLayout.LayoutFlags="PositionProportional"
+            CheckedChanged="radioButtonNotas_CheckedChanged"
+            Content="Quantidade de Vagas"
+            FontFamily="Montserrat-SemiBold"
+            FontSize="13.5"
+            GroupName="Options"
             TextColor="#092444" />
         <Label
-            AbsoluteLayout.LayoutBounds="0.5, 0.22"
+            x:Name="LabelVagas"
+            AbsoluteLayout.LayoutBounds="0.5, 0.3"
             AbsoluteLayout.LayoutFlags="PositionProportional"
             FontFamily="MontserratSemiBold"
             FontSize="18"
             Text="Quantidade de Vagas por Modalidade"
             TextColor="#092444" />
+        <Label
+            x:Name="LabelNotas"
+            AbsoluteLayout.LayoutBounds="0.5, 0.3"
+            AbsoluteLayout.LayoutFlags="PositionProportional"
+            FontFamily="MontserratSemiBold"
+            FontSize="18"
+            Text="Notas de Corte por Modalidade"
+            TextColor="#092444" />
         <GraphicsView
-            AbsoluteLayout.LayoutBounds="0.48, 0.5, 0.3,0.3"
-            AbsoluteLayout.LayoutFlags="All"
             x:Name="BarrasGrafico"
+            AbsoluteLayout.LayoutBounds="0.48, 0.55, 0.3,0.3"
+            AbsoluteLayout.LayoutFlags="All"
             HeightRequest="300"
             WidthRequest="400" />
+        <GraphicsView
+            x:Name="LinhasGrafico"
+            AbsoluteLayout.LayoutBounds="0.48, 0.65, 0.8, 0.5"
+            AbsoluteLayout.LayoutFlags="All"
+            HeightRequest="300"
+            WidthRequest="450" />
     </AbsoluteLayout>
 </ContentPage>
