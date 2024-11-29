@@ -6,119 +6,98 @@
 
     <AbsoluteLayout BackgroundColor="#ffffff">
 
-        <!-- Imagem do ícone -->
+        <!--  Imagem do ícone  -->
         <Image
-            AbsoluteLayout.LayoutBounds="0.09, 0.032, 0.1, 0.12"
+            AbsoluteLayout.LayoutBounds="0.09, 0.03, 0.1, 0.1"
             AbsoluteLayout.LayoutFlags="All"
             Source="appiconfg1.png" />
+        <Image
+            AbsoluteLayout.LayoutBounds="0.5, 0.65, 1, 0.8"
+            AbsoluteLayout.LayoutFlags="All"
+            Source="mapa.png" />
 
-        <!-- Título -->
+        <!--  Título  -->
         <Label
-            AbsoluteLayout.LayoutBounds="0.5, 0.07"
+            AbsoluteLayout.LayoutBounds="0.5, 0.065"
             AbsoluteLayout.LayoutFlags="PositionProportional"
             FontFamily="MontserratSemiBold"
             FontSize="22"
             Text="Indicadores"
             TextColor="#092444" />
-
-        <!-- Botões proporcionais -->
-        <Grid
-            AbsoluteLayout.LayoutBounds="0, 0.7, 1, 0.85"
+        <Label
+            AbsoluteLayout.LayoutBounds="0.5, 0.13"
+            AbsoluteLayout.LayoutFlags="PositionProportional"
+            FontFamily="MontserratSemiBold"
+            FontSize="20"
+            HorizontalOptions="Center"
+            Text="SELECIONE UMA REGIÃO"
+            TextColor="#092444"
+            VerticalOptions="Center" />
+        <Button
+            Padding="10,0"
+            AbsoluteLayout.LayoutBounds="0.35, 0.42, 0.2, 0.1"
             AbsoluteLayout.LayoutFlags="All"
-            RowDefinitions="Auto, *, *, *, *, *"
-            RowSpacing="20"
-            Margin="10, 20, 10, 20"
-            Padding="0, 0, 0, 20"
-            BackgroundColor="#d6eafa">
-
-            <!-- Retângulo com texto -->
-            <Frame
-                Grid.Row="0"
-                BackgroundColor="#092444"
-                CornerRadius="0"
-                HorizontalOptions="FillAndExpand"
-                VerticalOptions="FillAndExpand">
-                <Label
-                    Text="SELECIONE UMA REGIÃO"
-                    HorizontalOptions="Center"
-                    VerticalOptions="Center"
-                    FontFamily="MontserratSemiBold"
-                    FontSize="16"
-                    TextColor="White" />
-            </Frame>
-
-            <!-- Botões -->
-            <Button
-                Grid.Row="1"
-                Text="Norte"
-                FontFamily="MontserratSemiBold"
-                FontSize="16"
-                FontAttributes="Bold"
-                BackgroundColor="#ffffff"
-                TextColor="#092444"
-                BorderColor="#092444"
-                BorderWidth="1"
-                CornerRadius="40"
-                Padding="10, 0"
-                VerticalOptions="Fill"
-                Clicked="OnRegiaoClicked" />
-            <Button
-                Grid.Row="2"
-                Text="Nordeste"
-                FontFamily="MontserratSemiBold"
-                FontSize="16"
-                FontAttributes="Bold"
-                BackgroundColor="#ffffff"
-                TextColor="#092444"
-                BorderColor="#092444"
-                BorderWidth="1"
-                CornerRadius="40"
-                Padding="10, 0"
-                VerticalOptions="Fill"
-                Clicked="OnRegiaoClicked" />
-            <Button
-                Grid.Row="3"
-                Text="Centro-Oeste"
-                FontFamily="MontserratSemiBold"
-                FontSize="16"
-                FontAttributes="Bold"
-                BackgroundColor="#ffffff"
-                TextColor="#092444"
-                BorderColor="#092444"
-                BorderWidth="1"
-                CornerRadius="40"
-                Padding="10, 0"
-                VerticalOptions="Fill"
-                Clicked="OnRegiaoClicked" />
-            <Button
-                Grid.Row="4"
-                Text="Sudeste"
-                FontFamily="MontserratSemiBold"
-                FontSize="16"
-                FontAttributes="Bold"
-                BackgroundColor="#ffffff"
-                TextColor="#092444"
-                BorderColor="#092444"
-                BorderWidth="1"
-                CornerRadius="40"
-                Padding="10, 0"
-                VerticalOptions="Fill"
-                Clicked="OnRegiaoClicked" />
-            <Button
-                Grid.Row="5"
-                Text="Sul"
-                FontFamily="MontserratSemiBold"
-                FontSize="16"
-                FontAttributes="Bold"
-                BackgroundColor="#ffffff"
-                TextColor="#092444"
-                BorderColor="#092444"
-                BorderWidth="1"
-                CornerRadius="40"
-                Padding="10, 0"
-                VerticalOptions="Fill"
-                Clicked="OnRegiaoClicked" />
-        </Grid>
+            BackgroundColor="Transparent"
+            Clicked="OnRegiaoClicked"
+            CornerRadius="40"
+            FontAttributes="Bold"
+            FontFamily="MontserratSemiBold"
+            FontSize="15"
+            Text="Norte"
+            TextColor="#ffffff"
+            VerticalOptions="Fill" />
+        <Button
+            Padding="10,0"
+            AbsoluteLayout.LayoutBounds="0.89, 0.47, 0.25, 0.07"
+            AbsoluteLayout.LayoutFlags="All"
+            BackgroundColor="transparent"
+            Clicked="OnRegiaoClicked"
+            CornerRadius="40"
+            FontAttributes="Bold"
+            FontFamily="MontserratSemiBold"
+            FontSize="15"
+            Text="Nordeste"
+            TextColor="#ffffff"
+            VerticalOptions="Fill" />
+        <Button
+            Padding="10,0"
+            AbsoluteLayout.LayoutBounds="0.519, 0.564, 0.3, 0.07"
+            AbsoluteLayout.LayoutFlags="All"
+            BackgroundColor="Transparent"
+            Clicked="OnRegiaoClicked"
+            CornerRadius="40"
+            FontAttributes="Bold"
+            FontFamily="MontserratSemiBold"
+            FontSize="14"
+            Text="Centro-Oeste"
+            TextColor="#ffffff"
+            VerticalOptions="Fill" />
+        <Button
+            Padding="10,0"
+            AbsoluteLayout.LayoutBounds="0.72, 0.62, 0.2, 0.06"
+            AbsoluteLayout.LayoutFlags="All"
+            BackgroundColor="Transparent"
+            Clicked="OnRegiaoClicked"
+            CornerRadius="40"
+            FontAttributes="Bold"
+            FontFamily="MontserratSemiBold"
+            FontSize="15"
+            Text="Sudeste"
+            TextColor="#ffffff"
+            VerticalOptions="Fill" />
+        <Button
+            Padding="10,0"
+            AbsoluteLayout.LayoutBounds="0.55, 0.71, 0.2, 0.06"
+            AbsoluteLayout.LayoutFlags="All"
+            BackgroundColor="transparent"
+            Clicked="OnRegiaoClicked"
+            CornerRadius="40"
+            FontAttributes="Bold"
+            FontFamily="MontserratSemiBold"
+            FontSize="15"
+            Text="Sul"
+            TextColor="#ffffff"
+            VerticalOptions="Fill" />
 
     </AbsoluteLayout>
 </ContentPage>
