@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Extensionista.View.PaginaIndicadoresRegiao"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="PaginaIndicadoresRegiao">
+    <AbsoluteLayout BackgroundColor="#ffffff">
+        <Image
+            AbsoluteLayout.LayoutBounds="0.09, 0.036, 0.09, 0.1"
+            AbsoluteLayout.LayoutFlags="All"
+            Source="appiconfg1.png" />
+        <ImageButton
+            x:Name="sairIndicadoresS"
+            AbsoluteLayout.LayoutBounds="0.95, 0.058"
+            AbsoluteLayout.LayoutFlags="PositionProportional"
+            Clicked="sairIndicadoresS_Clicked"
+            HeightRequest="35"
+            Source="x.png" />
+        <Label
+            AbsoluteLayout.LayoutBounds="0.5, 0.065"
+            AbsoluteLayout.LayoutFlags="PositionProportional"
+            FontFamily="MontserratSemiBold"
+            FontSize="24"
+            Text="Indicadores"
+            TextColor="#092444" />
+        <Label
+            x:Name="LabelIndicadoresRegiao"
+            AbsoluteLayout.LayoutBounds="0.5, 0.11"
+            AbsoluteLayout.LayoutFlags="PositionProportional"
+            FontFamily="MontserratSemiBold"
+            FontSize="21"
+            Text=""
+            TextColor="#345d97" />
+        <Label
+            x:Name="LabelVagasRegiao"
+            AbsoluteLayout.LayoutBounds="0.5, 0.2"
+            AbsoluteLayout.LayoutFlags="PositionProportional"
+            FontFamily="MontserratSemiBold"
+            FontSize="21"
+            Text=""
+            TextColor="#345d97" />
+    </AbsoluteLayout>
+</ContentPage>

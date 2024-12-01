@@ -8,15 +8,15 @@ public partial class Indicadores : ContentPage
         NavigationPage.SetHasNavigationBar(this, false);
     }
 
-    private void OnRegiaoClicked(object sender, EventArgs e)
+    private async void OnRegiaoClicked(object sender, EventArgs e)
     {
         if (sender is Button button)
         {
             // Aqui você pode capturar o texto do botão clicado
             string regiaoSelecionada = button.Text;
 
-            // Exemplo de lógica futura
-            DisplayAlert("Região Selecionada", $"Você selecionou a região: {regiaoSelecionada}", "OK");
+            
+            await Navigation.PushAsync(new PaginaIndicadoresRegiao(regiaoSelecionada));
 
             // TODO: Adicione a lógica necessária para carregar dados ou navegar para outra página
         }
