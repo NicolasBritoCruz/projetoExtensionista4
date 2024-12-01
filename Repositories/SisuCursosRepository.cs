@@ -48,14 +48,14 @@ namespace Extensionista.Repositories
         public List<VagasRegiao> ObterVagasRegiao(string regiao)
         {
             var query = @"
-                        SELECT COUNT(*) AS TOTAL_LINHAS
-                        FROM(
-                            SELECT
-                                COUNT(NOME_CURSO) AS SOMA
-                            FROM SisuCursos
-                            WHERE REGIAO = @Regiao
-                            GROUP BY NOME_CURSO, REGIAO
-                        ) AS SUBCONSULTA;
+                           SELECT SUM(SOMA) AS total_vagas
+                           FROM(
+                               SELECT
+                                   COUNT(NOME_CURSO) AS SOMA
+                               FROM SisuCursos
+                               WHERE REGIAO = @Regiao
+                               GROUP BY NOME_CURSO, REGIAO
+                           ) AS SUBCONSULTA;
                         ";
             var vagasRegiao = _connection.Query<VagasRegiao>(query, new { Regiao = regiao });
             return vagasRegiao;
@@ -78,7 +78,7 @@ namespace Extensionista.Repositories
         }
 
         //Ranking de Matérias e pesos somados por região
-        public List<RankingMateriaPesos> ObterRankingPesos(string regiao)
+        public List<RankingMateriaPesos> ObterRankingPesos(string regiao, int limite)
         {
             var query = @"
                                 SELECT 
@@ -100,7 +100,7 @@ namespace Extensionista.Repositories
                                 WHERE REGIAO = @Regiao
                                 GROUP BY REGIAO, NOME_CURSO
                                 ORDER BY SOMAS DESC
-                                LIMIT 1
+                                LIMIT {limite}
                         ";
             var RankingPesos = _connection.Query<RankingMateriaPesos>(query, new { Regiao = regiao });
             return RankingPesos;
@@ -124,7 +124,7 @@ namespace Extensionista.Repositories
         }
 
         //Cursos que mais tem vagas, por região
-        public List<VagasPorRegiao> ObterVagasPorRegiao(string regiao)
+        public List<VagasPorRegiao> ObterVagasPorRegiao(string regiao, int limite)
         {
             var query = @"
                                 SELECT
@@ -134,7 +134,7 @@ namespace Extensionista.Repositories
                                 WHERE REGIAO = @Regiao
                                 GROUP BY NOME_CURSO
                                 ORDER BY QT_VAGAS DESC
-                                LIMIT 10;
+                                LIMIT {limite};
                         ";
             var ObterVagasPorRegiao = _connection.Query<VagasPorRegiao>(query, new { Regiao = regiao });
             return ObterVagasPorRegiao;
