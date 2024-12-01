@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SQLite;
 
 namespace Extensionista.Models
       {
@@ -20,12 +21,13 @@ namespace Extensionista.Models
             public string NotaCorte2023_2 { get; set; } = string.Empty;
             public string NotaCorte2024 { get; set; } = string.Empty;
         }
-    
-        public class VagasRegiao
-        {
-            public string Total_linhas { get; set; } = string.Empty;
 
-        }
+        [Table("SisuCursos")]
+        public class VagasRegiao
+            {
+                public int TotalVagas { get; set; } = 0;
+
+            }
 
         public class VagasRegiaoTurno
         {
