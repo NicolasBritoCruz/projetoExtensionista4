@@ -33,11 +33,25 @@
             TextColor="#345d97" />
         <Label
             x:Name="LabelVagasRegiao"
-            AbsoluteLayout.LayoutBounds="0.5, 0.2"
+            AbsoluteLayout.LayoutBounds="0.5, 0.18,0.9,0.1"
+            AbsoluteLayout.LayoutFlags="All"
+            FontFamily="MontserratSemiBold"
+            FontSize="18"
+            LineBreakMode="WordWrap"
+            Text=""
+            TextColor="#092444" />
+        <Label
+            AbsoluteLayout.LayoutBounds="0.12, 0.25"
             AbsoluteLayout.LayoutFlags="PositionProportional"
             FontFamily="MontserratSemiBold"
-            FontSize="21"
-            Text=""
+            FontSize="16"
+            Text="E essa foi a distribuição por turnos:"
             TextColor="#345d97" />
+        <GraphicsView
+            x:Name="GraficoVagasTurnos"
+            AbsoluteLayout.LayoutBounds="0, 0.8, 0.9, 0.8"
+            AbsoluteLayout.LayoutFlags="All"
+            HeightRequest="300"
+            WidthRequest="400" />
     </AbsoluteLayout>
 </ContentPage>

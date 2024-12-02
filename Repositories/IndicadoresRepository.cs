@@ -25,13 +25,11 @@ namespace Extensionista.Repositories
             regiao = regiao.ToUpper();
 
             var query = @"
-                SELECT SUM(SOMA) AS TotalVagas
-                FROM (
-                    SELECT COUNT(NOME_CURSO) AS SOMA
+                SELECT SUM(QT_VAGAS) AS TotalVagas
+                
                     FROM SisuCursos
                     WHERE REGIAO = ?
-                    GROUP BY NOME_CURSO, REGIAO
-                ) AS SUBCONSULTA;
+              
             ";
 
             //var query = "SELECT COUNT(REGIAO) FROM SisuCursos";
@@ -57,7 +55,7 @@ namespace Extensionista.Repositories
             return vagasRegiaoTurno;
         }
         public List<CursosDiferentesRegiao> ObterCursosPorRegiao(string regiao)
-        {
+        {   
             var query = @"
                                 SELECT COUNT(*) AS TOTAL_LINHAS
                                 FROM(
@@ -80,7 +78,7 @@ namespace Extensionista.Repositories
 	                                NOME_CURSO,
 	                                SUM(QT_VAGAS) QT_VAGAS
                                 FROM SisuCursos
-                                WHERE REGIAO = @Regiao
+                                WHERE REGIAO = ?
                                 GROUP BY NOME_CURSO
                                 ORDER BY QT_VAGAS DESC
                                 LIMIT 10;
