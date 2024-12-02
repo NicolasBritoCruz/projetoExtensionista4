@@ -11,7 +11,7 @@ namespace Extensionista.Drawables
         {
             // Fundo branco
             canvas.FillColor = Color.FromArgb("FFFFFF");
-            
+
             canvas.FillRectangle(dirtyRect);
 
             // Verifica se há dados para desenhar
@@ -50,7 +50,7 @@ namespace Extensionista.Drawables
                 canvas.DrawString(modalidade.QT_VAGAS.ToString(), x + larguraBarra / 2, y - 15, HorizontalAlignment.Center);
 
                 // Desenha o rótulo da modalidade
-                string rotulo = i < Rotulos.Count ? Rotulos[i] : modalidade.TIPO_CONCORRENCIA;
+                string rotulo = i < Rotulos.Count ? Rotulos[i] : "?";
 
                 canvas.FontSize = 12;
                 canvas.FontColor = Color.Parse("#092444");

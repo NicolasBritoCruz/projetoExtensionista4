@@ -23,8 +23,8 @@
                     Grid.Column="0"
                     Text="{Binding Nome_Curso}" 
                     FontSize="14" 
-                    TextColor="Black" 
-                    FontFamily="Default" 
+                    TextColor="#092444" 
+                    FontFamily="MontserratSemiBold" 
                     VerticalOptions="Center"
                     HorizontalTextAlignment="Center" />
 
@@ -32,7 +32,8 @@
                     Grid.Column="1"
                     Text="{Binding Qt_Vagas, StringFormat='{0}'}" 
                     FontSize="14" 
-                    TextColor="Black" 
+                    TextColor="#092444" 
+                    FontFamily="MontserratSemiBold" 
                     VerticalOptions="Center" 
                     HorizontalTextAlignment="Center" />
                     </Grid>

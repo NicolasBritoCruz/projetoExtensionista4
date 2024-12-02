@@ -6,18 +6,18 @@
     Title="PaginaIndicadores">
     <AbsoluteLayout BackgroundColor="#ffffff">
         <Image
-            AbsoluteLayout.LayoutBounds="0.09,0.06,0.1,0.12"
+            AbsoluteLayout.LayoutBounds="0.09,0.03,0.1,0.12"
             AbsoluteLayout.LayoutFlags="All"
             Source="appiconfg1.png" />
         <ImageButton
             x:Name="sairIndicadores"
-            AbsoluteLayout.LayoutBounds="0.95, 0.087"
+            AbsoluteLayout.LayoutBounds="0.95, 0.062"
             AbsoluteLayout.LayoutFlags="PositionProportional"
             Clicked="sairIndicadores_Clicked"
             HeightRequest="35"
             Source="x.png" />
         <Label
-            AbsoluteLayout.LayoutBounds="0.5, 0.094"
+            AbsoluteLayout.LayoutBounds="0.5, 0.077"
             AbsoluteLayout.LayoutFlags="PositionProportional"
             FontFamily="MontserratSemiBold"
             FontSize="24"
@@ -26,11 +26,11 @@
         <RadioButton
             x:Name="radioButtonNotas"
             Margin="10"
-            AbsoluteLayout.LayoutBounds="0.08,0.2"
+            AbsoluteLayout.LayoutBounds="0.08,0.15"
             AbsoluteLayout.LayoutFlags="PositionProportional"
             CheckedChanged="radioButtonNotas_CheckedChanged"
             Content="Pesos das Notas"
-            FontFamily="Montserrat-SemiBold"
+            FontFamily="MontserratSemiBold"
             FontSize="13.5"
             GroupName="Options"
             IsChecked="True"
@@ -38,17 +38,59 @@
         <RadioButton
             x:Name="radioButtonVagas"
             Margin="10"
-            AbsoluteLayout.LayoutBounds="0.9,0.2"
+            AbsoluteLayout.LayoutBounds="0.9,0.15"
             AbsoluteLayout.LayoutFlags="PositionProportional"
             CheckedChanged="radioButtonNotas_CheckedChanged"
             Content="Quantidade de Vagas"
-            FontFamily="Montserrat-SemiBold"
+            FontFamily="MontserratSemiBold"
             FontSize="13.5"
             GroupName="Options"
             TextColor="#092444" />
+        <CollectionView
+            x:Name="CollectionViewCotas"
+            AbsoluteLayout.LayoutBounds="0.5, 0.93, 0.9, 0.27"
+            AbsoluteLayout.LayoutFlags="All"
+            BackgroundColor="#d6eafa"
+            ItemsLayout="VerticalList">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame
+                        Margin="5"
+                        Padding="0"
+                        BackgroundColor="#d6eafa"
+                        BorderColor="#092444"
+                        CornerRadius="0"
+                        HasShadow="False">
+                        <Grid
+                            Padding="10"
+                            ColumnDefinitions="50, *"
+                            VerticalOptions="Center">
+                            <!--  Coluna do número  -->
+                            <Label
+                                FontFamily="MontserratSemiBold"
+                                FontSize="16"
+                                HorizontalTextAlignment="Center"
+                                Text="{Binding Numero}"
+                                TextColor="#092444"
+                                VerticalTextAlignment="Center" />
+                            <!--  Coluna do nome da cota  -->
+                            <Label
+                                Grid.Column="1"
+                                Margin="10,0,0,0"
+                                FontFamily="MontserratSemiBold"
+                                FontSize="16"
+                                Text="{Binding NomeCota}"
+                                TextColor="#092444"
+                                VerticalTextAlignment="Center" />
+                        </Grid>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
         <Label
             x:Name="LabelVagas"
-            AbsoluteLayout.LayoutBounds="0.5, 0.3"
+            AbsoluteLayout.LayoutBounds="0.5, 0.24"
             AbsoluteLayout.LayoutFlags="PositionProportional"
             FontFamily="MontserratSemiBold"
             FontSize="18"
@@ -56,7 +98,7 @@
             TextColor="#092444" />
         <Label
             x:Name="LabelNotas"
-            AbsoluteLayout.LayoutBounds="0.5, 0.3"
+            AbsoluteLayout.LayoutBounds="0.5, 0.24"
             AbsoluteLayout.LayoutFlags="PositionProportional"
             FontFamily="MontserratSemiBold"
             FontSize="18"
@@ -64,13 +106,13 @@
             TextColor="#092444" />
         <GraphicsView
             x:Name="BarrasGrafico"
-            AbsoluteLayout.LayoutBounds="0.48, 0.55, 0.3,0.3"
+            AbsoluteLayout.LayoutBounds="0.48, 0.45, 0.3,0.3"
             AbsoluteLayout.LayoutFlags="All"
             HeightRequest="300"
             WidthRequest="400" />
         <GraphicsView
             x:Name="LinhasGrafico"
-            AbsoluteLayout.LayoutBounds="0.48, 0.65, 0.8, 0.5"
+            AbsoluteLayout.LayoutBounds="0.48, 0.5, 0.8, 0.5"
             AbsoluteLayout.LayoutFlags="All"
             HeightRequest="300"
             WidthRequest="450" />

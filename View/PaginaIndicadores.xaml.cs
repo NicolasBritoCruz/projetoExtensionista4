@@ -1,4 +1,4 @@
-using Extensionista.Drawables;
+Ôªøusing Extensionista.Drawables;
 using Extensionista.Repositories;
 
 namespace Extensionista.View;
@@ -14,15 +14,21 @@ public partial class PaginaIndicadores : ContentPage
         BarrasGrafico.IsVisible = false;
         LabelVagas.IsVisible = false;
 
-        // Obter os dados do repositÛrio
+        // Obter os dados do reposit√≥rio
         var repository = new SisuModalidadesRepository();
         var modalidades = repository.ObterCursosPorIdCurso(IdCurso);
+
+        var mapeamentoCotas = modalidades
+             .Select((modalidade, index) => new { Numero = index + 1, NomeCota = modalidade.TIPO_CONCORRENCIA })
+             .ToList();
+
+        CollectionViewCotas.ItemsSource = mapeamentoCotas;
 
         // Configurar o drawable
         var drawable = new GraficoBarrasDrawable
         {
             Modalidades = modalidades, // Atribuir diretamente
-            Rotulos = new List<string> { "AC", "RaReEs", "RaEs", "Es", "DeEs", "DeReEs", "ReEs", "?", "De" },
+            Rotulos = mapeamentoCotas.Select(m => m.Numero.ToString()).ToList()
         };
 
         // Associar ao GraphicsView e atualizar
@@ -33,7 +39,7 @@ public partial class PaginaIndicadores : ContentPage
         var drawableL = new GraficoLinhasDrawable
         {
             ModalidadesBarras = modalidades,
-            RotulosBarras = new List<string> { "AC", "RaReEs", "RaEs", "Es", "DeEs", "DeReEs", "ReEs", "?", "De" },
+            RotulosBarras = mapeamentoCotas.Select(m => m.Numero.ToString()).ToList()
 
         };
 
@@ -54,7 +60,7 @@ public partial class PaginaIndicadores : ContentPage
         {
             if (radioButton == radioButtonNotas && radioButtonNotas.IsChecked)
             {
-                // Exibe o gr·fico de notas
+                // Exibe o gr√°fico de notas
                 LinhasGrafico.IsVisible = true;
                 LabelNotas.IsVisible = true;
                 BarrasGrafico.IsVisible = false;
@@ -62,7 +68,7 @@ public partial class PaginaIndicadores : ContentPage
             }
             else if (radioButton == radioButtonVagas && radioButtonVagas.IsChecked)
             {
-                // Exibe o gr·fico de vagas
+                // Exibe o gr√°fico de vagas
                 LinhasGrafico.IsVisible = false;
                 LabelNotas.IsVisible = false;
                 BarrasGrafico.IsVisible = true;
@@ -70,7 +76,4 @@ public partial class PaginaIndicadores : ContentPage
             }
         }
     }
-
-
-
 }
