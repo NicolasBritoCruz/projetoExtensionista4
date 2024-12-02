@@ -1,14 +1,53 @@
-<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage
     x:Class="Extensionista.View.PaginaIndicadoresRegiao"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     Title="PaginaIndicadoresRegiao">
+
+    <ContentPage.Resources>
+        <DataTemplate x:Key="Top10CursosTemplate">
+            <ViewCell>
+                <Frame 
+            Padding="5"  
+            CornerRadius="0" 
+            BorderColor="#345d97" 
+            BackgroundColor="#bcd7ed"
+            HasShadow="False">
+                    <Grid ColumnSpacing="20">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*" />
+                            <ColumnDefinition Width="1*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Label 
+                    Grid.Column="0"
+                    Text="{Binding Nome_Curso}" 
+                    FontSize="14" 
+                    TextColor="Black" 
+                    FontFamily="Default" 
+                    VerticalOptions="Center"
+                    HorizontalTextAlignment="Center" />
+
+                        <Label 
+                    Grid.Column="1"
+                    Text="{Binding Qt_Vagas, StringFormat='{0}'}" 
+                    FontSize="14" 
+                    TextColor="Black" 
+                    VerticalOptions="Center" 
+                    HorizontalTextAlignment="Center" />
+                    </Grid>
+                </Frame>
+            </ViewCell>
+        </DataTemplate>
+    </ContentPage.Resources>
+
     <AbsoluteLayout BackgroundColor="#ffffff">
+
         <Image
             AbsoluteLayout.LayoutBounds="0.09, 0.036, 0.09, 0.1"
             AbsoluteLayout.LayoutFlags="All"
             Source="appiconfg1.png" />
+
         <ImageButton
             x:Name="sairIndicadoresS"
             AbsoluteLayout.LayoutBounds="0.95, 0.058"
@@ -16,6 +55,7 @@
             Clicked="sairIndicadoresS_Clicked"
             HeightRequest="35"
             Source="x.png" />
+
         <Label
             AbsoluteLayout.LayoutBounds="0.5, 0.065"
             AbsoluteLayout.LayoutFlags="PositionProportional"
@@ -23,35 +63,129 @@
             FontSize="24"
             Text="Indicadores"
             TextColor="#092444" />
+
+        <RadioButton
+            x:Name="radioButtonIndicadoresVagas"
+            Margin="10"
+            AbsoluteLayout.LayoutBounds="0,0.2"
+            AbsoluteLayout.LayoutFlags="PositionProportional"
+            CheckedChanged="radioButtonNotas_CheckedChanged"
+            Content="Indicadores por Vagas"
+            FontFamily="Montserrat-SemiBold"
+            FontSize="13.5"
+            GroupName="Options"
+            IsChecked="True"
+            TextColor="#092444" />
+
+        <RadioButton
+            x:Name="radioButtonIndicadoresCursos"
+            Margin="10"
+            AbsoluteLayout.LayoutBounds="0.9,0.2"
+            AbsoluteLayout.LayoutFlags="PositionProportional"
+            CheckedChanged="radioButtonNotas_CheckedChanged"
+            Content="Indicadores por Cursos"
+            FontFamily="Montserrat-SemiBold"
+            FontSize="13.5"
+            GroupName="Options"
+            TextColor="#092444" />
+
         <Label
             x:Name="LabelIndicadoresRegiao"
-            AbsoluteLayout.LayoutBounds="0.5, 0.11"
+            AbsoluteLayout.LayoutBounds="0.5, 0.15"
             AbsoluteLayout.LayoutFlags="PositionProportional"
             FontFamily="MontserratSemiBold"
             FontSize="21"
             Text=""
             TextColor="#345d97" />
+
         <Label
             x:Name="LabelVagasRegiao"
-            AbsoluteLayout.LayoutBounds="0.5, 0.18,0.9,0.1"
+            AbsoluteLayout.LayoutBounds="0.5, 0.30,0.9,0.1"
             AbsoluteLayout.LayoutFlags="All"
             FontFamily="MontserratSemiBold"
-            FontSize="18"
+            FontSize="16"
             LineBreakMode="WordWrap"
             Text=""
             TextColor="#092444" />
+
         <Label
-            AbsoluteLayout.LayoutBounds="0.12, 0.25"
+            x:Name="LabelSoParaDesabilitar"
+            AbsoluteLayout.LayoutBounds="0.17, 0.34"
             AbsoluteLayout.LayoutFlags="PositionProportional"
             FontFamily="MontserratSemiBold"
             FontSize="16"
             Text="E essa foi a distribuição por turnos:"
             TextColor="#345d97" />
+
         <GraphicsView
             x:Name="GraficoVagasTurnos"
-            AbsoluteLayout.LayoutBounds="0, 0.8, 0.9, 0.8"
+            AbsoluteLayout.LayoutBounds="0, 0.9, 0.9, 0.8"
             AbsoluteLayout.LayoutFlags="All"
             HeightRequest="300"
             WidthRequest="400" />
+
+        <Label
+            x:Name="LabelTotalCursos"
+            AbsoluteLayout.LayoutBounds="0.5, 0.29, 0.9, 0.1"
+            AbsoluteLayout.LayoutFlags="All"
+            FontFamily="MontserratSemiBold"
+            FontSize="16"
+            LineBreakMode="WordWrap"
+            Text=""
+            TextColor="#092444"
+            IsVisible="False" />
+
+
+        <Label
+        x:Name="LabelTabela"
+         AbsoluteLayout.LayoutBounds="0.5, 0.36, 0.9, 0.1"
+        AbsoluteLayout.LayoutFlags="All"
+        FontFamily="MontserratSemiBold"
+        FontSize="16"
+        Text="Veja os 10 cursos que oferecem mais vagas na região:"
+        TextColor="#345d97"
+        IsVisible="False" />
+
+        <!-- Cabeçalho fixo -->
+        <Grid 
+            x:Name="Cabecalho"
+            BackgroundColor="#092444" 
+            Padding="10"
+            AbsoluteLayout.LayoutBounds="0.5, 0.41, 0.9, 0.05" 
+            AbsoluteLayout.LayoutFlags="All"
+            IsVisible="False">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+
+            <Label 
+                Grid.Column="0" 
+                Text="NOME" 
+                FontSize="16" 
+                TextColor="White" 
+                FontFamily="MontserratSemiBold" 
+                HorizontalTextAlignment="Center"
+                VerticalTextAlignment="Center" />
+
+            <Label 
+                Grid.Column="1" 
+                Text="VAGAS" 
+                FontSize="16" 
+                TextColor="White" 
+                FontFamily="MontserratSemiBold" 
+                HorizontalTextAlignment="Center"
+                VerticalTextAlignment="Center" />
+        </Grid>
+
+        <!-- ListView -->
+        <ListView
+            x:Name="ListViewTop10Cursos"
+            BackgroundColor="#bcd7ed"
+            AbsoluteLayout.LayoutBounds="0.5, 0.87, 0.9, 0.5"
+            AbsoluteLayout.LayoutFlags="All"
+            VerticalOptions="FillAndExpand"
+            ItemTemplate="{StaticResource Top10CursosTemplate}"
+            IsVisible="False"/>
     </AbsoluteLayout>
 </ContentPage>
