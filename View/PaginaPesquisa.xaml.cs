@@ -83,7 +83,7 @@ namespace Extensionista
         private async void Pesquisar_Clicked(object sender, EventArgs e)
         {
             var query = entrySearch.Text?.ToLower();
-
+  
             if (!string.IsNullOrEmpty(query))
             {
                 // Limpa a lista atual para exibir somente os resultados da pesquisa
@@ -91,6 +91,7 @@ namespace Extensionista
 
                 try
                 {
+                    ClearIcon.IsVisible = true;
                     // Executa a consulta SQL personalizada no repositório
                     var universidades = _cursosGeralRepository.ExecutarQueryPersonalizada<Universidades>(
                         "SELECT * FROM Universidades WHERE LOWER(MUNICIPIO) LIKE ? OR LOWER(NOME_IES) LIKE ?",
@@ -119,6 +120,7 @@ namespace Extensionista
                 {
                     Console.WriteLine($"Erro na query direta: {ex.Message}");
                 }
+                ClearIcon.IsVisible = true;
             }
             else
             {
@@ -126,6 +128,7 @@ namespace Extensionista
                 UniversidadesList.Clear();
                 currentPage = 1; // Reinicia a paginação
                 hasMoreItems = true; // Habilita mais itens para rolagem
+                ClearIcon.IsVisible = false;
                 await LoadFaculdadesAsync();
 
                 // Rola a lista para o início
@@ -162,5 +165,16 @@ namespace Extensionista
                 }
             }
         }
+
+        private async void ClearSearch_Clicked(object sender, EventArgs e)
+        {
+            entrySearch.Text = string.Empty; // Limpa o texto da entrada
+            UniversidadesList.Clear(); // Limpa os resultados atuais
+            currentPage = 1; // Reinicia a paginação
+            hasMoreItems = true; // Habilita mais itens para rolagem
+            await LoadFaculdadesAsync(); // Carrega a lista completa
+            ClearIcon.IsVisible = false; // Oculta o botão de limpar
+        }
+
     }
 }
