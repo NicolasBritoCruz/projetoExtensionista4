@@ -5,7 +5,15 @@ namespace Extensionista.View;
 
 public partial class PaginaListaS : ContentPage
 {
-	public PaginaListaS(int idUniversidade, string municipio)
+    protected override void OnAppearing()
+    {
+        base.OnAppearing();
+
+        // Atualiza o estado de favoritos sempre que a página aparecer
+        AtualizarListaFavoritos();
+    }
+
+    public PaginaListaS(int idUniversidade, string municipio)
 	{
 		InitializeComponent();
         CarregarCursosS(idUniversidade, municipio);

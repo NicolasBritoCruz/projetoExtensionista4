@@ -10,6 +10,14 @@ namespace Extensionista
         private int codigoIES;
         private string municipio;
 
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            // Atualiza o estado de favoritos sempre que a página aparecer
+            AtualizarListaFavoritos();
+        }
+
         public PaginaLista(int idUniversidade, bool estaNoSisu)
         {
             InitializeComponent();

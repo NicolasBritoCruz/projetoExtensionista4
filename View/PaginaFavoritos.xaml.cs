@@ -42,13 +42,31 @@ namespace Extensionista
             {
                 try
                 {
+                    // Obtém o CODIGO_IES da tabela Universidades
+                    var universidadesRepository = new CursosGeralRepository(); // Assuma que o repositório existe
+                    var universidade = universidadesRepository.ObterUniversidade(selectedFavorito.ID_UNIVERSIDADE);
+
+                    if (universidade == null)
+                    {
+                        await DisplayAlert("Erro", "Universidade não encontrada.", "OK");
+                        return;
+                    }
+
+                    int codigoIES = universidade.CODIGO_IES; // Aqui você pega o atributo CODIGO_IES
+
                     // Verifica se a universidade está no SISU
                     var sisuCursosRepository = new SisuCursosRepository();
-                    var cursosSisu = sisuCursosRepository.ObterCursosSisu(selectedFavorito.ID_UNIVERSIDADE.ToString());
+                    var cursosSisu = sisuCursosRepository.ObterCursosSisuCidade(codigoIES.ToString(), selectedFavorito.MUNICIPIO);
                     bool estaNoSisu = cursosSisu.Any();
 
-                    // Navega para a página de lista com os parâmetros corretos
-                    await Navigation.PushAsync(new PaginaLista(selectedFavorito.ID_UNIVERSIDADE, estaNoSisu));
+                    if (estaNoSisu)
+                    {
+                        await Navigation.PushAsync(new PaginaListaS(selectedFavorito.ID_UNIVERSIDADE, selectedFavorito.MUNICIPIO));
+                    }
+                    else
+                    {
+                        await Navigation.PushAsync(new PaginaLista(selectedFavorito.ID_UNIVERSIDADE, estaNoSisu));
+                    }
                 }
                 catch (Exception ex)
                 {
